@@ -13,11 +13,11 @@ const ServiceBox = ( props: IServiceBoxProps ) => {
     <div className="services-block-three col-xl-3 col-lg-6 col-md-6 col-sm-12">
       <div className="inner-box">
         <div className="image">
-          <a><img src={props.image} alt=""/></a>
+          <a href="/services"><img src={props.image} alt=""/></a>
         </div>
         <div className="lower-content">
-          <h3><a>{props.title}</a></h3>
-          <div className="text">{props.text}</div>
+          <h3 className="text-capitalize">{props.title}</h3>
+          <div className="text text-justify">{props.text}</div>
         </div>
       </div>
     </div>
