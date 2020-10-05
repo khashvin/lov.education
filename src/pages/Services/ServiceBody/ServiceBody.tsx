@@ -10,19 +10,19 @@ const ServiceBody = () => {
 
         <div className="sec-title">
           <div className="row">
-            <div className="col-lg-4 col-md-12">
+            <div className="col-12">
               <h2>
-                {"Start your journey with us!"}
-                <br />
+                {"Start your journey with us!\n"}
+                <br/>
                 {"We guide your pathways."}
               </h2>
             </div>
-            <div className="col-lg-8 col-md-12">
-              <div className="text">
+            <div className="col-12 mt-4">
+              <h5>
                 {"LOV provides a wide range of services that support you with your international education journey. " +
                 "If you are dreaming of studying overseas, we will get you there. From course information to career " +
                 "advice, we are dedicated to you and your future."}
-              </div>
+              </h5>
             </div>
           </div>
         </div>
@@ -31,7 +31,7 @@ const ServiceBody = () => {
 
           <ServiceBox
             image="/images/services/1.jpg"
-            title="Get your free consultation from LOV"
+            title="Free consultation from LOV"
             text="Our counsellors are qualified international education specialists and are
             always ready to guide you in finding the right course and country."
           />

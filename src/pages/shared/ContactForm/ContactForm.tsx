@@ -3,8 +3,9 @@ import React from 'react';
 import './ContactForm.css';
 
 const ContactForm = () => {
+
   return (
-    <div className="contact-form">
+    <div className="contact-form mt-1">
       <form method="post" action="/contact/send" id="contact-form">
         <div className="row clearfix">
 
@@ -53,8 +54,7 @@ const ContactForm = () => {
               <option value="Industrial Design">Industrial Design</option>
               <option value="Interior Architecture">Interior Architecture</option>
               <option value="Law">Law</option>
-              <option value="Logistics & Supply Chain Management">Logistics & Supply Chain Management
-              </option>
+              <option value="Logistics & Supply Chain Management">Logistics & Supply Chain Management</option>
               <option value="Mass Communication">Mass Communication</option>
               <option value="Medicine">Medicine</option>
               <option value="Multimedia Design">Multimedia Design</option>
@@ -84,9 +84,7 @@ const ContactForm = () => {
           </div>
 
           <div className="col-lg-6 col-md-6 col-sm-12 form-group">
-            <button id="reg-button" className="theme-btn btn-style-five" style={{ width: "100%"}} type="submit" name="submit-form"
-                    disabled>Register Interest!
-            </button>
+            <button id="reg-button" className="theme-btn btn-style-five" style={{ width: "100%"}} type="submit" name="submit-form" disabled>Register Interest!</button>
           </div>
 
         </div>

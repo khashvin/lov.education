@@ -4,7 +4,7 @@ import './Services.css';
 
 const Services = () => {
   return (
-      <section className="services-section mt-4">
+      <section className="services-section pt-4">
         <div className="auto-container">
           <div className="row clearfix">
 

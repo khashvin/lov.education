@@ -3,7 +3,6 @@ import { useLocation } from 'react-router';
 
 import './Header.css';
 
-
 const Header = () => {
     const { pathname } = useLocation();
 
