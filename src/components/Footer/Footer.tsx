@@ -17,7 +17,7 @@ const Footer = () => {
                 <div className="footer-column col-lg-6 col-md-6 col-sm-12">
                   <div className="footer-widget about-widget">
                     <div className="logo">
-                      <a href="/home"><img src="assets/images/logo-white.png" alt="" width="190px"
+                      <a href="/"><img src="/images/logo-white.png" alt="" width="190px"
                                            height="55px"/></a>
                     </div>
                     <div className="text">Start your journey with us! We guide your pathways.</div>
