@@ -85,7 +85,7 @@ const ContactForm = () => {
 
           <div className="col-lg-6 col-md-6 col-sm-12 form-group">
             <button id="reg-button" className="theme-btn btn-style-five" style={{ width: "100%"}} type="submit" name="submit-form"
-                    disabled={buttonState}>Register Interest!
+                    disabled>Register Interest!
             </button>
           </div>
 
