@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './ContactForm.css';
+
 const ContactForm = () => {
   return (
     <div className="contact-form">
@@ -77,14 +79,13 @@ const ContactForm = () => {
             <textarea name="message" placeholder="Message "></textarea>
           </div>
 
-          <div className="col-lg-6 col-md-6 col-sm-12 form-group">
-            <div className="g-recaptcha" data-sitekey="6Lf9hfgUAAAAAPYCrxXIJa5mFZNlYkHDrBIr-TwV"
-                 data-callback="correctCaptcha"></div>
+          <div className="col-lg-6 col-md-6 col-sm-12 form-group mx-auto">
+            <div className="g-recaptcha" data-sitekey="6Lf9hfgUAAAAAPYCrxXIJa5mFZNlYkHDrBIr-TwV" data-callback="correctCaptcha"></div>
           </div>
 
           <div className="col-lg-6 col-md-6 col-sm-12 form-group">
-            <button id="reg-button" className="theme-btn btn-style-five" type="submit" name="submit-form"
-                    disabled>Register Interest!
+            <button id="reg-button" className="theme-btn btn-style-five" style={{ width: "100%"}} type="submit" name="submit-form"
+                    disabled={buttonState}>Register Interest!
             </button>
           </div>
 
