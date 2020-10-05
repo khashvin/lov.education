@@ -1,0 +1,167 @@
+
+/***
+
+====================================================================
+			About Section Two
+====================================================================
+
+***/
+
+
+.about-section-two{
+    position: relative;
+    background-repeat:no-repeat;
+    background-position: center bottom;
+    background-image: url("/images/aboutbg.jpg");
+    padding: 50px 0 0;
+}
+
+.about-section-two .title-style-one{
+    max-width: 980px !important;
+}
+
+.about-section-two .image-column{
+    position: relative;
+}
+
+.about-section-two .image-column .inner-column{
+    position: relative;
+    padding-right: 60px;
+}
+
+.about-section-two .image-column .image{
+    position: relative;
+    display: block;
+    margin-bottom: 0;
+}
+
+.about-section-two .image-column .image img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.about-section-two .content-column{
+    position: relative;
+}
+
+.about-section-two .content-column .inner-column{
+    position: relative;
+    padding-top: 45px;
+    margin-left: -30px;
+}
+
+.about-section-two .content-column .inner-column:before{
+    position:absolute;
+    content:'';
+    left:0px;
+    top:0px;
+    width:120px;
+    height:1px;
+    background-color:#89c540;
+}
+
+.about-section-two .content-column .inner-column:after{
+    position:absolute;
+    content:'';
+    left:0px;
+    top:0px;
+    width:40px;
+    height:1px;
+    background-color:#001e57;
+}
+
+.about-section-two .content-column .text{
+    position: relative;
+    padding-right: 30px;
+    margin-bottom: 65px;
+}
+
+.about-section-two .content-column .text p{
+    position: relative;
+    display: block;
+    font-size: 16px;
+    line-height: 26px;
+    color: #555555;
+    font-weight: 400;
+    font-family: "Lato", sans-serif;
+    margin-bottom: 26px;
+}
+
+.about-section-two .content-column .text p strong{
+    position: relative;
+    font-weight: 700;
+}
+
+.about-section-two .fact-counter{
+    position: relative;
+    text-align: center;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0px 0px 35px rgba(0,0,0,0.15);
+    -ms-box-shadow: 0px 0px 35px rgba(0,0,0,0.15);
+    box-shadow: 0px 0px 35px rgba(0,0,0,0.15);
+    margin-left: -80px;
+}
+
+.about-section-two .fact-counter .column{
+    position: relative;
+    float: left;
+    padding: 0px;
+}
+
+.about-section-two .fact-counter .count-outer .count-text{
+    font-size: 44px;
+}
+
+.about-section-two .fact-counter .column .counter-title{
+    letter-spacing: 0;
+}
+
+
+/* Fact Counter */
+
+.fact-counter{
+    position:relative;
+}
+
+.fact-counter .column{
+    position:relative;
+}
+
+.fact-counter .column .inner{
+    position:relative;
+    padding:45px 0px;
+    transition:all 500ms ease;
+    -moz-transition:all 500ms ease;
+    -webkit-transition:all 500ms ease;
+    -ms-transition:all 500ms ease;
+    -o-transition:all 500ms ease;
+    border-right:1px solid #dddddd;
+}
+
+.fact-counter .count-outer{
+    position:relative;
+    margin:0px 0px;
+    font-weight:300;
+    color:#89c540;
+    font-size:40px;
+}
+
+.fact-counter .count-outer .count-text{
+    position:relative;
+    font-weight:300;
+    color:#89c540;
+    font-size:40px;
+    display:inline-block;
+}
+
+.fact-counter .column .counter-title{
+    position:relative;
+    font-size:16px;
+    font-weight:700;
+    color:#222222;
+    display:block;
+    margin-top:15px;
+    letter-spacing:1px;
+    text-transform:capitalize;
+}
