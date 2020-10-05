@@ -1,4 +1,6 @@
 import React from 'react';
+// @ts-ignore
+import Slide from "react-reveal/Slide";
 
 import './Services.css';
 
@@ -6,7 +8,8 @@ const Services = () => {
   return (
       <section className="services-section pt-4">
         <div className="auto-container">
-          <div className="row clearfix">
+          <Slide bottom cascade>
+            <div className="row clearfix">
 
             <div className="services-block col-xl-3 col-lg-6 col-md-6 col-sm-12">
               <div className="inner-box">
@@ -57,6 +60,7 @@ const Services = () => {
             </div>
 
           </div>
+          </Slide>
         </div>
       </section>
   )

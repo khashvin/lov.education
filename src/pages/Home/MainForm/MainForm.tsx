@@ -1,4 +1,6 @@
 import React from 'react';
+// @ts-ignore
+import Fade from "react-reveal/Fade";
 
 import './MainForm.css';
 import ContactForm from "../../shared/ContactForm/ContactForm";
@@ -18,7 +20,9 @@ const MainForm = () => {
                 </div>
               </div>
               <div className="col-12 order-1 order-md-2">
-                <img className="img-fluid" alt="formImage" src="/images/mainform.jpg"/>
+                <Fade>
+                  <img className="img-fluid" alt="formImage" src="/images/mainform.jpg"/>
+                </Fade>
               </div>
             </div>
           </div>

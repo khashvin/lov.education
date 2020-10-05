@@ -41,7 +41,7 @@ const ContactBody = () => {
                 <li>
                   <span className="icon icon-call-in"></span>
                   <strong>{"Call Support"}</strong>
-                  {"1300 - 300 - 993(TOLL FREE)"}
+                  {"1300 - 300 - 993 (TOLL FREE)"}
                 </li>
                 <li>
                   <span className="icon fab fa-whatsapp" style={{fontSize: 32}}></span>
