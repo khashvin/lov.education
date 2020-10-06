@@ -12,11 +12,13 @@ const universityFields = 'fields=id,path,name,abbr,description,intake,location,i
 
 const facultyEndpoint = 'faculty';
 const facultyFilter = 'filter[enable][eq]=1';
+const facultyFilterByUni = 'filter[university][eq]='
 const facultyFields = 'fields=id,name,file.data';
 
 const courseEndpoint = 'course';
 const courseFilter = 'filter[enable][eq]=1';
-const courseFields = 'fields=id,name,file.data';
+const courseFilterByFac = 'filter[faculty][eq]='
+const courseFields = 'fields=id,name,file.data,faculty';
 
 export const getUniversities = () => {
   return {
@@ -25,17 +27,20 @@ export const getUniversities = () => {
   }
 }
 
-export const getFaculties = () => {
+export const getFaculties = (uni: number) => {
   return {
     type: ACTION_TYPES.GET_FACULTIES,
-    payload: api.get(`${facultyEndpoint}?${facultyFilter}&${facultyFields}`),
+    payload: api.get(`${facultyEndpoint}?${facultyFilter}&${facultyFilterByUni}${uni}&${facultyFields}`),
   }
 }
 
 
-export const getCourses = () => {
+export const getCourses = (faculty: number) => {
   return {
     type: ACTION_TYPES.GET_COURSES,
-    payload: api.get(`${courseEndpoint}?${courseFilter}&${courseFields}`),
+    payload: api.get(`${courseEndpoint}?${courseFilter}&${courseFilterByFac}${faculty}&${courseFields}`),
+    meta: {
+      facultyId: faculty,
+    }
   }
 }

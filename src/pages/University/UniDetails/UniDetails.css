@@ -1,0 +1,405 @@
+.uni-title {
+    position: relative;
+    display: block;
+    line-height: 1.2em;
+    color: #001e57;
+    font-weight: 800;
+    padding-bottom: 25px;
+}
+
+.uni-title:before {
+    position: absolute;
+    content: '';
+    left: 0px;
+    bottom: 0px;
+    width: 120px;
+    height: 1px;
+    background-color: #89c540;
+}
+.uni-title:after {
+    position: absolute;
+    content: '';
+    left: 0px;
+    bottom: 0px;
+    width: 40px;
+    height: 1px;
+    background-color: #001e57;
+}
+
+.uni-box {
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding: 15px 20px;
+    background-color: #001e57;
+    -webkit-box-shadow: 0px 0px 45px rgba(0,0,0,0.20);
+    -ms-box-shadow: 0px 0px 45px rgba(0,0,0,0.20);
+    box-shadow: 0px 0px 45px rgba(0,0,0,0.20);
+    color: #FFF;
+}
+
+/***
+
+====================================================================
+	Sidebar Page Container
+====================================================================
+
+***/
+
+.sidebar-page-container{
+    position:relative;
+    padding:100px 0px 50px;
+}
+
+.sidebar-page-container .content-side,
+.sidebar-page-container .sidebar-side{
+    margin-bottom:40px;
+}
+
+.sidebar-page-container .sidebar-side .sidebar.padding-left{
+    padding-left:40px;
+}
+
+.sidebar-widget{
+    position:relative;
+    margin-bottom:45px;
+}
+
+/* Sidebar Title */
+
+.sidebar-title{
+    position: relative;
+    margin-bottom:20px;
+    padding: 15px 15px 15px 24px;
+    border-left: 5px solid #89c540;
+    -webkit-box-shadow:0px 0px 45px rgba(0,0,0,0.10);
+    -ms-box-shadow:0px 0px 45px rgba(0,0,0,0.10);
+    box-shadow:0px 0px 45px rgba(0,0,0,0.10);
+}
+
+.sidebar-title h5{
+    position: relative;
+    font-size: 18px;
+    color: #222222;
+    font-weight: 800;
+    line-height: 30px;
+}
+
+/* Sidebar Padding Right */
+
+.sidebar-page-container .sidebar-side .sidebar.padding-right{
+    padding-right:40px;
+}
+
+
+/* Blog Detail */
+
+.services-detail{
+    position:relative;
+}
+
+.services-detail .inner-box{
+    position:relative;
+}
+
+.services-detail .inner-box .image{
+    position:relative;
+}
+
+.services-detail .inner-box .image img{
+    position:relative;
+    width:100%;
+    display:block;
+}
+
+.services-detail .inner-box .lower-content{
+    position:relative;
+    padding-top:35px;
+}
+
+.services-detail .inner-box .lower-content .title-box{
+    position:relative;
+    margin-bottom:35px;
+}
+
+.services-detail .inner-box .lower-content .title-box .title{
+    position: relative;
+    display: block;
+    font-size: 18px;
+    line-height: 24px;
+    color: #afafaf;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+
+.services-detail .inner-box .lower-content .title-box h2{
+    position: relative;
+    display: block;
+    font-size:44px;
+    line-height: 1.2em;
+    color: #001e57;
+    font-weight: 700;
+    padding-bottom:25px;
+}
+
+.services-detail .inner-box .lower-content .title-box h2:before{
+    position:absolute;
+    content:'';
+    left:0px;
+    bottom:0px;
+    width:120px;
+    height:1px;
+    background-color:#89c540;
+}
+
+.services-detail .inner-box .lower-content .title-box h2:after{
+    position:absolute;
+    content:'';
+    left:0px;
+    bottom:0px;
+    width:40px;
+    height:1px;
+    background-color:#001e57;
+}
+
+.services-detail .inner-box .lower-content .bold-text{
+    position:relative;
+    color:#222222;
+    font-size:16px;
+    font-weight:700;
+    line-height:1.8em;
+    margin-bottom:22px;
+}
+
+.services-detail .inner-box .lower-content .text{
+    position:relative;
+}
+
+.services-detail .inner-box .lower-content .text p{
+    position:relative;
+    color:#555555;
+    font-size:16px;
+    line-height:1.7em;
+    margin-bottom:25px;
+}
+
+.services-detail .inner-box .lower-content .text h3{
+    position:relative;
+    color:#001e57;
+    font-size:24px;
+    margin-bottom:24px;
+    padding-bottom:22px;
+    font-weight:900;
+}
+
+.services-detail .inner-box .lower-content .text h3:before{
+    position:absolute;
+    content:'';
+    left:0px;
+    bottom:0px;
+    height:1px;
+    width:50px;
+    background-color:#89c540;
+}
+
+.services-detail .services-featured-outer{
+    position:relative;
+    margin-top:35px;
+    margin-bottom:10px;
+}
+
+.services-detail .inner-box .lower-content .default-two-column{
+    position:relative;
+    margin-bottom:15px;
+}
+
+.services-detail .inner-box .lower-content .default-two-column .column{
+    margin-bottom:20px;
+}
+
+
+/***
+
+====================================================================
+			FAQ Section
+====================================================================
+
+***/
+
+.faq-section{
+    position: relative;
+    padding: 100px 0 85px;
+}
+
+.faq-section.no-pd-top{
+    padding-top: 0;
+}
+
+.faq-section .upper-box{
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.faq-section .upper-box .text{
+    position: relative;
+    display: block;
+    font-size: 18px;
+    line-height: 30px;
+    color: #555555;
+    font-weight: 400;
+}
+
+
+.faq-section .title-style-one{
+    margin-bottom: 40px;
+}
+
+.faq-section .accordion-column{
+    position: relative;
+}
+
+.faq-section .title-style-one h2{
+    font-size: 44px;
+    color: #222222;
+    font-weight: 700;
+}
+
+.faq-section .accordion-column .inner-column{
+    position: relative;
+    padding-right: 30px;
+}
+
+.faq-section .accordion-box{
+    position:relative;
+}
+
+.accordion-box .block{
+    position: relative;
+    margin-bottom:15px;
+}
+
+.accordion-box .block .acc-btn{
+    position:relative;
+    font-size:18px;
+    cursor:pointer;
+    line-height:35px;
+    color:#222222;
+    font-weight:700;
+    padding:15px 50px 15px 35px;
+    transition:all 500ms ease;
+    -ms-transition:all 500ms ease;
+    -o-transition:all 500ms ease;
+    -moz-transition:all 500ms ease;
+    -webkit-transition:all 500ms ease;
+    background-color:#f3f5f9;
+}
+
+.accordion-box .block .icon-outer{
+    position:absolute;
+    right:30px;
+    top: 15px;
+    font-size: 16px;
+    line-height: 35px;
+    color: #555555;
+    text-align:center;
+    transition:all 500ms ease;
+    -moz-transition:all 500ms ease;
+    -webkit-transition:all 500ms ease;
+    -ms-transition:all 500ms ease;
+    -o-transition:all 500ms ease;
+}
+
+.accordion-box .block .acc-btn .icon-outer .icon{
+    position: relative;
+}
+
+.accordion-box .block .acc-btn.active{
+    background-color: #001e57;
+    color: #ffffff;
+}
+
+.accordion-box .block .acc-btn.active .icon-outer{
+    -webkit-transform:rotate(90deg);
+    -ms-transform:rotate(90deg);
+    -o-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+    transform:rotate(90deg);
+    color: #89c540;
+}
+
+.accordion-box .block .acc-content{
+    position:relative;
+}
+
+.accordion-box .block .acc-content.current{
+    display:block;
+}
+
+.accordion-box .block .content{
+    position:relative;
+    font-size:16px;
+    padding:30px 35px 15px;
+}
+
+.accordion-box .block .content .text{
+    font-size:16px;
+    line-height: 26px;
+    color:#555555;
+}
+
+.accordion-box .block .content p:last-child{
+    margin-bottom:0px;
+}
+
+.faq-section .image-column{
+    position: relative;
+}
+
+.faq-section .image-column .inner-column{
+    position: relative;
+    padding-top: 105px;
+    margin-left: 50px;
+    margin-right: -60px;
+}
+
+.faq-section .image-column .image{
+    position: relative;
+    display: block;
+    text-align: right;
+    border: 15px solid #89c540;
+    height: 600px;
+}
+
+.faq-section .image-column .image img{
+    position: absolute;
+    right: -40px;
+    bottom: 0;
+}
+
+/*=== Accordion Box Style Two ====*/
+
+.accordion-box.style-two .block .acc-btn{
+    padding-left: 55px;
+    padding-right:20px;
+}
+
+.accordion-box.style-two .block .acc-btn.active{
+    background-color: #89c540;
+    color: #ffffff;
+}
+
+.accordion-box.style-two .block .icon-outer{
+    left: 30px;
+    right: auto;
+    color: #001e57;
+}
+
+.accordion-box.style-two .block .acc-btn.active .icon-outer{
+    color: #ffffff;
+}
+
+.accordion-box.style-two .block .content{
+    padding-left: 55px;
+}
+
