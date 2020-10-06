@@ -7,6 +7,7 @@ const initialState = {
 export type PreloaderState = Readonly<typeof initialState>;
 
 export default (state: PreloaderState = initialState, action: any): PreloaderState => {
+  console.log(action.type);
   switch (action.type) {
     case ACTION_TYPES.START_PRELOADER:
       return {
