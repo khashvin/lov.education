@@ -13,7 +13,7 @@ const AboutBody = () => {
         <div className="title-style-one style-two centered">
           <div className="icon">
             <Fade>
-              <img src="/images/logo.png" alt="" style={{height: 200}} />
+              <img src="/images/logo.png" alt="LOV Logo" style={{height: 200}} />
             </Fade>
           </div>
         </div>
@@ -21,8 +21,8 @@ const AboutBody = () => {
         <div className="row">
           <div className="image-column col-lg-6 col-md-12 col-sm-12">
             <div className="inner-column wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-              <figure className="image"><a href="<?= env('baseURL') ?>assets/assets/images/office.jpg"
-                                           className="lightbox-image"><img src="assets/images/office.jpg" alt="" /></a>
+              <figure className="image">
+              {/*  IMAGE MISSING */}
               </figure>
             </div>
           </div>

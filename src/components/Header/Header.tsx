@@ -2,6 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router';
 
 import './Header.css';
+import {Link} from "react-router-dom";
 
 const Header = () => {
     const { pathname } = useLocation();
@@ -53,9 +54,9 @@ const Header = () => {
                   <div className="auto-container clearfix">
                       <div className="logo-outer">
                           <div className="logo">
-                              <a href="/">
+                              <Link to="/">
                                   <img src="https://lov.education/assets/images/logo.png" alt="" title="" width="250px"/>
-                              </a>
+                              </Link>
                           </div>
                       </div>
                       <div className="nav-outer clearfix">
@@ -69,11 +70,11 @@ const Header = () => {
                               </div>
                               <div className="collapse navbar-collapse clearfix" id="navbarSupportedContent">
                                   <ul className="navigation clearfix">
-                                      <li className={pathname === '/' ? 'current' : ''}><a href="/">Home</a></li>
-                                      <li className={pathname === '/about' ? 'current' : ''}><a href="/about">About us</a></li>
-                                      <li className={pathname === '/services' ? 'current' : ''}><a href="/services">Our Services</a></li>
-                                      <li className={pathname === '/university' ? 'current' : ''}><a href="/university">Universities/Colleges</a></li>
-                                      <li className={pathname === '/contact' ? 'current' : ''}><a href="/contact">Contact Us</a></li>
+                                      <li className={pathname === '/' ? 'current' : ''}><Link to="/">Home</Link></li>
+                                      <li className={pathname === '/about' ? 'current' : ''}><Link to="/about">About us</Link></li>
+                                      <li className={pathname === '/services' ? 'current' : ''}><Link to="/services">Our Services</Link></li>
+                                      <li className={pathname === '/university' ? 'current' : ''}><Link to="/university">Universities/Colleges</Link></li>
+                                      <li className={pathname === '/contact' ? 'current' : ''}><Link to="/contact">Contact Us</Link></li>
                                   </ul>
                               </div>
                           </nav>
