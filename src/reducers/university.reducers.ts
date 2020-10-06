@@ -5,10 +5,13 @@ import {IFacultyModel} from "../models/IFacultyModel";
 import {ICourseModel} from "../models/ICourseModel";
 
 const initialState = {
-  loading: false,
+  uLoading: false,
+  fLoading: false,
+  cLoading: false,
   universities: [] as ReadonlyArray<IUniversityModel>,
   faculties: [] as ReadonlyArray<IFacultyModel>,
   courses: [] as ReadonlyArray<ICourseModel>,
+  coursesStore: new Map<number, ICourseModel[]>() as Map<number, ICourseModel[]>,
 }
 
 export type UniversityState = Readonly<typeof initialState>;
@@ -16,36 +19,56 @@ export type UniversityState = Readonly<typeof initialState>;
 export default (state: UniversityState = initialState, action: any): UniversityState => {
   switch (action.type) {
     case REQUEST(ACTION_TYPES.GET_UNIVERSITIES):
+      return {
+        ...state,
+        uLoading: true,
+      }
     case REQUEST(ACTION_TYPES.GET_FACULTIES):
+      return {
+        ...state,
+        fLoading: true,
+      }
     case REQUEST(ACTION_TYPES.GET_COURSES):
       return {
         ...state,
-        loading: true,
+        cLoading: true,
       }
     case FAILURE(ACTION_TYPES.GET_UNIVERSITIES):
+      return {
+        ...state,
+        uLoading: false,
+      }
     case FAILURE(ACTION_TYPES.GET_FACULTIES):
+      return {
+        ...state,
+        fLoading: false,
+      }
     case FAILURE(ACTION_TYPES.GET_COURSES):
       return {
         ...state,
-        loading: false,
+        cLoading: false,
       }
     case SUCCESS(ACTION_TYPES.GET_UNIVERSITIES):
       return {
         ...state,
-        loading: false,
+        uLoading: false,
         universities: action.payload.data.data,
       }
     case SUCCESS(ACTION_TYPES.GET_FACULTIES):
       return {
         ...state,
-        loading: false,
+        fLoading: false,
         faculties: action.payload.data.data,
       }
     case SUCCESS(ACTION_TYPES.GET_COURSES):
       return {
         ...state,
-        loading: false,
+        cLoading: false,
         courses: action.payload.data.data,
+        coursesStore: state.coursesStore.set(
+          action.meta.facultyId,
+          action.payload.data.data
+        )
       }
     default:
       return state;

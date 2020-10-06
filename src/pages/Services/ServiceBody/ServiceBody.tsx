@@ -1,6 +1,4 @@
 import React from 'react';
-// @ts-ignore
-import Fade from "react-reveal/Fade";
 
 import './ServiceBody.css';
 import ServiceBox from "../ServiceBox";
@@ -11,24 +9,22 @@ const ServiceBody = () => {
       <div className="auto-container">
 
         <div className="sec-title">
-          <Fade cascade>
-            <div className="row">
-                <div className="col-12">
-                  <h2>
-                    {"Start your journey with us!\n"}
-                    <br/>
-                    {"We guide your pathways."}
-                  </h2>
-                </div>
-              <div className="col-12 mt-4">
-                <h5>
-                  {"LOV provides a wide range of services that support you with your international education journey. " +
-                  "If you are dreaming of studying overseas, we will get you there. From course information to career " +
-                  "advice, we are dedicated to you and your future."}
-                </h5>
+          <div className="row">
+              <div className="col-12">
+                <h2>
+                  {"Start your journey with us!\n"}
+                  <br/>
+                  {"We guide your pathways."}
+                </h2>
               </div>
+            <div className="col-12 mt-4">
+              <h5>
+                {"LOV provides a wide range of services that support you with your international education journey. " +
+                "If you are dreaming of studying overseas, we will get you there. From course information to career " +
+                "advice, we are dedicated to you and your future."}
+              </h5>
             </div>
-          </Fade>
+          </div>
         </div>
 
 

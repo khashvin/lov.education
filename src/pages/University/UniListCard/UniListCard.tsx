@@ -10,7 +10,7 @@ interface IUniListCard {
 
 const UniListCard = (props: IUniListCard) => {
 
-  const uniPath = `/university/${props.university.abbr}`
+  const uniPath = `/university/${props.university.path}`
   return (
     <div className="team-block col-lg-3 col-md-6 col-sm-12">
       <div className="inner-box">

@@ -1,7 +1,7 @@
 import {IFileModel} from "./IFileModel";
 
 export interface IUniversityModel {
-  id?: string;
+  id: number;
   path?: string;
   name?: string;
   abbr?: string;
