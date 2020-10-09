@@ -6,16 +6,16 @@ export const ACTION_TYPES = {
   GET_COURSES: "GET_COURSES",
 }
 
-const universityEndpoint = 'university';
+const universityEndpoint = 'items/university';
 const universityFilter = 'filter[enable][eq]=1';
 const universityFields = 'fields=id,path,name,abbr,description,intake,location,image.data,thumbnail.data'
 
-const facultyEndpoint = 'faculty';
+const facultyEndpoint = 'items/faculty';
 const facultyFilter = 'filter[enable][eq]=1';
 const facultyFilterByUni = 'filter[university][eq]='
 const facultyFields = 'fields=id,name,file.data';
 
-const courseEndpoint = 'course';
+const courseEndpoint = 'items/course';
 const courseFilter = 'filter[enable][eq]=1';
 const courseFilterByFac = 'filter[faculty][eq]='
 const courseFields = 'fields=id,name,file.data,faculty';

@@ -1,35 +1,75 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './ContactForm.css';
+import {useDispatch} from "react-redux";
+import {sendContactForm} from "../../../actions/contact.actions";
+import { useHistory } from 'react-router-dom';
+
+interface IFormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  fieldOfStudy: string;
+  message: string;
+}
 
 const ContactForm = () => {
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const [isOtherShow, setShowOthers] = useState(false);
+  const [formData, setData] = useState<IFormData>({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    fieldOfStudy: "Not Selected",
+    message: ''
+  });
+
+  const handleSubmit = (event: any) => {
+    console.log(formData);
+    dispatch(sendContactForm(formData));
+    history.push("/contact");
+    window.scrollTo(0,0);
+    event.preventDefault();
+  }
+
+  const handleChange = (event: any) => {
+    if(event.target.name === 'fieldOfStudy' && event.target.value === 'others') {
+      setShowOthers(true);
+    }
+
+    setData({
+      ...formData,
+      [event.target.name]: event.target.value,
+    });
+  }
 
   return (
     <div className="contact-form mt-1">
-      <form method="post" action="/contact/send" id="contact-form">
+      <form id="contact-form" onSubmit={handleSubmit}>
         <div className="row clearfix">
 
-          <input type="hidden" name="title" value="Contact Us Submission" />
-
           <div className="col-lg-6 col-md-6 col-sm-12 form-group">
-            <input type="text" name="firstname" placeholder="First Name " required />
+            <input type="text" name="firstName" placeholder="First Name " onChange={handleChange} required />
           </div>
 
           <div className="col-lg-6 col-md-6 col-sm-12 form-group">
-            <input type="text" name="lastname" placeholder="Last Name " required />
+            <input type="text" name="lastName" placeholder="Last Name " onChange={handleChange} required />
           </div>
 
           <div className="col-lg-6 col-md-6 col-sm-12 form-group">
-            <input type="email" name="email" placeholder="Email " required />
+            <input type="email" name="email" placeholder="Email " onChange={handleChange} required />
           </div>
 
           <div className="col-lg-6 col-md-6 col-sm-12 form-group">
-            <input type="text" name="phone" placeholder="Phone " required />
+            <input type="text" name="phone" placeholder="Phone " onChange={handleChange} required />
           </div>
 
           <div className="col-lg-12 col-md-12 col-sm-12 form-group">
-            <select id="fosSelect" name="fos" placeholder="Field of Study " required>
-              <option value="">Field of Study</option>
+            <select id="fosSelect" name="fieldOfStudy" onChange={handleChange}>
+              <option value="Not Selected">Field of Study</option>
               <option value="ACCA">ACCA</option>
               <option value="Accounting">Accounting</option>
               <option value="Actuarial Science">Actuarial Science</option>
@@ -71,20 +111,19 @@ const ContactForm = () => {
             </select>
           </div>
 
-          <div id="otherInput" className="d-none col-lg-12 col-md-12 col-sm-12 form-group">
-            <input type="text" name="others" placeholder="Field of Study" />
+          <div className={isOtherShow ? "col-lg-12 col-md-12 col-sm-12 form-group" : "d-none col-lg-12 col-md-12 col-sm-12 form-group"}>
+            <input type="text" name="fieldOfStudy" placeholder="Field of Study" onChange={handleChange} />
           </div>
 
           <div className="col-lg-12 col-md-12 col-sm-12 form-group">
-            <textarea name="message" placeholder="Message "></textarea>
+            <textarea name="message" placeholder="Message " onChange={handleChange} ></textarea>
           </div>
 
-          <div className="col-lg-6 col-md-6 col-sm-12 form-group mx-auto">
-            <div className="g-recaptcha" data-sitekey="6Lf9hfgUAAAAAPYCrxXIJa5mFZNlYkHDrBIr-TwV" data-callback="correctCaptcha"></div>
+          <div className="col-6 p-0">
           </div>
 
           <div className="col-lg-6 col-md-6 col-sm-12 form-group">
-            <button id="reg-button" className="theme-btn btn-style-five" style={{ width: "100%"}} type="submit" name="submit-form" disabled>Register Interest!</button>
+            <input value="Register Interest!" className="theme-btn btn-style-five" style={{ width: "100%", cursor: "pointer"}} type="submit"></input>
           </div>
 
         </div>

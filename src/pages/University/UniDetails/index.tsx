@@ -6,6 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {IRootState} from "../../../rootReducer";
 import {getUniversities} from "../../../actions/university.actions";
 import Section from "./Section";
+import Newsletter from "./Newsletter";
 
 const UniDetails = () => {
   const { unipath } = useParams();
@@ -31,6 +32,7 @@ const UniDetails = () => {
           </Helmet>
           <PageTitle title={university.name} />
           <Section university={university}/>
+          <Newsletter university={university} />
         </>
       }
 

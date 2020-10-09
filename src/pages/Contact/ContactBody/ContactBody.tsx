@@ -2,25 +2,33 @@ import React from 'react';
 import ContactForm from "../../shared/ContactForm/ContactForm";
 
 import './ContactBody.css';
+import {useDispatch, useSelector} from "react-redux";
+import {IRootState} from "../../../rootReducer";
+import {closeSuccessMsg} from "../../../actions/contact.actions";
 
 const ContactBody = () => {
+  const dispatch = useDispatch();
+  const success = useSelector((state: IRootState) => state.contact.success);
+
   return (
     <section className="contact-page-section">
       <div className="auto-container">
         <div className="row clearfix">
 
-          <div className="col-12">
-            <div className="alert alert-success alert-dismissible fade show" role="alert">
-              <h5>
-                <strong>{"Success!"}</strong>
-                {"You have successfully sent a message to us. We will get back to you shortly."}
-              </h5>
-              <button type="button" className="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">{"X"}</span>
-              </button>
+          {success ?
+            <div className="col-12">
+              <div className="alert alert-success alert-dismissible fade show" role="alert">
+                <h5>
+                  <strong>{"Success!"}</strong>
+                  {"You have successfully sent a message to us. We will get back to you shortly."}
+                </h5>
+                <button type="button" className="close" data-dismiss="alert" aria-label="Close"  onClick={() => dispatch(closeSuccessMsg())}>
+                  <span aria-hidden="true">{"X"}</span>
+                </button>
+              </div>
             </div>
-          </div>
-
+            : null
+          }
           <div className="info-column col-lg-4 col-md-12 col-sm-12">
             <div className="inner-column">
 

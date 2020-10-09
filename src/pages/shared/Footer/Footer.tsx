@@ -4,6 +4,7 @@ import './Footer.css'
 import {Link} from "react-router-dom";
 
 const Footer = () => {
+
   return (
     <footer className="main-footer">
 
@@ -49,7 +50,7 @@ const Footer = () => {
                   <div className="footer-widget post-widget">
                     <h2>Facebook</h2>
                     <div id="fb-root"/>
-                    <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v5.0"/>
+
                     <div className="fb-page" data-href="https://www.facebook.com/literacyofvirtue" data-tabs="timeline"
                          data-width="" data-height="300px" data-small-header="true" data-adapt-container-width="true"
                          data-hide-cover="false" data-show-facepile="false">

@@ -1,11 +1,28 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useLocation } from 'react-router';
 
 import './Header.css';
 import {Link} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {getAuth} from "../../../actions/contact.actions";
 
 const Header = () => {
     const { pathname } = useLocation();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+       const localToken = localStorage.getItem("token");
+       if(localToken === null) {
+           console.log(localToken);
+           dispatch(getAuth());
+       }
+       window.scrollTo(0,0);
+    }, [dispatch, pathname]);
+
+
+
+
+
 
     return (
       <header className="main-header">
