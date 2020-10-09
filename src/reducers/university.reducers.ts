@@ -1,4 +1,4 @@
-import { ACTION_TYPES } from '../actions/university.actions'
+import { ACTION_TYPES } from '../actions/university.actions';
 import {REQUEST, FAILURE, SUCCESS} from "../action.type";
 import {IUniversityModel} from "../models/IUniversityModel";
 import {IFacultyModel} from "../models/IFacultyModel";

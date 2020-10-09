@@ -25,12 +25,7 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Literacy of Virtue</title>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script type="text/javascript">
-      function correctCaptcha(token) {
-        document.getElementById("reg-button").disabled = false;
-      }
-    </script>
+    <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v5.0"></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -45,9 +40,22 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/script.js"></script>
+    <script src="%PUBLIC_URL%/js/jquery.min.js"></script>
+    <script src="%PUBLIC_URL%/js/popper.min.js"async defer></script>
+    <script src="%PUBLIC_URL%/js/bootstrap.min.js"async defer></script>
+    <script src="%PUBLIC_URL%/js/script.js"async defer></script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+      var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+      (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/5e1d87fb7e39ea1242a47fb7/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+      })();
+    </script>
+    <!--End of Tawk.to Script-->
   </body>
 </html>
