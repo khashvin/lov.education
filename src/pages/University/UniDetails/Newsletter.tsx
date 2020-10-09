@@ -25,7 +25,7 @@ const Newsletter = ( props: INewsletterProps ) => {
               <div className="inner-column">
 
                 <div className="subscribe-form">
-                  <Link to="/contact">
+                  <Link to="/contact#form">
                     <button type="button" className="theme-btn submit-btn" >Apply Now!</button>
                   </Link>
                 </div>

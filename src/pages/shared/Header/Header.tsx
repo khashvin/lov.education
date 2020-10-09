@@ -72,7 +72,7 @@ const Header = () => {
                       <div className="logo-outer">
                           <div className="logo">
                               <Link to="/">
-                                  <img src="https://lov.education/assets/images/logo.png" alt="" title="" width="250px"/>
+                                  <img src="/images/logo.png" alt="Logo" width="250px"/>
                               </Link>
                           </div>
                       </div>
