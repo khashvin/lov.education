@@ -1,4 +1,5 @@
 import React from 'react';
+import parse from 'html-react-parser';
 
 import './UniDetails.css';
 import FacultyList from "./FacultyList";
@@ -29,7 +30,7 @@ const Section = ( props: ISectionProps) => {
               </div>
               <br />
                 <div className="text">
-                  {props.university.description}
+                  {props.university.description ? parse(props.university.description) : props.university.description}
                 </div>
             </div>
 
