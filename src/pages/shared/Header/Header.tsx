@@ -42,7 +42,7 @@ const Header = () => {
                               </a>
                           </li>
                           <li>
-                              <a href="https://wa.me/60197529930">
+                              <a href="https://wa.me/60124209899">
                                   <span style={{ fontSize: 22 }} className="fab fa-whatsapp"></span>
                               </a>
                           </li>
@@ -51,8 +51,8 @@ const Header = () => {
                   <div className="top-right clearfix">
                       <ul className="info-list clearfix">
                           <li>
-                              <a href="tel:1300300993">
-                                  <span className="txt">1300-300-993 (TOLL FREE)</span>
+                              <a href="tel:+60124209899">
+                                  <span className="txt">+6012 - 420 9899</span>
                                   <span className="icon fas fa-phone"></span>
                               </a>
                           </li>
