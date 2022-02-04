@@ -47,21 +47,16 @@ const ContactBody = () => {
                   {"info@lov.education"}
                 </li>
                 <li>
-                  <span className="icon icon-call-in"></span>
-                  <strong>{"Call Support"}</strong>
-                  {"1300 - 300 - 993 (TOLL FREE)"}
-                </li>
-                <li>
                   <span className="icon fab fa-whatsapp" style={{fontSize: 32}}></span>
                   <strong>{"WhatsApp"}</strong>
-                  {"+6019 - 752 9930"}
+                  {"+6012 - 420 9899"}
                 </li>
               </ul>
 
               <ul className="social-links">
                 <li><a href="https://facebook.com/literacyofvirtue"><span className="fab fa-facebook-f"></span></a></li>
                 <li><a href="https://instagram.com/literacyofvirtue"><span className="fab fa-instagram"></span></a></li>
-                <li><a href="https://wa.me/60197529930"><span className="fab fa-whatsapp"></span></a></li>
+                <li><a href="https://wa.me/60124209899"><span className="fab fa-whatsapp"></span></a></li>
               </ul>
 
             </div>
