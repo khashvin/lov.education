@@ -116,7 +116,7 @@ export function ContactForm() {
             value={formData.country} 
             onValueChange={(value) => handleSelectChange('country', value)}
           >
-            <SelectTrigger id="country" className="bg-[#f3f5f9] border-transparent focus:border-[#89c540] h-12">
+            <SelectTrigger id="country" className="bg-[#f3f5f9] border-transparent focus:border-[#89c540] h-12 w-full">
               <SelectValue placeholder="Select preferred region" />
             </SelectTrigger>
             <SelectContent>

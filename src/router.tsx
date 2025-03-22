@@ -6,7 +6,8 @@ import { QueryClient } from '@tanstack/react-query'
 import { routeTree } from './routeTree.gen'
 
 import './styles.css'
-
+import { DefaultNotFoundPage } from './components/DefaultNotFound'
+import { DefaultErrorPage } from './components/DefaultErrorPage'
 const queryClient = new QueryClient()
 
 // Create a new router instance
@@ -19,6 +20,8 @@ export const createRouter = () => {
       defaultPreload: 'intent',
       defaultPreloadDelay: 500,
       defaultPreloadStaleTime: 5 * 60 * 1000,
+      defaultErrorComponent: DefaultErrorPage,
+      defaultNotFoundComponent: DefaultNotFoundPage
     }),
     queryClient,
   )

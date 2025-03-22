@@ -27,11 +27,11 @@ export function ServicesSection() {
   return (
     <section id="services" className="services-section py-12 sm:py-16 md:py-20">
       <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto">
+        <div className="mx-auto">
           <div className="text-center mb-16">
             <span className="bg-[#89c540]/10 text-[#89c540] px-4 py-2 rounded-full text-sm font-semibold inline-block mb-4">OUR SERVICES</span>
-            <h2 className="text-3xl md:text-5xl font-bold text-[#001e57] mb-6">How We Can Help You</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">We're with you every step of the way, from initial consultation to settling into your new life in Malaysia.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#001e57] mb-6">How We Can Help You</h2>
+            <p className="text-gray-600 max-w-3xl mx-auto">We're with you every step of the way, from initial consultation to settling into your new life in Malaysia.</p>
           </div>
           
           <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
