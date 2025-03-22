@@ -7,3 +7,5 @@ dist-ssr
 .vinxi
 .old-website
 .wrangler
+.drizzle
+.env

@@ -1,0 +1,34 @@
+import { sqliteTable, integer, text } from "drizzle-orm/sqlite-core"
+
+export const universities = sqliteTable("universities", {
+  id: integer().primaryKey(),
+  name: text().notNull(),
+  path: text().notNull(),
+  description: text().notNull(),
+  intake: text().notNull(),
+  location: text().notNull(),
+  image: text().notNull(),
+  thumbnail: text().notNull(),
+  createdAt: integer({ mode: "timestamp_ms" }),
+  updatedAt: integer({ mode: "timestamp_ms" }),
+})
+
+export const faculties = sqliteTable("faculties", {
+  id: integer().primaryKey(),
+  name: text().notNull(),
+  university: integer().references(() => universities.id, { onDelete: "cascade"}),
+  createdAt: integer({ mode: "timestamp_ms" }),
+  updatedAt: integer({ mode: "timestamp_ms" }),
+})
+
+export const courses = sqliteTable("courses", {
+  id: integer().primaryKey(),
+  name: text().notNull(),
+  faculty: integer().references(() => faculties.id, { onDelete: "cascade"}),
+  createdAt: integer({ mode: "timestamp_ms" }),
+  updatedAt: integer({ mode: "timestamp_ms" }),
+})
+
+export type University = typeof universities.$inferSelect
+export type Faculty = typeof faculties.$inferSelect
+export type Course = typeof courses.$inferSelect
