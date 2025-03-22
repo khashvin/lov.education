@@ -9,24 +9,18 @@ export const universities = sqliteTable("universities", {
   location: text().notNull(),
   image: text().notNull(),
   thumbnail: text().notNull(),
-  createdAt: integer({ mode: "timestamp_ms" }),
-  updatedAt: integer({ mode: "timestamp_ms" }),
 })
 
 export const faculties = sqliteTable("faculties", {
   id: integer().primaryKey(),
   name: text().notNull(),
   university: integer().references(() => universities.id, { onDelete: "cascade"}),
-  createdAt: integer({ mode: "timestamp_ms" }),
-  updatedAt: integer({ mode: "timestamp_ms" }),
 })
 
 export const courses = sqliteTable("courses", {
   id: integer().primaryKey(),
   name: text().notNull(),
   faculty: integer().references(() => faculties.id, { onDelete: "cascade"}),
-  createdAt: integer({ mode: "timestamp_ms" }),
-  updatedAt: integer({ mode: "timestamp_ms" }),
 })
 
 export type University = typeof universities.$inferSelect

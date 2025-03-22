@@ -12,23 +12,15 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as UniversityImport } from './routes/university'
-import { Route as ServicesImport } from './routes/services'
 import { Route as ContactImport } from './routes/contact'
 import { Route as AboutImport } from './routes/about'
 import { Route as IndexImport } from './routes/index'
-import { Route as UniversityUnipathImport } from './routes/university.$unipath'
 
 // Create/Update Routes
 
 const UniversityRoute = UniversityImport.update({
   id: '/university',
   path: '/university',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const ServicesRoute = ServicesImport.update({
-  id: '/services',
-  path: '/services',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -48,12 +40,6 @@ const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRoute,
-} as any)
-
-const UniversityUnipathRoute = UniversityUnipathImport.update({
-  id: '/$unipath',
-  path: '/$unipath',
-  getParentRoute: () => UniversityRoute,
 } as any)
 
 // Populate the FileRoutesByPath interface
@@ -81,13 +67,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactImport
       parentRoute: typeof rootRoute
     }
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesImport
-      parentRoute: typeof rootRoute
-    }
     '/university': {
       id: '/university'
       path: '/university'
@@ -95,46 +74,23 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UniversityImport
       parentRoute: typeof rootRoute
     }
-    '/university/$unipath': {
-      id: '/university/$unipath'
-      path: '/$unipath'
-      fullPath: '/university/$unipath'
-      preLoaderRoute: typeof UniversityUnipathImport
-      parentRoute: typeof UniversityImport
-    }
   }
 }
 
 // Create and export the route tree
 
-interface UniversityRouteChildren {
-  UniversityUnipathRoute: typeof UniversityUnipathRoute
-}
-
-const UniversityRouteChildren: UniversityRouteChildren = {
-  UniversityUnipathRoute: UniversityUnipathRoute,
-}
-
-const UniversityRouteWithChildren = UniversityRoute._addFileChildren(
-  UniversityRouteChildren,
-)
-
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/services': typeof ServicesRoute
-  '/university': typeof UniversityRouteWithChildren
-  '/university/$unipath': typeof UniversityUnipathRoute
+  '/university': typeof UniversityRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/services': typeof ServicesRoute
-  '/university': typeof UniversityRouteWithChildren
-  '/university/$unipath': typeof UniversityUnipathRoute
+  '/university': typeof UniversityRoute
 }
 
 export interface FileRoutesById {
@@ -142,36 +98,15 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/services': typeof ServicesRoute
-  '/university': typeof UniversityRouteWithChildren
-  '/university/$unipath': typeof UniversityUnipathRoute
+  '/university': typeof UniversityRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/about'
-    | '/contact'
-    | '/services'
-    | '/university'
-    | '/university/$unipath'
+  fullPaths: '/' | '/about' | '/contact' | '/university'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/about'
-    | '/contact'
-    | '/services'
-    | '/university'
-    | '/university/$unipath'
-  id:
-    | '__root__'
-    | '/'
-    | '/about'
-    | '/contact'
-    | '/services'
-    | '/university'
-    | '/university/$unipath'
+  to: '/' | '/about' | '/contact' | '/university'
+  id: '__root__' | '/' | '/about' | '/contact' | '/university'
   fileRoutesById: FileRoutesById
 }
 
@@ -179,16 +114,14 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
-  ServicesRoute: typeof ServicesRoute
-  UniversityRoute: typeof UniversityRouteWithChildren
+  UniversityRoute: typeof UniversityRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
-  ServicesRoute: ServicesRoute,
-  UniversityRoute: UniversityRouteWithChildren,
+  UniversityRoute: UniversityRoute,
 }
 
 export const routeTree = rootRoute
@@ -204,7 +137,6 @@ export const routeTree = rootRoute
         "/",
         "/about",
         "/contact",
-        "/services",
         "/university"
       ]
     },
@@ -217,18 +149,8 @@ export const routeTree = rootRoute
     "/contact": {
       "filePath": "contact.tsx"
     },
-    "/services": {
-      "filePath": "services.tsx"
-    },
     "/university": {
-      "filePath": "university.tsx",
-      "children": [
-        "/university/$unipath"
-      ]
-    },
-    "/university/$unipath": {
-      "filePath": "university.$unipath.tsx",
-      "parent": "/university"
+      "filePath": "university.tsx"
     }
   }
 }
