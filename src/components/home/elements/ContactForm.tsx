@@ -2,19 +2,11 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { 
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
 
 interface FormData {
   name: string;
   phone: string;
   email: string;
-  country: string;
   university: string;
   study: string;
   message: string;
@@ -25,7 +17,6 @@ export function ContactForm() {
     name: '',
     phone: '',
     email: '',
-    country: '',
     university: '',
     study: '',
     message: ''
@@ -33,13 +24,6 @@ export function ContactForm() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSelectChange = (name: string, value: string) => {
     setFormData(prev => ({
       ...prev,
       [name]: value
@@ -55,7 +39,6 @@ export function ContactForm() {
       name: '',
       phone: '',
       email: '',
-      country: '',
       university: '',
       study: '',
       message: ''
@@ -108,38 +91,18 @@ export function ContactForm() {
       </div>
       
       <h3 className="text-xl font-bold text-[#001e57] mt-8 mb-4">Study Preferences</h3>
-      
-      <div className="grid md:grid-cols-2 gap-6">
-        <div className="form-group">
-          <label htmlFor="country" className="text-sm font-medium text-gray-600 mb-2 block">Preferred Region</label>
-          <Select 
-            value={formData.country} 
-            onValueChange={(value) => handleSelectChange('country', value)}
-          >
-            <SelectTrigger id="country" className="bg-[#f3f5f9] border-transparent focus:border-[#89c540] h-12 w-full">
-              <SelectValue placeholder="Select preferred region" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="KL">Kuala Lumpur</SelectItem>
-              <SelectItem value="Selangor">Selangor</SelectItem>
-              <SelectItem value="Penang">Penang</SelectItem>
-              <SelectItem value="Johor">Johor</SelectItem>
-              <SelectItem value="Sabah">Sabah</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-        <div className="form-group">
-          <label htmlFor="university" className="text-sm font-medium text-gray-600 mb-2 block">Preferred University</label>
-          <Input 
-            type="text" 
-            id="university"
-            name="university" 
-            value={formData.university}
-            onChange={handleChange}
-            placeholder="Enter preferred university" 
-            className="bg-[#f3f5f9] border-transparent focus:border-[#89c540] h-12"
-          />
-        </div>
+
+      <div className="form-group">
+        <label htmlFor="university" className="text-sm font-medium text-gray-600 mb-2 block">Preferred University</label>
+        <Input 
+          type="text" 
+          id="university"
+          name="university" 
+          value={formData.university}
+          onChange={handleChange}
+          placeholder="Enter preferred university" 
+          className="bg-[#f3f5f9] border-transparent focus:border-[#89c540] h-12"
+        />
       </div>
       
       <div className="form-group">

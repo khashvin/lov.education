@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { LazyMotion, domAnimation } from "motion/react"
 import { 
   ContactHeroSection, 
   ContactInfoSection, 
@@ -11,10 +12,12 @@ export const Route = createFileRoute('/contact')({
 
 function ContactPage() {
   return (
-    <div>
-      <ContactHeroSection />
-      <ContactInfoSection />
-      <MapSection />
-    </div>
+    <LazyMotion features={domAnimation}>
+      <div className="bg-white">
+        <ContactHeroSection />
+        <ContactInfoSection />
+        <MapSection />
+      </div>
+    </LazyMotion>
   )
 } 

@@ -1,3 +1,5 @@
+import * as m from "motion/react-m";
+
 export function ContactHeroSection() {
   return (
     <section className="relative overflow-hidden py-20 bg-[#001e57]">
@@ -6,13 +8,23 @@ export function ContactHeroSection() {
       </div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">
+          <m.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight"
+          >
             Contact <span className="text-[#89c540]">Us</span>
-          </h1>
-          <p className="text-xl text-white/90">
+          </m.h1>
+          <m.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-xl text-white/90"
+          >
             Get in touch with us for any inquiries about our services or to
             schedule a consultation.
-          </p>
+          </m.p>
         </div>
       </div>
     </section>

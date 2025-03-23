@@ -1,8 +1,15 @@
+import * as m from "motion/react-m";
+
 export function MapSection() {
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="rounded-xl overflow-hidden shadow-lg">
+        <m.div 
+          className="rounded-xl overflow-hidden shadow-lg"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           <iframe 
             title="Google Map" 
             className="w-full h-[500px]" 
@@ -15,7 +22,7 @@ export function MapSection() {
             loading="lazy"
           >
           </iframe>
-        </div>
+        </m.div>
       </div>
     </section>
   );
