@@ -11,18 +11,13 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as UniversityImport } from './routes/university'
 import { Route as ContactImport } from './routes/contact'
 import { Route as AboutImport } from './routes/about'
 import { Route as IndexImport } from './routes/index'
+import { Route as UniversityIndexImport } from './routes/university.index'
+import { Route as UniversityUniImport } from './routes/university.$uni'
 
 // Create/Update Routes
-
-const UniversityRoute = UniversityImport.update({
-  id: '/university',
-  path: '/university',
-  getParentRoute: () => rootRoute,
-} as any)
 
 const ContactRoute = ContactImport.update({
   id: '/contact',
@@ -39,6 +34,18 @@ const AboutRoute = AboutImport.update({
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const UniversityIndexRoute = UniversityIndexImport.update({
+  id: '/university/',
+  path: '/university/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const UniversityUniRoute = UniversityUniImport.update({
+  id: '/university/$uni',
+  path: '/university/$uni',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -67,11 +74,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactImport
       parentRoute: typeof rootRoute
     }
-    '/university': {
-      id: '/university'
+    '/university/$uni': {
+      id: '/university/$uni'
+      path: '/university/$uni'
+      fullPath: '/university/$uni'
+      preLoaderRoute: typeof UniversityUniImport
+      parentRoute: typeof rootRoute
+    }
+    '/university/': {
+      id: '/university/'
       path: '/university'
       fullPath: '/university'
-      preLoaderRoute: typeof UniversityImport
+      preLoaderRoute: typeof UniversityIndexImport
       parentRoute: typeof rootRoute
     }
   }
@@ -83,14 +97,16 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/university': typeof UniversityRoute
+  '/university/$uni': typeof UniversityUniRoute
+  '/university': typeof UniversityIndexRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/university': typeof UniversityRoute
+  '/university/$uni': typeof UniversityUniRoute
+  '/university': typeof UniversityIndexRoute
 }
 
 export interface FileRoutesById {
@@ -98,15 +114,22 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/university': typeof UniversityRoute
+  '/university/$uni': typeof UniversityUniRoute
+  '/university/': typeof UniversityIndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/contact' | '/university'
+  fullPaths: '/' | '/about' | '/contact' | '/university/$uni' | '/university'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/university'
-  id: '__root__' | '/' | '/about' | '/contact' | '/university'
+  to: '/' | '/about' | '/contact' | '/university/$uni' | '/university'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/university/$uni'
+    | '/university/'
   fileRoutesById: FileRoutesById
 }
 
@@ -114,14 +137,16 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
-  UniversityRoute: typeof UniversityRoute
+  UniversityUniRoute: typeof UniversityUniRoute
+  UniversityIndexRoute: typeof UniversityIndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
-  UniversityRoute: UniversityRoute,
+  UniversityUniRoute: UniversityUniRoute,
+  UniversityIndexRoute: UniversityIndexRoute,
 }
 
 export const routeTree = rootRoute
@@ -137,7 +162,8 @@ export const routeTree = rootRoute
         "/",
         "/about",
         "/contact",
-        "/university"
+        "/university/$uni",
+        "/university/"
       ]
     },
     "/": {
@@ -149,8 +175,11 @@ export const routeTree = rootRoute
     "/contact": {
       "filePath": "contact.tsx"
     },
-    "/university": {
-      "filePath": "university.tsx"
+    "/university/$uni": {
+      "filePath": "university.$uni.tsx"
+    },
+    "/university/": {
+      "filePath": "university.index.tsx"
     }
   }
 }

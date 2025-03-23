@@ -11,6 +11,7 @@ import { TopBar, Navigation, Footer } from '../components/layout'
 import appCss from '../styles.css?url'
 
 import type { QueryClient } from '@tanstack/react-query'
+import React from 'react'
 
 interface MyRouterContext {
   queryClient: QueryClient

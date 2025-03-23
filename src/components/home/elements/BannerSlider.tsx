@@ -53,7 +53,7 @@ export function BannerSlider({ banners }: BannerSliderProps) {
 
   return (
     <div 
-      className="w-full lg:w-7/12 relative h-[45vh] sm:h-[50vh] md:h-[55vh] lg:h-[60vh]"
+      className="w-full lg:w-7/12 relative aspect-[16/9] sm:aspect-[16/10] md:aspect-[16/9] flex items-center justify-center"
       ref={bannerContainerRef}
     >
       <m.div 
@@ -94,11 +94,11 @@ export function BannerSlider({ banners }: BannerSliderProps) {
                 <img 
                   src={banner} 
                   alt={`Malaysian education - banner ${index + 1}`} 
-                  className="w-full h-full object-cover object-center rounded-2xl select-none"
+                  className="w-full h-full object-contain object-center rounded-2xl select-none"
                   loading={index === 0 ? "eager" : "lazy"}
                 />
                 
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+                <div className="absolute inset-0 rounded-2xl pointer-events-none"></div>
               </m.div>
             </m.div>
           ))}

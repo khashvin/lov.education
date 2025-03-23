@@ -32,7 +32,7 @@ export function StorySection() {
             <img
               src="/banner2.png"
               alt="Education consultancy"
-              className="w-full h-full object-cover rounded-lg shadow-lg"
+              className="w-full h-full object-fill rounded-lg shadow-lg"
             />
           </m.div>
         </div>

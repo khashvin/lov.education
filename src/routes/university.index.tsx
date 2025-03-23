@@ -1,14 +1,13 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { LazyMotion, domAnimation } from 'motion/react'
 import { useUniversities } from '@/hooks/useUniversities'
-
 import { 
   UniversityHeroSection, 
   UniversityListSection, 
   UniversityCtaSection 
 } from '@/components/university'
 
-export const Route = createFileRoute('/university')({
+export const Route = createFileRoute('/university/')({
   component: UniversityPage,
 })
 
@@ -18,8 +17,6 @@ function UniversityPage() {
     isLoading: isLoadingUniversities, 
     isError: isUniversitiesError 
   } = useUniversities()
-
-  console.log(universities)
 
   return (
     <LazyMotion features={domAnimation}>

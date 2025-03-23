@@ -81,7 +81,7 @@ export function ServicesSection() {
               <div className="w-16 h-16 bg-[#001e57] rounded-xl mx-auto mb-5 flex items-center justify-center text-white">
                 <i className="fas fa-check-circle text-2xl"></i>
               </div>
-              <h3 className="text-lg font-bold text-[#001e57] mb-3">100% Success Rate</h3>
+              <h3 className="text-lg font-bold text-[#001e57] mb-3">High Success Rate</h3>
               <p className="text-gray-600">We have a proven track record of successful placements with top universities worldwide.</p>
             </div>
             
@@ -97,7 +97,7 @@ export function ServicesSection() {
               <div className="w-16 h-16 bg-[#001e57] rounded-xl mx-auto mb-5 flex items-center justify-center text-white">
                 <i className="fas fa-headset text-2xl"></i>
               </div>
-              <h3 className="text-lg font-bold text-[#001e57] mb-3">24/7 Support</h3>
+              <h3 className="text-lg font-bold text-[#001e57] mb-3">Personalized Guidance</h3>
               <p className="text-gray-600">Our team is always available to assist you throughout your educational journey.</p>
             </div>
           </div>

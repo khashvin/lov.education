@@ -4,17 +4,28 @@ import * as m from 'motion/react-m'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-
-interface University {
-  id: string | number
-  name: string
-  location: string
-  description: string
-  intake: string
-}
+import type { University } from '@/drizzle/schema'
+import { createLink, type LinkComponent } from '@tanstack/react-router'
+import React from 'react'
 
 interface UniversityCardProps {
   university: University
+}
+
+const BasicButtonLink = React.forwardRef<HTMLButtonElement>(
+  (props, ref) => {
+    return (
+      <Button ref={ref} {...props} className="w-full bg-[#001e57] hover:bg-[#001e57]/90 text-white">
+        Learn More
+      </Button>
+    )
+  },
+)
+
+const CreatedLinkComponent = createLink(BasicButtonLink)
+
+const ButtonLink: LinkComponent<typeof BasicButtonLink> = (props) => {
+  return <CreatedLinkComponent preload={'intent'} {...props} />
 }
 
 export function UniversityCard({ university }: UniversityCardProps) {
@@ -63,9 +74,9 @@ export function UniversityCard({ university }: UniversityCardProps) {
         </CardContent>
         
         <CardFooter className="pt-2">
-          <Button className="w-full bg-[#001e57] hover:bg-[#001e57]/90 text-white">
+          <ButtonLink to="/university/$uni" params={{ uni: university.path}}>
             Learn More
-          </Button>
+          </ButtonLink>
         </CardFooter>
       </Card>
     </m.div>
