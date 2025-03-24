@@ -1,12 +1,6 @@
-import axios from 'axios';
+import {
+  createStartAPIHandler,
+  defaultAPIFileRouteHandler,
+} from '@tanstack/react-start/api'
 
-export const tokens = localStorage.getItem("token");
-
-export default axios.create({
-    baseURL: 'https://api.lov.education/api/',
-    timeout: 5000,
-    headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${tokens}`
-    }
-});
+export default createStartAPIHandler(defaultAPIFileRouteHandler)
