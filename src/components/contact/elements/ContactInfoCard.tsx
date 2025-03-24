@@ -9,9 +9,9 @@ export function ContactInfoCard() {
           <div>
             <h3 className="font-medium text-[#89c540]">Our Location</h3>
             <p className="text-white/90 mt-1">
-              C-3A-03, Centum @ Oasis Corporate Park,<br />
-              No., 2, Jalan PJU 1A/3A, Taipan<br />
-              Ara Damansara, 47301 Petaling Jaya
+              Block B4, Leisure Commerce Square, No. 9,< br />
+              Jln PJS 8/9, 46150 Petaling Jaya,<br />
+              Selangor, Malaysia
             </p>
           </div>
         </div>

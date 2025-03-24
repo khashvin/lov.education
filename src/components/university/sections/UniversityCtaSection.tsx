@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button'
+import { CustomButtonLink } from '@/components/CustomLink'
 
 export function UniversityCtaSection() {
   return (
@@ -10,14 +10,11 @@ export function UniversityCtaSection() {
             Our expert consultants can help you navigate the application process, visa requirements,
             and find the perfect Malaysian university for your academic goals.
           </p>
-          <Button 
-            size="lg" 
-            className="bg-[#89c540] hover:bg-[#89c540]/90 text-white px-8 py-6 text-lg"
-          >
+          <CustomButtonLink to="/contact" className="bg-[#89c540] hover:bg-[#89c540]/90 text-white px-8 py-6 text-lg">
             Get Free Consultation
-          </Button>
+          </CustomButtonLink>
         </div>
       </div>
     </section>
   )
-} 
+}

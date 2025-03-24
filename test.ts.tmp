@@ -1,0 +1,255 @@
+import { json } from '@tanstack/react-start'
+import { createAPIFileRoute } from '@tanstack/react-start/api'
+import { drizzle } from 'drizzle-orm/d1'
+import { env } from 'cloudflare:workers'
+import * as schema from '@/drizzle/schema'
+
+export const APIRoute = createAPIFileRoute('/api/test')({
+  GET: async () => {
+    const db = drizzle(env.DB, { schema })
+    
+    const universities: schema.University[] = [
+      {
+        id: 1,
+        name: 'Asia Pacific University',
+        path: 'APU',
+        description: 'Nurturing Professional for Global Careers - The Asia Pacific University of Technology & Innovation (APU) is amongst Malaysia\'s Premier Private Universities, and is where a unique fusion of technology, innovation and creativity works effectively towards preparing professional graduates for significant roles in business and society globally. APU has earned an enviable reputation as an award-winning University through its achievements in winning a host of prestigious awards at international and international levels Soaring Upwards - APU awarded 5-STAR Excellent Rating at SETARA 2017.  APU was announced as among the Highest Rated Emerging Universities in Malaysia, being rated at 5-STAR (EXCELLENT Rating) under the SETARA 2017 Ratings by the Ministry of Higher Education (MOHE). APU has maintained this Excellent Rating in the SETARA 2011, 2013 and now in 2017. SETARA 2017 5-Star Rating was presented by the Minister of Higher Education Malaysia, YB Datuk Seri Idris Jusoh.',
+        intake: 'Feb – Apr – Sept – Nov',
+        location: 'Bukit Jalil, Kuala Lumpur, Malaysia',
+        image: '/images/university/apu.jpg',
+        thumbnail: '/images/university/apu_t.jpg',
+        enabled: true,
+        fieldOfStudies: [
+          'Business',
+          'Engineering',
+          'Arts',
+          'Science',
+          'Design',
+          'Finance',
+        ]
+      },
+      {
+        id: 2,
+        name: 'SEGI University',
+        path: 'SEGI',
+        description: 'SEGi University and Colleges is located in the heart of Kuala Lumpur\'s commercial district, offering globally recognised professional qualifications. Since then, SEGi has experienced significant growth by adapting and catering to an increasing demand for tertiary education and professional qualifications in Malaysia. Known as one of the largest private higher education providers in Malaysia, SEGi now serves 25,000 students in five major campuses located in Kota Damansara, Kuala Lumpur, Subang Jaya, Penang and Sarawak.  Today, the significance of climbing the career ladder in the industry is highly competitive, therefore SEGi now offers a new breakthrough method known as PACE or Professional and Continuing Education. SEGi PACE enables working adults to upgrade their qualification level whilst accommodating their work schedule, hence fulfilling work-life balance.',
+        intake: 'Feb - May - July - Sep - Oct',
+        location: 'Kota Damansara, Kuala Lumpur, Malaysia',
+        image: '/images/university/segi.jpg',
+        thumbnail: '/images/university/segi_t.jpg',
+        enabled: true,
+        fieldOfStudies: [
+          'Business',
+          'Engineering',
+          'Arts',
+          'Science',
+          'Design',
+          'Finance',
+          'Medicine',
+          'Law',
+          'Education',
+          'Technology',
+          'Architecture',
+        ]
+      },
+      {
+        id: 3,
+        name: 'University Kuala Lumpur',
+        path: 'UNIKL',
+        description: 'Universiti Kuala Lumpur (UniKL) is a multi-campus university technical university with its main campus based in Kuala Lumpur, Malaysia. Rated as a Tier-5 "Excellent University" by the Ministry of Higher Education Malaysia in 2009, 2011, and 2013  Universiti Kuala Lumpur (UniKL) is a multi-campus university technical university with its main campus based in Kuala Lumpur, Malaysia. Rated as a Tier-5 "Excellent University" by the Ministry of Higher Education Malaysia in 2009, 2011, and 2013',
+        intake: 'Jan - July - Sep',
+        location: 'Kuala Lumpur, Malaysia',
+        image: '/images/university/unikl.jpg',
+        thumbnail: '/images/university/unikl_t.jpg',
+        enabled: false,
+        fieldOfStudies: []
+      },
+      {
+        id: 4,
+        name: 'Limkokwing University',
+        path: 'LKW',
+        description: 'The Limkokwing Institute of Creative Technology (as it was known then) was established to play an active role enabling much needed technology transfer in the area of creative education. The Institute had started to create strategic links with reputable and well-established universities and colleges in UK, USA, Canada, Australia and New Zealand. At the same time the Institute had forged strong connections with industry to provide guidance and support to enable the right environment of learning to students.  Limkokwing University of Creative Technology (also referred to as Limkokwing) is a private international university with a presence across Africa, Europe, and Asia. With its main campus in Malaysia, the university has over 30,000 students from more than 150 countries.',
+        intake: 'Feb – Apr – Aug – Oct',
+        location: 'Cyberjaya, Malaysia',
+        image: '/images/university/lkw.jpg',
+        thumbnail: '/images/university/lkw_t.jpg',
+        enabled: false,
+        fieldOfStudies: []
+      },
+      {
+        id: 5,
+        name: 'UCSI University',
+        path: 'UCSI',
+        description: 'UCSI University built on the principles of audacity, perseverance, integrity and excellence, UCSI University is a leading institution of higher learning with campuses in Kuala Lumpur, Terengganu and Sarawak, Malaysia. Our faculties, equipped with state-of-the-art facilities to meet student needs offer a wide spectrum of academic programmes, ranging from Medicine, Pharmacy, Nursing, Engineering and Architecture to Music, Multimedia, Education, Liberal Arts and Hospitality.  The University\'s academic staff are at the forefront of their disciplines and their views are highly sought after on major issues; from business to political science. Many of our academics have extensive experience working overseas and some play advisory roles in public bodies and various committees. By bringing their experiences into the classroom, our academics cater to an exhilarating learning environment and learners will thrive as they balance academic mastery with industrial application.',
+        intake: 'Jan – May – Sept',
+        location: 'Taman Connaught, Kuala Lumpur, Malaysia',
+        image: '/images/university/ucsi.jpg',
+        thumbnail: '/images/university/ucsi_t.jpg',
+        enabled: false,
+        fieldOfStudies: []
+      },
+      {
+        id: 6,
+        name: 'Multimedia University',
+        path: 'MMU',
+        description: 'As the first private university approved by the Malaysian government, MMU adheres to the strictest requirements for a high quality degree. A study by Gartner and MSC Malaysia found that MMU is among the top five universities preferred by major ICT players for graduate employment — a testament to the quality of our academicians, curriculum, student development programmes and our solid reputation with the industries.  Multimedia University is a private university in Malaysia. The university has three campuses, located in Melaka, Cyberjaya and Iskandar Puteri. The university hosts 9 faculties and 19 research centres.',
+        intake: 'Apr - July - Nov',
+        location: 'Cyberjaya, Malaysia',
+        image: '/images/university/mmu.jpg',
+        thumbnail: '/images/university/mmu_t.jpg',
+        enabled: false,
+        fieldOfStudies: []
+      },
+      {
+        id: 7,
+        name: 'Mahsa University',
+        path: 'MAHSA',
+        description: 'MAHSA was founded in the year 2005 by Professor Tan Sri Dr. Hj. Mohamed Haniffa who is Pro-Chancellor and Executive Chairman. Professor Haniffa is a clinical practitioner of Medicine whose vision involves the creation of a stronghold of academic excellence in Medicine, Dentistry, Pharmacy, Nursing and Allied Health Sciences, Business and Engineering in the South-East Asian region. This vision will produce qualified and compassionate professionals to serve the needs of our nation, in line with the Prime Minister\'s vision that Malaysia should become a centre for academic excellence.  The new 48 acres campus in Bandar Saujana Putra, is the embodiment of that vision. Today MAHSA University has students from 61 different countries. And not just from the region of Asia, but as far as Australia, United Kingdom, the United States of America and Canada.',
+        intake: 'Apr - Sept',
+        location: 'Selangor, Malaysia',
+        image: '/images/university/mahsa.jpg',
+        thumbnail: '/images/university/mahsa_t.jpg',
+        enabled: true,
+        fieldOfStudies: [
+          "Medicine",
+          "Finance",
+          "Engineering",
+          "Business",
+          "Science",
+          "Education"
+        ]
+      },
+      {
+        id: 8,
+        name: 'Asia e University',
+        path: 'AEU',
+        description: 'AeU is one of a new breed of global digital universities –agile, entrepreneurial and ubiquitous. We offer a personalised experience, enhanced by innovative digital engagement. We are Open, Flexible and Everywhere.  AeU is a leading Open and Distance Learning (ODL) university in Malaysia, and one of the premier ODL institutions in Asia. We have made it our mission to remove barriers that can limit access to Higher Education and make it more accessible, affordable and beneficial for our learners.  AeU\'s commitment to drive higher education\'s digital frontier manifests in a number of exciting ways. From world-class learning support to our forward-thinking staff, our technological infrastructure or our exclusive partnerships, we\'re constantly striving for new ways to improve student experience and the learning outcomes. We have taken flexibility to a new level by combining our experience in open, online and distance learning with the very latest technology-rich innovative learning environments. We are strategically poised to reach learners wherever they are in the world.',
+        intake: 'Jan',
+        location: 'Subang Jaya, Selangor, Malaysia',
+        image: '/images/university/aeu.jpg',
+        thumbnail: '/images/university/aeu_t.jpg',
+        enabled: true,
+        fieldOfStudies: [
+          "Business",
+          "Arts",
+          "Science",
+          "Social Sciences",
+          "Design",
+          "Finance",
+          "Education"
+        ]
+      },
+      {
+        id: 9,
+        name: 'FTMS College',
+        path: 'FTMS',
+        description: 'FTMS established in 1986, is today serving students globally. Its robust and dynamic structure has helped develop and expand its strategic divisions of Education and Training, eLearning, Management and Human Resource Consulting, Publishing, Corporate Outsourcing, eBusiness and IT services.  FTMS international campuses, located in dynamic city centres, operate modern facilities to enhance students\' learning. Modern telecommunication facilities, including IT network, videoconferencing and Internet links, ensure that wherever and whenever a student chooses to study, the total support of FTMS is available.  FTMS\'s focus on professional and entrepreneurial development ensures that its students pass their examinations and build strong foundations to succeed in their careers. This approach has resulted in producing students with distinctions at all levels.  FTMS has a strong participative culture amongst its academics, staff and students. FTMS\'s research units ensure that a solid base of academic knowledge relevant to the ever-changing world underpins its programme.',
+        intake: 'Jan - June',
+        location: 'Cyberjaya, Selangor, Malaysia',
+        image: '/images/university/ftms.jpg',
+        thumbnail: '/images/university/ftms_t.jpg',
+        enabled: true,
+        fieldOfStudies: [
+          "Business",
+          "Engineering",
+          "Arts",
+          "Science",
+          "Education"
+        ]
+      },
+      {
+        id: 10,
+        name: 'Kursk State Medical',
+        path: 'KSMU',
+        description: 'Established in 1935, Kursk State Medical University is ranked as one of the top 10 best Russian Medical Universities. Among its many achievements, KSMU was the first University in Russia to offer students a full Medical training program in the English language.  Within the structure of KSMU we also have a Research Institute of Ecological Medicine as well as a consulting diagnostic policlinic and medical institute. To date KSMU has trained over 25,000 medical professionals across 14 faculties and 67 departments.  The staff body consists of 633 academic staff of which there are 333 Ph.D and 92 D.Sc academics serving our 6,400 students. The university boasts a well stocked library with a subscription of more than 500,000 journals, books and publications. The campus includes four teaching buildings as well as a five student halls of residence. Students also enjoy the recreational facilities onsite including three sports halls and a shooting range.',
+        intake: 'Aug - Sept - Oct',
+        location: 'Petaling Jaya, Selangor, Malaysia',
+        image: '/images/university/ksmu.jpg',
+        thumbnail: '/images/university/ksmu_t.jpg',
+        enabled: true,
+        fieldOfStudies: [
+          "Medicine"
+        ]
+      },
+      {
+        id: 11,
+        name: 'Nilai University',
+        path: 'NILAI',
+        description: 'The founders of the University decided to respond to the Government\'s call to make Malaysia a regional centre of education excellence by setting up a private higher educational institution. The dream was an institution that provides affordable quality education benchmarked against world standards. The first step towards the realisation of this dream began in 1996, when the groundwork commenced in the strategically located modern township of Putra Nilai.  With full infrastructure in place, Nilai College opened its doors, offering homegrown diploma programmes in the areas of Business, Information Technology, Engineering and Hospitality. In addition, as one of the first institutions approved to run 3+0 programmes, Nilai College offered students internationally recognised foreign degrees – the La Trobe University (Australia) degree in business and the Oxford Brookes University (United Kingdom) degrees in accounting, business, computing and hospitality.',
+        intake: 'Jan - June - Oct',
+        location: 'Nilai, Negeri Sembilan, Malaysia',
+        image: '/images/university/nilai.jpg',
+        thumbnail: '/images/university/nilai_t.jpg',
+        enabled: true,
+        fieldOfStudies: [
+          "Business",
+          "Finance",
+          "Engineering",
+          "Science"
+        ]
+      },
+      {
+        id: 12,
+        name: 'Point College',
+        path: 'POINT',
+        description: 'Led by industry leaders, Point College aims to set a new benchmark in the creative industry. Its world class education is differentiated by courses which optimizes hands-on and experiential mode of delivery, enabling students to learn from real life experiences whilst working on local and international projects.  With our 360° APPROACH TO CREATIVITY & INNOVATION, students will be exposed to a multi-angle approach to both academic and industrial projects. This prepares them to be independent, creative and innovative when they take their next step into the industry.',
+        intake: 'Jan',
+        location: 'Selangor, Malaysia',
+        image: '/images/university/point.jpg',
+        thumbnail: '/images/university/point_t.jpg',
+        enabled: true,
+        fieldOfStudies: [
+          "Arts",
+          "Design",
+          "Visual Arts"
+        ]
+      },
+      {
+        id: 13,
+        name: 'UNITAR International University',
+        path: 'UNITAR',
+        description: 'Established in 1997, UNITAR International University (UNITAR) is a visionary and well-governed institution, known for being the first virtual university in Southeast Asia and one of the pioneering private universities in Malaysia.  Our programmes are offered at our main campus in urban Kelana Jaya and at 11 other independent campuses spread throughout Malaysia. We have 36 academic programmes ranging from the Foundation, Diploma and Bachelor\'s levels to the post-graduate Master\'s and Doctorates. We take pride in having committed academics housed in various faculties and schools such as Business & Technology, Education & Humanities, Culinary Arts, and Foundation.  Since inception, we pursued innovative learning where technology complements human interaction on a strong educational platform. Our pursuit of affordable and quality education in both conventional and remote teaching modes continues till today and is embodied in our UNITAR\'s Education Core ("UNIEC"), meeting the cutting-edge needs of 21st Century education.',
+        intake: 'Jan',
+        location: 'Petaling Jaya, Selangor, Malaysia',
+        image: '/images/university/unitar.jpg',
+        thumbnail: '/images/university/unitar_t.jpg',
+        enabled: true,
+        fieldOfStudies: [
+          "Business",
+          "Education",
+          "Arts",
+        ]
+      },
+      {
+        id: 14,
+        name: 'Vision College',
+        path: 'VISION',
+        description: 'Established in 2005, Vision College has build a solid reputation for delivering high quality programmes across a wide-range of fields, including Nursing, Health Science, Medical Imaging, Ultrasonography, Business, Accounting, Information Technology and Foundation programs. All programs offered by us are recognised and fully accredited by the Malaysian Qualification Agency (MQA) and Ministry of Education (MOE).  Strategically located in Kelana Jaya, Vision College is an ISO-certified organisation and being accorded with a five-star rating by MyQuest is further testament to our position as a dynamic and fast-growing educational institution. Our campus has a built-up area of 50,000 square feet with state-of-the-art facilities and a host of amenities located within walking distance of the College.  With a renowned team of committed lecturers and modern facilities, Vision College has put in place the knowledge, capabilities and resources to produce highly employable graduates that are capable of competing in both local and international arenas.',
+        intake: 'Jan - April - July - Oct',
+        location: 'Kelana Jaya, Selangor, Malaysia',
+        image: '/images/university/vision.jpg',
+        thumbnail: '/images/university/vision_t.jpg',
+        enabled: false,
+        fieldOfStudies: []
+      },
+      {
+        id: 15,
+        name: 'Sri College',
+        path: 'SRI',
+        description: 'With a vision of educating the educators, SRI® College was established in 2004 as an expansion project of Smart Reader® Worldwide Sdn Bhd (the largest early childhood education provider in Malaysia). Due to growing concerns from the government and parents towards the quality of early childhood education in Malaysia, SRI® College was established to specialise in the field of Early Childhood Education, Care and Development.     SRI® College has also invested in qualified and dedicated lecturers to prepare students towards their success. With our skillful lecturers, we are certain that students will acquire the necessary knowledge to achieve their goals. The SRI® College academic and teaching staff comprise experts in the fields of Early Childhood Education, Business Studies, Business Management, Marketing Management, Entrepreneurship, Tourism Management, Accounting, Business Communication and English for Business Communication',
+        intake: 'Feb - Dec',
+        location: 'Segambut, Kuala Lumpur',
+        image: '/images/university/sri.jpg',
+        thumbnail: '/images/university/sri_t.jpg',
+        enabled: false,
+        fieldOfStudies: []
+      }
+    ]
+
+    for (const university of universities) {
+      await db.insert(schema.universities).values(university)
+    }
+
+    return json({ message: 'Universities imported successfully' })
+  },
+})

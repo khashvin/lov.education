@@ -2,12 +2,13 @@ import { useState, useEffect } from 'react';
 import * as m from "motion/react-m";
 import { LazyMotion, domAnimation } from "motion/react";
 import BannerSlider from '../elements/BannerSlider';
+import { CustomLink } from '@/components/CustomLink';
 
 export function HeroSection() {
   const banners = [
-    "/banner1.png",
-    "/banner2.png",
-    "/banner3.png"
+    "/images/banner/banner1.png",
+    "/images/banner/banner2.png",
+    "/images/banner/banner3.png"
   ];
 
   const [, setIsLoaded] = useState(false);
@@ -76,24 +77,18 @@ export function HeroSection() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.7, delay: 0.4 }}
                 >
-                  <a 
-                    href="#main-form" 
-                    className="bg-[#89c540] hover:bg-[#89c540]/90 text-white px-5 sm:px-6 py-3 sm:py-4 rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 transform hover:-translate-y-1 shadow-[0_0_20px_rgba(137,197,64,0.5)]"
-                  >
+                  <CustomLink to="/" hash="main-form" className="bg-[#89c540] hover:bg-[#89c540]/90 text-white px-5 sm:px-6 py-3 sm:py-4 rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 transform hover:-translate-y-1 shadow-[0_0_20px_rgba(137,197,64,0.5)]">
                     <span>Start Application</span>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                     </svg>
-                  </a>
-                  <a 
-                    href="#services" 
-                    className="bg-white/10 backdrop-blur-sm hover:bg-white/20 border border-white/30 text-white px-5 sm:px-6 py-3 sm:py-4 rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 group"
-                  >
+                  </CustomLink>
+                  <CustomLink to="/" hash="services" className="bg-white/10 backdrop-blur-sm hover:bg-white/20 border border-white/30 text-white px-5 sm:px-6 py-3 sm:py-4 rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 group">
                     <span>Our Services</span>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                     </svg>
-                  </a>
+                  </CustomLink>
                 </m.div>
                 
                 <m.div 
@@ -111,7 +106,7 @@ export function HeroSection() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: 0.6 + (i * 0.1) }}
                         style={{
-                          backgroundImage: `url(/banner${i}.png)`,
+                          backgroundImage: `url(/images/banner/banner${i}.png)`,
                           backgroundSize: 'cover',
                           backgroundPosition: 'center'
                         }}

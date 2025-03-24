@@ -1,4 +1,6 @@
+import { CustomLink } from "@/components/CustomLink";
 import * as m from "motion/react-m";
+
 
 export function AboutCtaSection() {
   return (
@@ -15,18 +17,12 @@ export function AboutCtaSection() {
             Contact us today to discuss how we can help you achieve your academic and career goals.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <a
-              href="/contact"
-              className="bg-white hover:bg-[#89c540] text-[#001e57] hover:text-white px-8 py-3 rounded-md font-semibold transition-all duration-300"
-            >
+            <CustomLink to="/contact" className="bg-white hover:bg-[#89c540] text-[#001e57] hover:text-white px-8 py-3 rounded-md font-semibold transition-all duration-300">
               Contact Us
-            </a>
-            <a
-              href="/#services"
-              className="bg-transparent border border-white text-white hover:bg-white/10 px-8 py-3 rounded-md font-semibold transition-all duration-300"
-            >
+            </CustomLink>
+            <CustomLink to="/" hash="services" className="bg-transparent border border-white text-white hover:bg-white/10 px-8 py-3 rounded-md font-semibold transition-all duration-300">
               Explore Services
-            </a>
+            </CustomLink>
           </div>
         </m.div>
       </div>

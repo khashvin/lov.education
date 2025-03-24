@@ -22,7 +22,7 @@ export function TimelineItem({ year, title, description, index }: TimelineItemPr
       </div>
       <div className="w-0 relative flex items-center justify-center">
         <div className="absolute h-full w-px bg-[#89c540]/30"></div>
-        <div className="w-4 h-4 rounded-full bg-[#89c540] border-4 border-white z-10"></div>
+        <div className="w-4 h-4 rounded-full bg-[#89c540] border-4 border-[#001e57] z-10"></div>
       </div>
       <div className="w-1/2"></div>
     </m.div>

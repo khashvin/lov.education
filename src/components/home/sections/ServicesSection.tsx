@@ -1,3 +1,4 @@
+import { CustomLink } from '@/components/CustomLink';
 import ServiceCard from '../elements/ServiceCard';
 
 export function ServicesSection() {
@@ -63,13 +64,10 @@ export function ServicesSection() {
                 </div>
                 
                 <div className="mt-10">
-                  <a
-                    href="#main-form"
-                    className="bg-[#001e57] hover:bg-[#001e57]/90 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 inline-flex items-center gap-2 shadow-lg hover:shadow-xl"
-                  >
+                  <CustomLink to="/" hash="main-form" className="bg-[#001e57] hover:bg-[#001e57]/90 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 inline-flex items-center gap-2 shadow-lg hover:shadow-xl">
                     Get Started Today
                     <i className="fas fa-arrow-right"></i>
-                  </a>
+                  </CustomLink>
                 </div>
               </div>
             </div>

@@ -9,6 +9,7 @@ export const universities = sqliteTable("universities", {
   location: text().notNull(),
   image: text().notNull(),
   thumbnail: text().notNull(),
+  fieldOfStudies: text({ mode: "json" }).$type<FieldOfStudy[]>().default([]),
   enabled: integer({ mode: "boolean" }).notNull().default(true),
 })
 
@@ -22,7 +23,9 @@ export const courses = sqliteTable("courses", {
   id: integer().primaryKey(),
   name: text().notNull(),
   faculty: integer().references(() => faculties.id, { onDelete: "cascade"}),
-}) 
+})
+
+export type FieldOfStudy = "Business" | "Engineering" | "Arts" | "Science" | "Medicine" | "Law" | "Education" | "Technology" | "Agriculture" | "Architecture" | "Design" | "Music" | "Visual Arts" | "Finance" | "Social Sciences" | "Humanities" | "Other"
 
 export type University = typeof universities.$inferSelect
 export type Faculty = typeof faculties.$inferSelect

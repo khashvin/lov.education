@@ -30,7 +30,7 @@ export function StorySection() {
           >
             <div className="absolute top-4 left-4 right-4 bottom-4 border-2 border-[#89c540]/20 rounded-lg -z-10"></div>
             <img
-              src="/banner2.png"
+              src="/images/banner/banner2.png"
               alt="Education consultancy"
               className="w-full h-full object-fill rounded-lg shadow-lg"
             />

@@ -84,7 +84,7 @@ export function Footer() {
               <ul className="space-y-4 text-[#cccccc]">
                 <li className="flex gap-3 items-start justify-center md:justify-start">
                   <i className="fas fa-map-marker-alt text-[#89c540] mt-1"></i>
-                  <span>C-3A-03, Centum @ Oasis Corporate Park, No., 2, Jalan PJU 1A/3A, Taipan</span>
+                  <span>Block B4, Leisure Commerce Square, No. 9, Jln PJS 8/9, 46150 Petaling Jaya, Selangor, Malaysia</span>
                 </li>
                 <li className="flex gap-3 items-center justify-center md:justify-start">
                   <i className="fas fa-envelope text-[#89c540]"></i>
@@ -103,7 +103,8 @@ export function Footer() {
         <div className="pt-10 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-[#cccccc] text-center md:text-left">
-              &copy; {new Date().getFullYear()} Literacy of Virtue. All rights reserved.
+              &copy; {new Date().getFullYear()} LOV Edu Academy (003560575-D). All rights reserved.<br />
+              Designed by <a href="https://artiqe.media" target="_blank" rel="noopener noreferrer" className="text-[#89c540] hover:text-[#89c540]">Artiqe Media</a>
             </div>
             <div>
               <ul className="flex space-x-4 justify-center">

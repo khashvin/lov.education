@@ -49,7 +49,7 @@ function UniversityDetailsPage() {
             <UniversitySidebarSection
               location={university.location}
               intake={university.intake}
-              image={university.image}
+              image={university.thumbnail}
             />
           </div>
 
@@ -63,7 +63,7 @@ function UniversityDetailsPage() {
             <UniversitySidebarSection
               location={university.location}
               intake={university.intake}
-              image={university.image}
+              image={university.thumbnail}
             />
           </div>
         </div>
