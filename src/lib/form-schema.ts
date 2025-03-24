@@ -16,3 +16,6 @@ export const InquiryFormSchema = type({
   fieldOfStudy: 'string > 0',
   additionalInfo: 'string',
 })
+
+export type ContactFormType = typeof ContactFormSchema.infer
+export type InquiryFormType = typeof InquiryFormSchema.infer

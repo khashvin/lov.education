@@ -1,5 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
-import nodemailer from "nodemailer";
+import { Resend } from 'resend'
 
 type SendEmailParams = {
   name: string;
@@ -13,22 +13,13 @@ export const sendEmail = createServerFn({
 })
 .validator((data: SendEmailParams) => data)
 .handler(async (ctx) => {
-  const transporter = nodemailer.createTransport({
-    host: process.env.EMAIL_HOST,
-    port: parseInt(process.env.EMAIL_PORT || "465"),
-    secure: process.env.EMAIL_SECURE === "true",
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
-    },
-  });
+  const resend = new Resend(process.env.RESEND_API_KEY)
 
-  const result = await transporter.sendMail({
-    from: `"${ctx.data.name}" <${ctx.data.from}>`, // sender address
-    to: process.env.EMAIL_TO, // list of receivers
-    subject: ctx.data.subject, // Subject line
-    text: ctx.data.text, // plain text body
+  await resend.emails.send({
+    from: `lov.education System <${process.env.EMAIL_FROM}>`,
+    replyTo: `${ctx.data.name} <${ctx.data.from}>`,
+    to: [`${process.env.EMAIL_TO}`],
+    subject: ctx.data.subject,
+    text: ctx.data.text,
   })
-  
-  return result;
 });

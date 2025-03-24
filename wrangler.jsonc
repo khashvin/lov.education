@@ -1,9 +1,13 @@
 {
   "$schema": "https://unpkg.com/wrangler@4.4.0/config-schema.json",
+  "account_id": "870e543d41f304fa4fe70ffd722dee4b",
   "name": "lov-education",
-  "compatibility_date": "2024-09-19",
+  "compatibility_date": "2024-03-24",
   "compatibility_flags": ["nodejs_compat"],
   "main": ".output/server/index.mjs",
+  "workers_dev": false,
+  "keep_vars": true,
+  "preview_urls": false,
   "assets": {
     "directory": ".output/public/",
     "binding": "ASSETS"
@@ -14,8 +18,8 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "LOV_DB",
-      "database_id": "85bac0e1-a2cf-4157-a54c-399e597ece62",
+      "database_name": "lov_db",
+      "database_id": "f63daa02-d721-4ba5-b7ee-389c14e09412",
       "migrations_dir": "./src/drizzle/migrations"
     }
   ],
@@ -23,5 +27,11 @@
     "logs": {
       "enabled": true
     }
-  }
+  },
+  "routes": [
+    {
+      "pattern": "lov.education",
+      "custom_domain": true
+    }
+  ]
 }
