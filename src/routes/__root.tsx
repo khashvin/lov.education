@@ -12,6 +12,7 @@ import appCss from '../styles.css?url'
 
 import type { QueryClient } from '@tanstack/react-query'
 import React from 'react'
+import { Toaster } from 'sonner'
 
 interface MyRouterContext {
   queryClient: QueryClient
@@ -93,6 +94,7 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
           </main>
           <Footer />
         </div>
+        <Toaster position="top-right" />
         <TanStackRouterDevtools />
         <ReactQueryDevtools buttonPosition="bottom-right" />
       </RootDocument>
