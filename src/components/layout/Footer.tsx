@@ -27,28 +27,28 @@ export function Footer() {
               </h2>
               <ul className="space-y-3">
                 <li className="transition-transform duration-200 hover:translate-x-1">
-                  <a href="/#services" className="text-[#cccccc] hover:text-white hover:underline flex items-center gap-2 justify-center md:justify-start">
+                  <Link to="/" hash="services" className="text-[#cccccc] hover:text-white hover:underline flex items-center gap-2 justify-center md:justify-start">
                     <i className="fas fa-chevron-right text-xs text-[#89c540]"></i>
                     <span>Free Consultation</span>
-                  </a>
+                  </Link>
                 </li>
                 <li className="transition-transform duration-200 hover:translate-x-1">
-                  <a href="/#services" className="text-[#cccccc] hover:text-white hover:underline flex items-center gap-2 justify-center md:justify-start">
+                  <Link to="/" hash="services" className="text-[#cccccc] hover:text-white hover:underline flex items-center gap-2 justify-center md:justify-start">
                     <i className="fas fa-chevron-right text-xs text-[#89c540]"></i>
                     <span>Application Assistance</span>
-                  </a>
+                  </Link>
                 </li>
                 <li className="transition-transform duration-200 hover:translate-x-1">
-                  <a href="/#services" className="text-[#cccccc] hover:text-white hover:underline flex items-center gap-2 justify-center md:justify-start">
+                  <Link to="/" hash="services" className="text-[#cccccc] hover:text-white hover:underline flex items-center gap-2 justify-center md:justify-start">
                     <i className="fas fa-chevron-right text-xs text-[#89c540]"></i>
                     <span>Prepare For Departure</span>
-                  </a>
+                  </Link>
                 </li>
                 <li className="transition-transform duration-200 hover:translate-x-1">
-                  <a href="/#services" className="text-[#cccccc] hover:text-white hover:underline flex items-center gap-2 justify-center md:justify-start">
+                  <Link to="/" hash="services" className="text-[#cccccc] hover:text-white hover:underline flex items-center gap-2 justify-center md:justify-start">
                     <i className="fas fa-chevron-right text-xs text-[#89c540]"></i>
                     <span>Accommodation</span>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

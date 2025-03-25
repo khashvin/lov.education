@@ -8,6 +8,7 @@
   "workers_dev": false,
   "keep_vars": true,
   "preview_urls": false,
+  "upload_source_maps": false,
   "assets": {
     "directory": ".output/public/",
     "binding": "ASSETS"

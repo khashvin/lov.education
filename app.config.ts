@@ -24,7 +24,8 @@ export default defineConfig({
         external: [
           'cloudflare:workers',
         ]
-      }
-    }
+      },
+      sourcemap: true,
+    },
   },
 })
