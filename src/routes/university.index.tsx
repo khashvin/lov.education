@@ -9,6 +9,13 @@ import {
 
 export const Route = createFileRoute('/university/')({
   component: UniversityPage,
+  head: () => ({
+    meta: [
+      {
+        title: 'University - Literacy of Virtue',
+      },
+    ],
+  }),
 })
 
 function UniversityPage() {

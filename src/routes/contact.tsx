@@ -8,6 +8,13 @@ import {
 
 export const Route = createFileRoute('/contact')({
   component: ContactPage,
+  head: () => ({
+    meta: [
+      {
+        title: 'Contact - Literacy of Virtue',
+      },
+    ],
+  }),
 })
 
 function ContactPage() {

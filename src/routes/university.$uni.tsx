@@ -13,6 +13,13 @@ import {
 
 export const Route = createFileRoute('/university/$uni')({
   component: UniversityDetailsPage,
+  head: ({ params }) => ({
+    meta: [
+      {
+        title: `${params.uni.toUpperCase()} - Literacy of Virtue`,
+      },
+    ],
+  }),
 })
 
 function UniversityDetailsPage() {

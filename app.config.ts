@@ -13,7 +13,7 @@ export default defineConfig({
   },
   vite: {
     plugins: [
-      // this is the plugin that enables path aliases
+            // this is the plugin that enables path aliases
       viteTsConfigPaths({
         projects: ['./tsconfig.json'],
       }),
@@ -25,7 +25,6 @@ export default defineConfig({
           'cloudflare:workers',
         ]
       },
-      sourcemap: true,
     },
   },
 })

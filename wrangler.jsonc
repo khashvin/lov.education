@@ -2,13 +2,12 @@
   "$schema": "https://unpkg.com/wrangler@4.4.0/config-schema.json",
   "account_id": "870e543d41f304fa4fe70ffd722dee4b",
   "name": "lov-education",
-  "compatibility_date": "2024-03-24",
+  "compatibility_date": "2025-03-24",
   "compatibility_flags": ["nodejs_compat"],
   "main": ".output/server/index.mjs",
   "workers_dev": false,
   "keep_vars": true,
   "preview_urls": false,
-  "upload_source_maps": false,
   "assets": {
     "directory": ".output/public/",
     "binding": "ASSETS"
