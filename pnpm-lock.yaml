@@ -156,9 +156,6 @@ importers:
       drizzle-kit:
         specifier: ^0.30.6
         version: 0.30.6
-      nitro-cloudflare-dev:
-        specifier: ^0.2.2
-        version: 0.2.2
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
@@ -3852,9 +3849,6 @@ packages:
     peerDependencies:
       react: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
       react-dom: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
-
-  nitro-cloudflare-dev@0.2.2:
-    resolution: {integrity: sha512-aZfNTVdgXPQeAmXW0Tw8hm3usAHr4qVG4Bg3WhHBGeZYuXr9OyT04Ztb+STkMzhyaXvfMHViAaPUPg06iAYqag==}
 
   nitropack@2.11.8:
     resolution: {integrity: sha512-ummTu4R8Lhd1nO3nWrW7eeiHA2ey3ntbWFKkYakm4rcbvT6meWp+oykyrYBNFQKhobQl9CydmUWlCyztYXFPJw==}
@@ -8575,12 +8569,6 @@ snapshots:
     dependencies:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
-
-  nitro-cloudflare-dev@0.2.2:
-    dependencies:
-      consola: 3.4.2
-      mlly: 1.7.4
-      pkg-types: 2.1.0
 
   nitropack@2.11.8(drizzle-orm@0.41.0(gel@2.0.2)):
     dependencies:

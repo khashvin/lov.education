@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { LazyMotion, domAnimation } from 'motion/react'
-import { useUniversities } from '@/hooks/useUniversities'
+import { getUniversitiesOptions } from '@/lib/queries'
+import { useQuery } from '@tanstack/react-query'
 import { 
   UniversityHeroSection, 
   UniversityListSection, 
@@ -9,6 +10,9 @@ import {
 
 export const Route = createFileRoute('/university/')({
   component: UniversityPage,
+  loader: async ({ context }) => {
+    await context.queryClient.ensureQueryData(getUniversitiesOptions);
+  },
   head: () => ({
     meta: [
       {
@@ -19,11 +23,7 @@ export const Route = createFileRoute('/university/')({
 })
 
 function UniversityPage() {
-  const { 
-    data: universities = [], 
-    isLoading: isLoadingUniversities, 
-    isError: isUniversitiesError 
-  } = useUniversities()
+  const { data: universities = [], isLoading: isLoadingUniversities, isError: isUniversitiesError } = useQuery(getUniversitiesOptions)
 
   return (
     <LazyMotion features={domAnimation}>

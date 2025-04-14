@@ -1,9 +1,9 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, redirect } from '@tanstack/react-router'
 import { GraduationCapIcon } from 'lucide-react'
 import { Skeleton } from "@/components/ui/skeleton"
 import { Card, CardContent } from "@/components/ui/card"
-import { useUniversity } from '@/hooks/useUniversities'
-
+import { useQuery } from '@tanstack/react-query'
+import { getFacultiesOptions, getUniversityOptions } from '@/lib/queries'
 import {
   UniversityHeroSection,
   UniversityAboutSection,
@@ -13,6 +13,13 @@ import {
 
 export const Route = createFileRoute('/university/$uni')({
   component: UniversityDetailsPage,
+  loader: async ({ context, params }) => {
+    const uni = await context.queryClient.ensureQueryData(getUniversityOptions(params.uni))
+    if (!uni) {
+      return redirect({ to: '/university' })
+    }
+    await context.queryClient.ensureQueryData(getFacultiesOptions(uni.id))
+  },
   head: ({ params }) => ({
     meta: [
       {
@@ -24,8 +31,7 @@ export const Route = createFileRoute('/university/$uni')({
 
 function UniversityDetailsPage() {
   const { uni } = Route.useParams()
-  const { data: university, isLoading, isError } = useUniversity(uni)
-
+  const { data: university, isLoading, isError } = useQuery(getUniversityOptions(uni))
 
   if (isError) {
     return (

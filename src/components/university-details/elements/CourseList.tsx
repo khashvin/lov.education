@@ -3,14 +3,15 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 import { Skeleton } from "@/components/ui/skeleton"
 import { AlertCircle, XCircle } from 'lucide-react'
 import { Button } from "@/components/ui/button"
-import { useCourses } from "@/hooks/useUniversities"
+import { useQuery } from "@tanstack/react-query"
+import { getCoursesOptions } from "@/lib/queries"
 
 interface CourseListProps {
   facultyId: number
 }
 
 export function CourseList({ facultyId }: CourseListProps) {
-  const { data: courses, isLoading: isCoursesLoading, isError: isCoursesError, refetch } = useCourses(facultyId)
+  const { data: courses, isLoading: isCoursesLoading, isError: isCoursesError, refetch } = useQuery(getCoursesOptions(facultyId))
 
   if (isCoursesLoading) {
     return <Skeleton className="h-[200px] rounded-md border p-4" />

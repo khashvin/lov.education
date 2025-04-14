@@ -7,16 +7,17 @@ import {
 } from "@/components/ui/accordion"
 import { CourseList } from './CourseList'
 import { Skeleton } from '@/components/ui/skeleton'
-import { useFaculties } from '@/hooks/useUniversities'
+import { getFacultiesOptions } from '@/lib/queries'
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { useQuery } from '@tanstack/react-query'
 
 interface FacultyAccordionProps {
   universityId: number
 }
 
 export function FacultyAccordion({ universityId }: FacultyAccordionProps) {
-  const { data: faculties, isLoading: isFacultiesLoading, isError: isFacultiesError, refetch } = useFaculties(universityId)
+  const { data: faculties, isLoading: isFacultiesLoading, isError: isFacultiesError, refetch } = useQuery(getFacultiesOptions(universityId))
 
   if (isFacultiesLoading) {
     return <Skeleton className="h-[200px] rounded-md border p-4" />
