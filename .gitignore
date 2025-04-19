@@ -5,7 +5,7 @@ dist-ssr
 *.local
 .output
 .vinxi
-.old-website
 .wrangler
 .drizzle
-.env
+.env*
+!.env.example

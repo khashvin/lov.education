@@ -1,13 +1,10 @@
 import { defineConfig } from "drizzle-kit";
 
 export default defineConfig({
-  out: "./src/drizzle/migrations",
   dialect: "sqlite",
+  out: "./src/drizzle/migrations",
   schema: "./src/drizzle/schema.ts",
-  driver: "d1-http",
   dbCredentials: {
-    accountId: process.env.CLOUDFLARE_ACCOUNT_ID!,
-    databaseId: process.env.CLOUDFLARE_DATABASE_ID!,
-    token: process.env.CLOUDFLARE_TOKEN!,
+    url: "file:./.wrangler/state/v3/d1/miniflare-D1DatabaseObject/36e3c9a58d2fd18136c257cbcab32224042788cbe7d730e04beb2f820904535e.sqlite"
   }
 });

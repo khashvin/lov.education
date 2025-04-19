@@ -1,10 +1,10 @@
 {
-  "$schema": "https://unpkg.com/wrangler@4.4.0/config-schema.json",
+  "$schema": "node_modules/wrangler/config-schema.json",
   "account_id": "870e543d41f304fa4fe70ffd722dee4b",
   "name": "lov-education",
+  "main": ".output/server/index.mjs",
   "compatibility_date": "2025-03-24",
   "compatibility_flags": ["nodejs_compat"],
-  "main": ".output/server/index.mjs",
   "workers_dev": false,
   "keep_vars": true,
   "preview_urls": false,
@@ -30,8 +30,11 @@
   },
   "routes": [
     {
+      "custom_domain": true,
       "pattern": "lov.education",
-      "custom_domain": true
     }
-  ]
+  ],
+  "version_metadata": {
+    "binding": "CF_VERSION_METADATA"
+  }
 }

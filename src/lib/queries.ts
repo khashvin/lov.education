@@ -1,3 +1,4 @@
+import { fetchVersionMetadata } from '@/functions/cf-metadata'
 import { fetchCourses, fetchFaculties, fetchUniversities, fetchUniversity } from '@/functions/fetch-universities'
 import { queryOptions } from '@tanstack/react-query'
 
@@ -25,6 +26,13 @@ export const getFacultiesOptions = (universityId: number) => queryOptions({
 export const getCoursesOptions = (facultyId: number) => queryOptions({
   queryKey: [`courses-faculty-${facultyId}`],
   queryFn: () => fetchCourses({ data: facultyId }),
+  staleTime: Infinity,
+  retry: false,
+})
+
+export const getVersionMetadataOptions = queryOptions({
+  queryKey: ['version-metadata'],
+  queryFn: fetchVersionMetadata,
   staleTime: Infinity,
   retry: false,
 })

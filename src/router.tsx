@@ -19,7 +19,7 @@ export const createRouter = () => {
       scrollRestoration: true,
       defaultPreload: 'intent',
       defaultPreloadDelay: 500,
-      defaultPreloadStaleTime: 5 * 60 * 1000,
+      defaultPreloadStaleTime: 0,
       defaultErrorComponent: DefaultErrorPage,
       defaultNotFoundComponent: DefaultNotFoundPage
     }),
