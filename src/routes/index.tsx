@@ -1,9 +1,13 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { HeroSection, ServicesSection, ContactFormSection } from '@/components/home'
+import { createFileRoute } from '@tanstack/react-router';
+import {
+  HeroSection,
+  ServicesSection,
+  ContactFormSection,
+} from '@/components/home';
 
 export const Route = createFileRoute('/')({
   component: HomePage,
-})
+});
 
 function HomePage() {
   return (
@@ -12,5 +16,5 @@ function HomePage() {
       <ServicesSection />
       <ContactFormSection />
     </div>
-  )
+  );
 }

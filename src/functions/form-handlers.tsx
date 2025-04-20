@@ -1,10 +1,10 @@
-import { createServerFn } from '@tanstack/react-start'
-import { ContactFormSchema, InquiryFormSchema } from '@/lib/form-schema'
-import { sendEmail } from './send-email'
+import { createServerFn } from '@tanstack/react-start';
+import { ContactFormSchema, InquiryFormSchema } from '@/lib/form-schema';
+import { sendEmail } from './send-email';
 
 export const handleContactForm = createServerFn({
-    method: 'POST',
-  })
+  method: 'POST',
+})
   .validator(ContactFormSchema)
   .handler(async ({ data }) => {
     const emailText = `
@@ -13,7 +13,7 @@ export const handleContactForm = createServerFn({
       Phone: ${data.phone}
       Subject: ${data.subject}
       Message: ${data.message}
-    `
+    `;
     try {
       await sendEmail({
         data: {
@@ -21,17 +21,17 @@ export const handleContactForm = createServerFn({
           from: data.email,
           subject: `Contact Form Submission from ${data.name}`,
           text: emailText,
-        }
-      })
+        },
+      });
     } catch (error) {
-      console.error(error)
-      throw new Error("Failed to send email")
+      console.error(error);
+      throw new Error('Failed to send email');
     }
-  })
+  });
 
-  export const handleInquiryForm = createServerFn({
-    method: 'POST',
-  })
+export const handleInquiryForm = createServerFn({
+  method: 'POST',
+})
   .validator(InquiryFormSchema)
   .handler(async ({ data }) => {
     const emailText = `
@@ -41,7 +41,7 @@ export const handleContactForm = createServerFn({
       University: ${data.university}
       Field of Study: ${data.fieldOfStudy}
       Additional Info: ${data.additionalInfo}
-    `
+    `;
     try {
       await sendEmail({
         data: {
@@ -49,10 +49,10 @@ export const handleContactForm = createServerFn({
           from: data.email,
           subject: `Inquiry Form Submission from ${data.name}`,
           text: emailText,
-        }
-      })
+        },
+      });
     } catch (error) {
-      console.error(error)
-      throw new Error("Failed to send email")
+      console.error(error);
+      throw new Error('Failed to send email');
     }
-  })
+  });

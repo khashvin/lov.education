@@ -10,4 +10,4 @@ export function StatsItem({ value, label }: StatsItemProps) {
       <p className="text-gray-600 mt-2">{label}</p>
     </div>
   );
-} 
+}

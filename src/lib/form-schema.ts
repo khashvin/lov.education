@@ -1,4 +1,4 @@
-import { type } from "arktype";
+import { type } from 'arktype';
 
 export const ContactFormSchema = type({
   name: 'string > 0',
@@ -6,7 +6,7 @@ export const ContactFormSchema = type({
   phone: 'string',
   subject: 'string > 0',
   message: 'string > 0',
-})
+});
 
 export const InquiryFormSchema = type({
   name: 'string > 0',
@@ -15,7 +15,7 @@ export const InquiryFormSchema = type({
   university: 'string > 0',
   fieldOfStudy: 'string > 0',
   additionalInfo: 'string',
-})
+});
 
-export type ContactFormType = typeof ContactFormSchema.infer
-export type InquiryFormType = typeof InquiryFormSchema.infer
+export type ContactFormType = typeof ContactFormSchema.infer;
+export type InquiryFormType = typeof InquiryFormSchema.infer;

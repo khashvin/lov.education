@@ -1,26 +1,31 @@
-import { BookOpenIcon, AlertCircle, XCircle } from 'lucide-react'
-import { 
+import { BookOpenIcon, AlertCircle, XCircle } from 'lucide-react';
+import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion"
-import { CourseList } from './CourseList'
-import { Skeleton } from '@/components/ui/skeleton'
-import { getFacultiesOptions } from '@/lib/queries'
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { useQuery } from '@tanstack/react-query'
+} from '@/components/ui/accordion';
+import { CourseList } from './CourseList';
+import { Skeleton } from '@/components/ui/skeleton';
+import { getFacultiesOptions } from '@/lib/queries';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { useQuery } from '@tanstack/react-query';
 
 interface FacultyAccordionProps {
-  universityId: number
+  universityId: number;
 }
 
 export function FacultyAccordion({ universityId }: FacultyAccordionProps) {
-  const { data: faculties, isLoading: isFacultiesLoading, isError: isFacultiesError, refetch } = useQuery(getFacultiesOptions(universityId))
+  const {
+    data: faculties,
+    isLoading: isFacultiesLoading,
+    isError: isFacultiesError,
+    refetch,
+  } = useQuery(getFacultiesOptions(universityId));
 
   if (isFacultiesLoading) {
-    return <Skeleton className="h-[200px] rounded-md border p-4" />
+    return <Skeleton className="h-[200px] rounded-md border p-4" />;
   }
 
   if (isFacultiesError) {
@@ -28,10 +33,14 @@ export function FacultyAccordion({ universityId }: FacultyAccordionProps) {
       <Card className="border-red-100">
         <CardContent className="p-6 text-center">
           <AlertCircle className="h-12 w-12 text-red-500 mx-auto mb-4" />
-          <h3 className="text-lg font-semibold text-red-700 mb-2">Error Loading Faculties</h3>
-          <p className="text-gray-600 mb-4">There was a problem loading the faculty information.</p>
-          <Button 
-            variant="outline" 
+          <h3 className="text-lg font-semibold text-red-700 mb-2">
+            Error Loading Faculties
+          </h3>
+          <p className="text-gray-600 mb-4">
+            There was a problem loading the faculty information.
+          </p>
+          <Button
+            variant="outline"
             onClick={() => refetch()}
             className="border-red-200 text-red-700 hover:bg-red-50"
           >
@@ -39,7 +48,7 @@ export function FacultyAccordion({ universityId }: FacultyAccordionProps) {
           </Button>
         </CardContent>
       </Card>
-    )
+    );
   }
 
   if (!faculties || faculties.length === 0) {
@@ -47,11 +56,15 @@ export function FacultyAccordion({ universityId }: FacultyAccordionProps) {
       <Card className="border-gray-200">
         <CardContent className="p-6 text-center">
           <XCircle className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">No Faculties Found</h3>
-          <p className="text-gray-600">This university hasn't added any faculties yet.</p>
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">
+            No Faculties Found
+          </h3>
+          <p className="text-gray-600">
+            This university hasn't added any faculties yet.
+          </p>
         </CardContent>
       </Card>
-    )
+    );
   }
 
   return (
@@ -70,5 +83,5 @@ export function FacultyAccordion({ universityId }: FacultyAccordionProps) {
         </AccordionItem>
       ))}
     </Accordion>
-  )
-} 
+  );
+}

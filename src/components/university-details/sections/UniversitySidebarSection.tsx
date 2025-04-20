@@ -1,19 +1,23 @@
-import { MapPinIcon, CalendarIcon } from 'lucide-react'
-import { Card, CardContent } from "@/components/ui/card"
+import { MapPinIcon, CalendarIcon } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 
 interface UniversitySidebarSectionProps {
-  location: string
-  intake: string
-  image: string
+  location: string;
+  intake: string;
+  image: string;
 }
 
-export function UniversitySidebarSection({ location, intake, image }: UniversitySidebarSectionProps) {
+export function UniversitySidebarSection({
+  location,
+  intake,
+  image,
+}: UniversitySidebarSectionProps) {
   return (
     <div className="space-y-6">
       <Card className="overflow-hidden">
         <div className="aspect-[4/3] relative">
-          <img 
-            src={image} 
+          <img
+            src={image}
             alt="University campus"
             className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
           />
@@ -42,5 +46,5 @@ export function UniversitySidebarSection({ location, intake, image }: University
         </CardContent>
       </Card>
     </div>
-  )
-} 
+  );
+}

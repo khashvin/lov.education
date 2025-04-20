@@ -1,4 +1,4 @@
-import type { LucideIcon } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react';
 
 interface UniversityQuickFactProps {
   icon: LucideIcon;
@@ -6,7 +6,11 @@ interface UniversityQuickFactProps {
   value: string;
 }
 
-export function UniversityQuickFact({ icon: Icon, title, value }: UniversityQuickFactProps) {
+export function UniversityQuickFact({
+  icon: Icon,
+  title,
+  value,
+}: UniversityQuickFactProps) {
   return (
     <div className="flex items-start space-x-3">
       <Icon className="h-5 w-5 text-gray-500 mt-1" />
@@ -16,4 +20,4 @@ export function UniversityQuickFact({ icon: Icon, title, value }: UniversityQuic
       </div>
     </div>
   );
-} 
+}

@@ -1,5 +1,5 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { LazyMotion, domAnimation } from "motion/react"
+import { createFileRoute } from '@tanstack/react-router';
+import { LazyMotion, domAnimation } from 'motion/react';
 
 import {
   AboutHeroSection,
@@ -7,8 +7,8 @@ import {
   MissionValuesSection,
   ServicesSection,
   TimelineSection,
-  AboutCtaSection
-} from '@/components/about'
+  AboutCtaSection,
+} from '@/components/about';
 
 export const Route = createFileRoute('/about')({
   component: AboutPage,
@@ -19,7 +19,7 @@ export const Route = createFileRoute('/about')({
       },
     ],
   }),
-})
+});
 
 function AboutPage() {
   return (
@@ -33,5 +33,5 @@ function AboutPage() {
         <AboutCtaSection />
       </div>
     </LazyMotion>
-  )
-} 
+  );
+}

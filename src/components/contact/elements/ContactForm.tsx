@@ -5,11 +5,11 @@ import { Card } from '@/components/ui/card';
 import { handleContactForm } from '@/functions/form-handlers';
 import { useForm } from '@tanstack/react-form';
 import { ContactFormSchema, type ContactFormType } from '@/lib/form-schema';
-import { toast } from "sonner";
+import { toast } from 'sonner';
 import { DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { useState } from 'react';
-import { Turnstile } from '@marsidev/react-turnstile'
+import { Turnstile } from '@marsidev/react-turnstile';
 
 const formDefaultValues = {
   name: '',
@@ -17,11 +17,11 @@ const formDefaultValues = {
   phone: '',
   subject: '',
   message: '',
-}
+};
 
 export function ContactForm() {
   const [dialogOpen, setDialogOpen] = useState(false);
-  const [formData, setFormData] = useState<ContactFormType>(formDefaultValues)
+  const [formData, setFormData] = useState<ContactFormType>(formDefaultValues);
 
   const form = useForm({
     defaultValues: formDefaultValues,
@@ -30,23 +30,23 @@ export function ContactForm() {
       onSubmit: ContactFormSchema,
     },
     onSubmit: async ({ value }) => {
-      setFormData(value)
-      setDialogOpen(true)
-    }
-  })
+      setFormData(value);
+      setDialogOpen(true);
+    },
+  });
 
   const handleTurnstileSuccess = async () => {
     try {
-      await handleContactForm({ data: formData })
-      toast.success("Message sent successfully! We'll get back to you soon.")
-      form.reset()
+      await handleContactForm({ data: formData });
+      toast.success("Message sent successfully! We'll get back to you soon.");
+      form.reset();
     } catch (error) {
-      console.error("Form submission error:", error)
-      toast.error("Failed to send message. Please try again later.")
+      console.error('Form submission error:', error);
+      toast.error('Failed to send message. Please try again later.');
     } finally {
-      setDialogOpen(false)
+      setDialogOpen(false);
     }
-  }
+  };
 
   return (
     <>
@@ -56,20 +56,21 @@ export function ContactForm() {
             Send Us a Message
           </h2>
 
-          <form 
-            className='space-y-4'
+          <form
+            className="space-y-4"
             onSubmit={(e) => {
-              e.preventDefault()
-              e.stopPropagation()
-              form.handleSubmit()
-            }} 
+              e.preventDefault();
+              e.stopPropagation();
+              form.handleSubmit();
+            }}
           >
-            <form.Field
-              name='name'
-            >
+            <form.Field name="name">
               {(field) => (
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Full Name <span className="text-red-500">*</span>
                   </label>
                   <Input
@@ -82,18 +83,21 @@ export function ContactForm() {
                     className={`bg-[#f3f5f9] border-transparent focus:border-[#89c540] h-12 ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
                   />
                   {field.state.meta.errors.length > 0 && (
-                    <p className="text-red-500 text-xs mt-1">{field.state.meta.errors[0]?.message || "Invalid input"}</p>
+                    <p className="text-red-500 text-xs mt-1">
+                      {field.state.meta.errors[0]?.message || 'Invalid input'}
+                    </p>
                   )}
                 </div>
               )}
             </form.Field>
 
-            <form.Field
-              name='email'
-            >
+            <form.Field name="email">
               {(field) => (
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Email Address <span className="text-red-500">*</span>
                   </label>
                   <Input
@@ -106,18 +110,21 @@ export function ContactForm() {
                     className={`bg-[#f3f5f9] border-transparent focus:border-[#89c540] h-12 ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
                   />
                   {field.state.meta.errors.length > 0 && (
-                    <p className="text-red-500 text-xs mt-1">{field.state.meta.errors[0]?.message || "Invalid email"}</p>
+                    <p className="text-red-500 text-xs mt-1">
+                      {field.state.meta.errors[0]?.message || 'Invalid email'}
+                    </p>
                   )}
                 </div>
               )}
             </form.Field>
 
-            <form.Field
-              name='phone'
-            >
+            <form.Field name="phone">
               {(field) => (
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="phone"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Phone Number
                   </label>
                   <Input
@@ -129,19 +136,22 @@ export function ContactForm() {
                     className={`bg-[#f3f5f9] border-transparent focus:border-[#89c540] h-12 ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
                   />
                   {field.state.meta.errors.length > 0 && (
-                    <p className="text-red-500 text-xs mt-1">{field.state.meta.errors[0]?.message || "Invalid phone number"}</p>
+                    <p className="text-red-500 text-xs mt-1">
+                      {field.state.meta.errors[0]?.message ||
+                        'Invalid phone number'}
+                    </p>
                   )}
                 </div>
               )}
             </form.Field>
 
-            
-            <form.Field
-              name='subject'
-            >
+            <form.Field name="subject">
               {(field) => (
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="subject"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Subject <span className="text-red-500">*</span>
                   </label>
                   <Input
@@ -154,18 +164,21 @@ export function ContactForm() {
                     className={`bg-[#f3f5f9] border-transparent focus:border-[#89c540] h-12 ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
                   />
                   {field.state.meta.errors.length > 0 && (
-                    <p className="text-red-500 text-xs mt-1">{field.state.meta.errors[0]?.message || "Invalid subject"}</p>
+                    <p className="text-red-500 text-xs mt-1">
+                      {field.state.meta.errors[0]?.message || 'Invalid subject'}
+                    </p>
                   )}
                 </div>
               )}
             </form.Field>
 
-            <form.Field
-              name='message'
-            >
+            <form.Field name="message">
               {(field) => (
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Message <span className="text-red-500">*</span>
                   </label>
                   <Textarea
@@ -178,18 +191,24 @@ export function ContactForm() {
                     className={`bg-[#f3f5f9] border-transparent focus:border-[#89c540] min-h-[140px] ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
                   />
                   {field.state.meta.errors.length > 0 && (
-                    <p className="text-red-500 text-xs mt-1">{field.state.meta.errors[0]?.message || "Invalid message"}</p>
+                    <p className="text-red-500 text-xs mt-1">
+                      {field.state.meta.errors[0]?.message || 'Invalid message'}
+                    </p>
                   )}
                 </div>
               )}
             </form.Field>
 
             <form.Subscribe
-              selector={(formState) => [formState.canSubmit, formState.isSubmitting, Boolean(Object.keys(formState.errors).length > 0)]}
+              selector={(formState) => [
+                formState.canSubmit,
+                formState.isSubmitting,
+                Boolean(Object.keys(formState.errors).length > 0),
+              ]}
             >
               {([canSubmit, isSubmitting]) => (
                 <>
-                  <Button 
+                  <Button
                     type="submit"
                     disabled={!canSubmit || isSubmitting}
                     className="w-full bg-[#001e57] hover:bg-[#001e57]/90 text-white h-12 font-medium"
@@ -204,28 +223,28 @@ export function ContactForm() {
       </Card>
 
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-      <DialogContent className="sm:max-w-md">
-        <DialogHeader>
-          <DialogTitle>Verify you're human</DialogTitle>
-        </DialogHeader>
-        <div className="flex justify-center py-4">
-          <Turnstile
-            siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY!} 
-            onSuccess={handleTurnstileSuccess}
-            onError={() => {
-              toast.error("Verification failed. Please try again.");
-              setDialogOpen(false)
-            }}
-            onExpire={() => {
-              toast.warning("Verification expired. Please verify again.");
-              setDialogOpen(false)
-            }}
-          />
-        </div>
-      </DialogContent>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Verify you're human</DialogTitle>
+          </DialogHeader>
+          <div className="flex justify-center py-4">
+            <Turnstile
+              siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
+              onSuccess={handleTurnstileSuccess}
+              onError={() => {
+                toast.error('Verification failed. Please try again.');
+                setDialogOpen(false);
+              }}
+              onExpire={() => {
+                toast.warning('Verification expired. Please verify again.');
+                setDialogOpen(false);
+              }}
+            />
+          </div>
+        </DialogContent>
       </Dialog>
     </>
   );
 }
 
-export default ContactForm; 
+export default ContactForm;

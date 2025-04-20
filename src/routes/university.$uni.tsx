@@ -1,24 +1,26 @@
-import { createFileRoute, redirect } from '@tanstack/react-router'
-import { GraduationCapIcon } from 'lucide-react'
-import { Skeleton } from "@/components/ui/skeleton"
-import { Card, CardContent } from "@/components/ui/card"
-import { useQuery } from '@tanstack/react-query'
-import { getFacultiesOptions, getUniversityOptions } from '@/lib/queries'
+import { createFileRoute, redirect } from '@tanstack/react-router';
+import { GraduationCapIcon } from 'lucide-react';
+import { Skeleton } from '@/components/ui/skeleton';
+import { Card, CardContent } from '@/components/ui/card';
+import { useQuery } from '@tanstack/react-query';
+import { getFacultiesOptions, getUniversityOptions } from '@/lib/queries';
 import {
   UniversityHeroSection,
   UniversityAboutSection,
   UniversityFacultiesSection,
   UniversitySidebarSection,
-} from '@/components/university-details'
+} from '@/components/university-details';
 
 export const Route = createFileRoute('/university/$uni')({
   component: UniversityDetailsPage,
   loader: async ({ context, params }) => {
-    const uni = await context.queryClient.ensureQueryData(getUniversityOptions(params.uni))
+    const uni = await context.queryClient.ensureQueryData(
+      getUniversityOptions(params.uni),
+    );
     if (!uni) {
-      return redirect({ to: '/university' })
+      return redirect({ to: '/university' });
     }
-    await context.queryClient.ensureQueryData(getFacultiesOptions(uni.id))
+    await context.queryClient.ensureQueryData(getFacultiesOptions(uni.id));
   },
   head: ({ params }) => ({
     meta: [
@@ -27,24 +29,31 @@ export const Route = createFileRoute('/university/$uni')({
       },
     ],
   }),
-})
+});
 
 function UniversityDetailsPage() {
-  const { uni } = Route.useParams()
-  const { data: university, isLoading, isError } = useQuery(getUniversityOptions(uni))
+  const { uni } = Route.useParams();
+  const {
+    data: university,
+    isLoading,
+    isError,
+  } = useQuery(getUniversityOptions(uni));
 
   if (isError) {
     return (
       <div className="container mx-auto px-4 py-16 text-center">
         <GraduationCapIcon className="mx-auto h-16 w-16 text-red-500 mb-4" />
         <h1 className="text-2xl font-bold mb-2">University Not Found</h1>
-        <p className="text-gray-600">The university you're looking for doesn't exist or there was an error loading it.</p>
+        <p className="text-gray-600">
+          The university you're looking for doesn't exist or there was an error
+          loading it.
+        </p>
       </div>
-    )
+    );
   }
 
   if (isLoading || !university) {
-    return <UniversityDetailsSkeleton />
+    return <UniversityDetailsSkeleton />;
   }
 
   return (
@@ -82,7 +91,7 @@ function UniversityDetailsPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 function UniversityDetailsSkeleton() {
@@ -141,5 +150,5 @@ function UniversityDetailsSkeleton() {
         </div>
       </div>
     </div>
-  )
+  );
 }

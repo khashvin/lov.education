@@ -16,7 +16,15 @@ function NavLink({ to, label }: { to: string; label: string }) {
 }
 
 // MobileNavLink component for mobile navigation
-function MobileNavLink({ to, label, onClick }: { to: string; label: string; onClick: () => void }) {
+function MobileNavLink({
+  to,
+  label,
+  onClick,
+}: {
+  to: string;
+  label: string;
+  onClick: () => void;
+}) {
   return (
     <Link
       to={to}
@@ -48,20 +56,24 @@ export function Navigation() {
   }, []);
 
   return (
-    <div className={`bg-white shadow-md transition-all duration-300 ${isSticky ? 'fixed top-0 left-0 right-0 animate-slideDown shadow-lg' : ''}`}>
+    <div
+      className={`bg-white shadow-md transition-all duration-300 ${isSticky ? 'fixed top-0 left-0 right-0 animate-slideDown shadow-lg' : ''}`}
+    >
       <div className="container mx-auto px-4">
-        <div className={`flex items-center justify-between ${isSticky ? 'py-2' : 'py-4'} transition-all duration-300`}>
+        <div
+          className={`flex items-center justify-between ${isSticky ? 'py-2' : 'py-4'} transition-all duration-300`}
+        >
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center">
-              <img 
-                src="/logo-header.png" 
-                alt="Literacy of Virtue" 
-                className={`transition-all duration-300 ${isSticky ? 'h-10 md:h-12' : 'h-16 md:h-20'}`} 
+              <img
+                src="/logo-header.png"
+                alt="Literacy of Virtue"
+                className={`transition-all duration-300 ${isSticky ? 'h-10 md:h-12' : 'h-16 md:h-20'}`}
               />
             </Link>
           </div>
-          
+
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1">
             <NavLink to="/" label="Home" />
@@ -69,7 +81,7 @@ export function Navigation() {
             <NavLink to="/university" label="Universities" />
             <NavLink to="/contact" label="Contact Us" />
           </nav>
-          
+
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
@@ -86,16 +98,32 @@ export function Navigation() {
           </div>
         </div>
       </div>
-      
+
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-200 animate-slideDown">
           <div className="container mx-auto px-4 py-4">
             <nav className="flex flex-col space-y-2">
-              <MobileNavLink to="/" label="Home" onClick={() => setMobileMenuOpen(false)} />
-              <MobileNavLink to="/about" label="About us" onClick={() => setMobileMenuOpen(false)} />
-              <MobileNavLink to="/university" label="Universities" onClick={() => setMobileMenuOpen(false)} />
-              <MobileNavLink to="/contact" label="Contact Us" onClick={() => setMobileMenuOpen(false)} />
+              <MobileNavLink
+                to="/"
+                label="Home"
+                onClick={() => setMobileMenuOpen(false)}
+              />
+              <MobileNavLink
+                to="/about"
+                label="About us"
+                onClick={() => setMobileMenuOpen(false)}
+              />
+              <MobileNavLink
+                to="/university"
+                label="Universities"
+                onClick={() => setMobileMenuOpen(false)}
+              />
+              <MobileNavLink
+                to="/contact"
+                label="Contact Us"
+                onClick={() => setMobileMenuOpen(false)}
+              />
             </nav>
           </div>
         </div>
@@ -104,4 +132,4 @@ export function Navigation() {
   );
 }
 
-export default Navigation; 
+export default Navigation;

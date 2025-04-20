@@ -1,11 +1,11 @@
-import * as m from "motion/react-m";
-import { StatsItem } from "../elements/StatsItem";
+import * as m from 'motion/react-m';
+import { StatsItem } from '../elements/StatsItem';
 
 export function AboutHeroSection() {
   const stats = [
-    { value: "2012", label: "Year Founded" },
-    { value: "20+", label: "Partner Universities" },
-    { value: "450+", label: "Courses Available" }
+    { value: '2012', label: 'Year Founded' },
+    { value: '20+', label: 'Partner Universities' },
+    { value: '450+', label: 'Courses Available' },
   ];
 
   return (
@@ -18,18 +18,21 @@ export function AboutHeroSection() {
             transition={{ duration: 1 }}
             className="mb-6"
           >
-            <p className="text-[#89c540] font-medium tracking-wider uppercase text-sm">About Us</p>
+            <p className="text-[#89c540] font-medium tracking-wider uppercase text-sm">
+              About Us
+            </p>
           </m.div>
-          
+
           <m.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-4xl md:text-6xl font-bold text-[#001e57] tracking-tight mb-8"
           >
-            Your trusted partner in <span className="text-[#89c540]">international education</span>.
+            Your trusted partner in{' '}
+            <span className="text-[#89c540]">international education</span>.
           </m.h1>
-          
+
           <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -44,4 +47,4 @@ export function AboutHeroSection() {
       </div>
     </section>
   );
-} 
+}

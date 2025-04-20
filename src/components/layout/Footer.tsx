@@ -11,11 +11,16 @@ export function Footer() {
             <div className="space-y-6 text-center md:text-left">
               <div className="mb-6">
                 <Link to="/" className="inline-block">
-                  <img src="/logo-footer.png" alt="Literacy of Virtue" className="h-16 md:h-20 mx-auto md:mx-0" />
+                  <img
+                    src="/logo-footer.png"
+                    alt="Literacy of Virtue"
+                    className="h-16 md:h-20 mx-auto md:mx-0"
+                  />
                 </Link>
               </div>
               <div className="text-[#cccccc] leading-relaxed">
-                Start your journey with us!<br/>
+                Start your journey with us!
+                <br />
                 We guide your pathways.
               </div>
             </div>
@@ -27,25 +32,41 @@ export function Footer() {
               </h2>
               <ul className="space-y-3">
                 <li className="transition-transform duration-200 hover:translate-x-1">
-                  <Link to="/" hash="services" className="text-[#cccccc] hover:text-white hover:underline flex items-center gap-2 justify-center md:justify-start">
+                  <Link
+                    to="/"
+                    hash="services"
+                    className="text-[#cccccc] hover:text-white hover:underline flex items-center gap-2 justify-center md:justify-start"
+                  >
                     <i className="fas fa-chevron-right text-xs text-[#89c540]"></i>
                     <span>Free Consultation</span>
                   </Link>
                 </li>
                 <li className="transition-transform duration-200 hover:translate-x-1">
-                  <Link to="/" hash="services" className="text-[#cccccc] hover:text-white hover:underline flex items-center gap-2 justify-center md:justify-start">
+                  <Link
+                    to="/"
+                    hash="services"
+                    className="text-[#cccccc] hover:text-white hover:underline flex items-center gap-2 justify-center md:justify-start"
+                  >
                     <i className="fas fa-chevron-right text-xs text-[#89c540]"></i>
                     <span>Application Assistance</span>
                   </Link>
                 </li>
                 <li className="transition-transform duration-200 hover:translate-x-1">
-                  <Link to="/" hash="services" className="text-[#cccccc] hover:text-white hover:underline flex items-center gap-2 justify-center md:justify-start">
+                  <Link
+                    to="/"
+                    hash="services"
+                    className="text-[#cccccc] hover:text-white hover:underline flex items-center gap-2 justify-center md:justify-start"
+                  >
                     <i className="fas fa-chevron-right text-xs text-[#89c540]"></i>
                     <span>Prepare For Departure</span>
                   </Link>
                 </li>
                 <li className="transition-transform duration-200 hover:translate-x-1">
-                  <Link to="/" hash="services" className="text-[#cccccc] hover:text-white hover:underline flex items-center gap-2 justify-center md:justify-start">
+                  <Link
+                    to="/"
+                    hash="services"
+                    className="text-[#cccccc] hover:text-white hover:underline flex items-center gap-2 justify-center md:justify-start"
+                  >
                     <i className="fas fa-chevron-right text-xs text-[#89c540]"></i>
                     <span>Accommodation</span>
                   </Link>
@@ -59,9 +80,9 @@ export function Footer() {
                 Connect With Us
               </h2>
               <div className="bg-[#031331] rounded-lg p-6 flex justify-center md:block">
-                <a 
-                  href="https://www.facebook.com/literacyofvirtue" 
-                  target="_blank" 
+                <a
+                  href="https://www.facebook.com/literacyofvirtue"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#cccccc] hover:text-white flex items-center gap-4 group"
                 >
@@ -84,7 +105,10 @@ export function Footer() {
               <ul className="space-y-4 text-[#cccccc]">
                 <li className="flex gap-3 items-start justify-center md:justify-start">
                   <i className="fas fa-map-marker-alt text-[#89c540] mt-1"></i>
-                  <span>Block B4, Leisure Commerce Square, No. 9, Jln PJS 8/9, 46150 Petaling Jaya, Selangor, Malaysia</span>
+                  <span>
+                    Block B4, Leisure Commerce Square, No. 9, Jln PJS 8/9, 46150
+                    Petaling Jaya, Selangor, Malaysia
+                  </span>
                 </li>
                 <li className="flex gap-3 items-center justify-center md:justify-start">
                   <i className="fas fa-envelope text-[#89c540]"></i>
@@ -98,21 +122,31 @@ export function Footer() {
             </div>
           </div>
         </div>
-        
+
         {/* Footer Bottom */}
         <div className="pt-10 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-[#cccccc] text-center md:text-left">
-              &copy; {new Date().getFullYear()} LOV Edu Academy (003560575-D). All rights reserved.<br />
-              Designed by <a href="https://artiqe.media" target="_blank" rel="noopener noreferrer" className="text-[#89c540] hover:text-[#89c540]">Artiqe Media</a>
+              &copy; {new Date().getFullYear()} LOV Edu Academy (003560575-D).
+              All rights reserved.
+              <br />
+              Designed by{' '}
+              <a
+                href="https://artiqe.media"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#89c540] hover:text-[#89c540]"
+              >
+                Artiqe Media
+              </a>
             </div>
             <div>
               <ul className="flex space-x-4 justify-center">
                 <li>
-                  <a 
-                    href="https://facebook.com/literacyofvirtue" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href="https://facebook.com/literacyofvirtue"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-[#cccccc] hover:text-[#89c540] w-10 h-10 rounded-full bg-[#031331] flex items-center justify-center transition-all duration-300 hover:bg-[#001e57]"
                     aria-label="Facebook"
                   >
@@ -120,10 +154,10 @@ export function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a 
-                    href="https://instagram.com/literacyofvirtue" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href="https://instagram.com/literacyofvirtue"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-[#cccccc] hover:text-[#89c540] w-10 h-10 rounded-full bg-[#031331] flex items-center justify-center transition-all duration-300 hover:bg-[#001e57]"
                     aria-label="Instagram"
                   >
@@ -131,10 +165,10 @@ export function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a 
-                    href="https://wa.me/60124209899" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href="https://wa.me/60124209899"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-[#cccccc] hover:text-[#89c540] w-10 h-10 rounded-full bg-[#031331] flex items-center justify-center transition-all duration-300 hover:bg-[#001e57]"
                     aria-label="WhatsApp"
                   >
@@ -150,4 +184,4 @@ export function Footer() {
   );
 }
 
-export default Footer; 
+export default Footer;

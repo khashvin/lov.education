@@ -4,11 +4,11 @@ import { Textarea } from '@/components/ui/textarea';
 import { useForm } from '@tanstack/react-form';
 import { InquiryFormSchema, type InquiryFormType } from '@/lib/form-schema';
 import { handleInquiryForm } from '@/functions/form-handlers';
-import { toast } from "sonner";
+import { toast } from 'sonner';
 import { DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { useState } from 'react';
-import { Turnstile } from '@marsidev/react-turnstile'
+import { Turnstile } from '@marsidev/react-turnstile';
 
 const formDefaultValues = {
   name: '',
@@ -17,191 +17,230 @@ const formDefaultValues = {
   university: '',
   fieldOfStudy: '',
   additionalInfo: '',
-}
+};
 
 export function ContactForm() {
   const [dialogOpen, setDialogOpen] = useState(false);
-  const [formData, setFormData] = useState<InquiryFormType>(formDefaultValues)
+  const [formData, setFormData] = useState<InquiryFormType>(formDefaultValues);
   const form = useForm({
-    defaultValues: formDefaultValues,  
+    defaultValues: formDefaultValues,
     validators: {
       onChange: InquiryFormSchema,
       onSubmit: InquiryFormSchema,
     },
     onSubmit: async ({ value }) => {
-      setFormData(value)
-      setDialogOpen(true)
-    }
-  })
+      setFormData(value);
+      setDialogOpen(true);
+    },
+  });
 
   const handleTurnstileSuccess = async () => {
     try {
-      await handleInquiryForm({ data: formData })
-      toast.success("Inquiry submitted successfully! We'll get back to you soon.")
-      form.reset()
+      await handleInquiryForm({ data: formData });
+      toast.success(
+        "Inquiry submitted successfully! We'll get back to you soon.",
+      );
+      form.reset();
     } catch (error) {
-      console.error("Form submission error:", error)
-      toast.error("Failed to submit inquiry. Please try again later.")
+      console.error('Form submission error:', error);
+      toast.error('Failed to submit inquiry. Please try again later.');
     } finally {
-      setDialogOpen(false)
+      setDialogOpen(false);
     }
-  }
+  };
 
   return (
     <>
-      <form 
-        className="space-y-6" 
+      <form
+        className="space-y-6"
         onSubmit={(e) => {
-          e.preventDefault()
-          e.stopPropagation()
-          form.handleSubmit()
+          e.preventDefault();
+          e.stopPropagation();
+          form.handleSubmit();
         }}
       >
         <div className="grid md:grid-cols-2 gap-6">
-          <form.Field
-            name="name"
-          >
+          <form.Field name="name">
             {(field) => (
               <div className="form-group">
-                <label htmlFor="name" className="text-sm font-medium text-gray-600 mb-2 block">Full Name</label>
-                <Input 
-                  type="text" 
+                <label
+                  htmlFor="name"
+                  className="text-sm font-medium text-gray-600 mb-2 block"
+                >
+                  Full Name
+                </label>
+                <Input
+                  type="text"
                   id="name"
-                  name="name" 
+                  name="name"
                   value={field.state.value}
                   onChange={(e) => field.handleChange(e.target.value)}
-                  placeholder="Enter your full name" 
+                  placeholder="Enter your full name"
                   className={`bg-[#f3f5f9] border-transparent focus:border-[#89c540] h-12 ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
                   required
                 />
                 {field.state.meta.errors.length > 0 && (
-                  <p className="text-red-500 text-xs mt-1">{field.state.meta.errors[0]?.message || "Invalid name"}</p>
+                  <p className="text-red-500 text-xs mt-1">
+                    {field.state.meta.errors[0]?.message || 'Invalid name'}
+                  </p>
                 )}
               </div>
             )}
           </form.Field>
-          <form.Field
-            name="phone"
-          >
+          <form.Field name="phone">
             {(field) => (
               <div className="form-group">
-                <label htmlFor="phone" className="text-sm font-medium text-gray-600 mb-2 block">Phone Number</label>
-                <Input 
-                  type="tel" 
+                <label
+                  htmlFor="phone"
+                  className="text-sm font-medium text-gray-600 mb-2 block"
+                >
+                  Phone Number
+                </label>
+                <Input
+                  type="tel"
                   id="phone"
-                  name="phone" 
+                  name="phone"
                   value={field.state.value}
                   onChange={(e) => field.handleChange(e.target.value)}
-                  placeholder="Enter your phone number" 
+                  placeholder="Enter your phone number"
                   className={`bg-[#f3f5f9] border-transparent focus:border-[#89c540] h-12 ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
                   required
                 />
                 {field.state.meta.errors.length > 0 && (
-                  <p className="text-red-500 text-xs mt-1">{field.state.meta.errors[0]?.message || "Invalid phone number"}</p>
+                  <p className="text-red-500 text-xs mt-1">
+                    {field.state.meta.errors[0]?.message ||
+                      'Invalid phone number'}
+                  </p>
                 )}
               </div>
             )}
           </form.Field>
         </div>
-        
-        <form.Field
-          name="email"
-        >
+
+        <form.Field name="email">
           {(field) => (
             <div className="form-group">
-              <label htmlFor="email" className="text-sm font-medium text-gray-600 mb-2 block">Email Address</label>
-              <Input 
-                type="email" 
+              <label
+                htmlFor="email"
+                className="text-sm font-medium text-gray-600 mb-2 block"
+              >
+                Email Address
+              </label>
+              <Input
+                type="email"
                 id="email"
-                name="email" 
+                name="email"
                 value={field.state.value}
                 onChange={(e) => field.handleChange(e.target.value)}
-                placeholder="Enter your email address" 
+                placeholder="Enter your email address"
                 className={`bg-[#f3f5f9] border-transparent focus:border-[#89c540] h-12 ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
                 required
               />
               {field.state.meta.errors.length > 0 && (
-                <p className="text-red-500 text-xs mt-1">{field.state.meta.errors[0]?.message || "Invalid email"}</p>
+                <p className="text-red-500 text-xs mt-1">
+                  {field.state.meta.errors[0]?.message || 'Invalid email'}
+                </p>
               )}
             </div>
           )}
         </form.Field>
-        
-        <h3 className="text-xl font-bold text-[#001e57] mt-8 mb-4">Study Preferences</h3>
 
-        <form.Field
-          name="university"
-        >
+        <h3 className="text-xl font-bold text-[#001e57] mt-8 mb-4">
+          Study Preferences
+        </h3>
+
+        <form.Field name="university">
           {(field) => (
             <div className="form-group">
-              <label htmlFor="university" className="text-sm font-medium text-gray-600 mb-2 block">Preferred University</label>
-              <Input 
-                type="text" 
+              <label
+                htmlFor="university"
+                className="text-sm font-medium text-gray-600 mb-2 block"
+              >
+                Preferred University
+              </label>
+              <Input
+                type="text"
                 id="university"
-                name="university" 
+                name="university"
                 value={field.state.value}
                 onChange={(e) => field.handleChange(e.target.value)}
-                placeholder="Enter preferred university" 
+                placeholder="Enter preferred university"
                 className={`bg-[#f3f5f9] border-transparent focus:border-[#89c540] h-12 ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
               />
               {field.state.meta.errors.length > 0 && (
-                <p className="text-red-500 text-xs mt-1">{field.state.meta.errors[0]?.message || "Invalid input"}</p>
+                <p className="text-red-500 text-xs mt-1">
+                  {field.state.meta.errors[0]?.message || 'Invalid input'}
+                </p>
               )}
             </div>
           )}
         </form.Field>
-        
-        <form.Field
-          name="fieldOfStudy"
-        >
+
+        <form.Field name="fieldOfStudy">
           {(field) => (
             <div className="form-group">
-              <label htmlFor="study" className="text-sm font-medium text-gray-600 mb-2 block">Field of Study</label>
-              <Input 
-                type="text" 
+              <label
+                htmlFor="study"
+                className="text-sm font-medium text-gray-600 mb-2 block"
+              >
+                Field of Study
+              </label>
+              <Input
+                type="text"
                 id="study"
-                name="study" 
+                name="study"
                 value={field.state.value}
                 onChange={(e) => field.handleChange(e.target.value)}
-                placeholder="What do you want to study?" 
+                placeholder="What do you want to study?"
                 className={`bg-[#f3f5f9] border-transparent focus:border-[#89c540] h-12 ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
               />
               {field.state.meta.errors.length > 0 && (
-                <p className="text-red-500 text-xs mt-1">{field.state.meta.errors[0]?.message || "Invalid input"}</p>
+                <p className="text-red-500 text-xs mt-1">
+                  {field.state.meta.errors[0]?.message || 'Invalid input'}
+                </p>
               )}
             </div>
           )}
         </form.Field>
-        
-        <form.Field
-          name="additionalInfo"
-        >
+
+        <form.Field name="additionalInfo">
           {(field) => (
             <div className="form-group">
-              <label htmlFor="message" className="text-sm font-medium text-gray-600 mb-2 block">Additional Information</label>
-              <Textarea 
+              <label
+                htmlFor="message"
+                className="text-sm font-medium text-gray-600 mb-2 block"
+              >
+                Additional Information
+              </label>
+              <Textarea
                 id="message"
-                name="message" 
+                name="message"
                 value={field.state.value}
                 onChange={(e) => field.handleChange(e.target.value)}
-                placeholder="Any specific requirements or questions?" 
+                placeholder="Any specific requirements or questions?"
                 className={`bg-[#f3f5f9] border-transparent focus:border-[#89c540] min-h-[140px] ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
               />
               {field.state.meta.errors.length > 0 && (
-                <p className="text-red-500 text-xs mt-1">{field.state.meta.errors[0]?.message || "Invalid input"}</p>
+                <p className="text-red-500 text-xs mt-1">
+                  {field.state.meta.errors[0]?.message || 'Invalid input'}
+                </p>
               )}
             </div>
           )}
         </form.Field>
-        
+
         <div className="form-group pt-4">
           <form.Subscribe
-            selector={(formState) => [formState.canSubmit, formState.isSubmitting, Boolean(Object.keys(formState.errors).length > 0)]}
+            selector={(formState) => [
+              formState.canSubmit,
+              formState.isSubmitting,
+              Boolean(Object.keys(formState.errors).length > 0),
+            ]}
           >
             {([canSubmit, isSubmitting]) => (
               <>
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
                   className="w-full bg-[#001e57] hover:bg-[#001e57]/90 text-white h-12 font-medium hover:shadow-xl transition-all duration-300"
                   disabled={!canSubmit || isSubmitting}
                 >
@@ -222,15 +261,15 @@ export function ContactForm() {
           </DialogHeader>
           <div className="flex justify-center py-4">
             <Turnstile
-              siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY!} 
+              siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
               onSuccess={handleTurnstileSuccess}
               onError={() => {
-                toast.error("Verification failed. Please try again.");
-                setDialogOpen(false)
+                toast.error('Verification failed. Please try again.');
+                setDialogOpen(false);
               }}
               onExpire={() => {
-                toast.warning("Verification expired. Please verify again.");
-                setDialogOpen(false)
+                toast.warning('Verification expired. Please verify again.');
+                setDialogOpen(false);
               }}
             />
           </div>
@@ -240,4 +279,4 @@ export function ContactForm() {
   );
 }
 
-export default ContactForm; 
+export default ContactForm;

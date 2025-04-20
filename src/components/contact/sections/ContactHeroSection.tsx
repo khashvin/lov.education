@@ -1,4 +1,4 @@
-import * as m from "motion/react-m";
+import * as m from 'motion/react-m';
 
 export function ContactHeroSection() {
   return (
@@ -31,4 +31,4 @@ export function ContactHeroSection() {
   );
 }
 
-export default ContactHeroSection; 
+export default ContactHeroSection;

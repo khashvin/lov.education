@@ -13,13 +13,13 @@ export function ServiceCard({ icon, title, description }: ServiceCardProps) {
         </div>
       </div>
       <div>
-        <h3 className="text-xl font-bold text-[#001e57] group-hover:text-[#001e57] mb-2">{title}</h3>
-        <p className="text-gray-600">
-          {description}
-        </p>
+        <h3 className="text-xl font-bold text-[#001e57] group-hover:text-[#001e57] mb-2">
+          {title}
+        </h3>
+        <p className="text-gray-600">{description}</p>
       </div>
     </div>
   );
 }
 
-export default ServiceCard; 
+export default ServiceCard;

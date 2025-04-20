@@ -3,20 +3,20 @@ import {
   HeadContent,
   Scripts,
   createRootRouteWithContext,
-} from '@tanstack/react-router'
-import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+} from '@tanstack/react-router';
+import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
-import { TopBar, Navigation, Footer } from '../components/layout'
-import appCss from '../styles.css?url'
+import { TopBar, Navigation, Footer } from '../components/layout';
+import appCss from '../styles.css?url';
 
-import { useQuery, type QueryClient } from '@tanstack/react-query'
-import React from 'react'
-import { Toaster } from 'sonner'
-import { getVersionMetadataOptions } from '@/lib/queries'
+import { useQuery, type QueryClient } from '@tanstack/react-query';
+import React from 'react';
+import { Toaster } from 'sonner';
+import { getVersionMetadataOptions } from '@/lib/queries';
 
 interface MyRouterContext {
-  queryClient: QueryClient
+  queryClient: QueryClient;
 }
 
 // Root document component
@@ -48,10 +48,13 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <Scripts />
       </body>
     </html>
-  )
+  );
 }
 
 export const Route = createRootRouteWithContext<MyRouterContext>()({
+  loader: async ({ context }) => {
+    await context.queryClient.ensureQueryData(getVersionMetadataOptions);
+  },
   head: () => ({
     meta: [
       {
@@ -66,7 +69,8 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
       },
       {
         name: 'description',
-        content: 'Expert education consultancy services for international students',
+        content:
+          'Expert education consultancy services for international students',
       },
     ],
     links: [
@@ -80,12 +84,9 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
       },
     ],
   }),
-  loader: async ({ context }) => {
-    await context.queryClient.ensureQueryData(getVersionMetadataOptions)
-  },
   component: () => {
     const { data: version } = useQuery(getVersionMetadataOptions);
-    console.info("CF_VERSION_ID", version?.id)
+    console.info('CF_VERSION_ID', version?.id);
     return (
       <RootDocument>
         <div className="min-h-screen flex flex-col">
@@ -93,7 +94,7 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
             <TopBar />
             <Navigation />
           </header>
-          
+
           <main className="flex-1">
             <Outlet />
           </main>
@@ -104,5 +105,5 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
         <ReactQueryDevtools buttonPosition="bottom-right" />
       </RootDocument>
     );
-  }
-})
+  },
+});

@@ -11,7 +11,10 @@
     "drizzle:generate": "drizzle-kit generate",
     "drizzle:migrate:prod": "drizzle-kit migrate --config=drizzle-prod.config.ts",
     "drizzle:migrate": "drizzle-kit migrate",
-    "drizzle:studio": "drizzle-kit studio"
+    "drizzle:studio": "drizzle-kit studio",
+    "lint": "eslint --fix-dry-run ./src",
+    "format": "prettier -c ./src",
+    "check": "prettier --write ./src && eslint --fix ./src"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
@@ -59,14 +62,21 @@
     "vite-tsconfig-paths": "^5.1.4"
   },
   "devDependencies": {
+    "@eslint/js": "^9.25.0",
     "@libsql/client": "^0.15.4",
+    "@tanstack/eslint-plugin-query": "^5.73.3",
+    "@tanstack/eslint-plugin-router": "^1.115.0",
     "@types/node": "^22.14.1",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "@vitejs/plugin-react": "^4.4.1",
     "drizzle-kit": "^0.31.0",
+    "eslint": "^9.25.0",
+    "eslint-config-prettier": "^10.1.2",
     "nitro-cloudflare-dev": "^0.2.2",
+    "prettier": "^3.5.3",
     "typescript": "^5.8.3",
+    "typescript-eslint": "^8.30.1",
     "vite": "^6.3.2",
     "wrangler": "^4.12.0"
   },

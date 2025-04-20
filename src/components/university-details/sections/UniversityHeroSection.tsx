@@ -1,12 +1,16 @@
-import { MapPinIcon, CalendarIcon } from 'lucide-react'
+import { MapPinIcon, CalendarIcon } from 'lucide-react';
 
 interface UniversityHeroSectionProps {
-  name: string
-  location: string
-  intake: string
+  name: string;
+  location: string;
+  intake: string;
 }
 
-export function UniversityHeroSection({ name, location, intake }: UniversityHeroSectionProps) {
+export function UniversityHeroSection({
+  name,
+  location,
+  intake,
+}: UniversityHeroSectionProps) {
   return (
     <div className="relative bg-[#001e57] h-[300px]">
       <div className="absolute inset-0 bg-grid-white/[0.1] bg-[size:16px_16px]" />
@@ -28,5 +32,5 @@ export function UniversityHeroSection({ name, location, intake }: UniversityHero
         </div>
       </div>
     </div>
-  )
-} 
+  );
+}

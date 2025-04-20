@@ -1,4 +1,4 @@
-import * as m from "motion/react-m";
+import * as m from 'motion/react-m';
 
 interface ValueCardProps {
   title: string;
@@ -22,4 +22,4 @@ export function ValueCard({ title, description, icon, index }: ValueCardProps) {
       <p className="text-gray-600">{description}</p>
     </m.div>
   );
-} 
+}

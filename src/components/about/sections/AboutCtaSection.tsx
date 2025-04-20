@@ -1,6 +1,5 @@
-import { CustomLink } from "@/components/CustomLink";
-import * as m from "motion/react-m";
-
+import { CustomLink } from '@/components/CustomLink';
+import * as m from 'motion/react-m';
 
 export function AboutCtaSection() {
   return (
@@ -12,15 +11,25 @@ export function AboutCtaSection() {
           transition={{ duration: 0.8 }}
           className="max-w-3xl mx-auto text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Begin Your Educational Journey</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Begin Your Educational Journey
+          </h2>
           <p className="text-white/80 text-lg mb-8">
-            Contact us today to discuss how we can help you achieve your academic and career goals.
+            Contact us today to discuss how we can help you achieve your
+            academic and career goals.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <CustomLink to="/contact" className="bg-white hover:bg-[#89c540] text-[#001e57] hover:text-white px-8 py-3 rounded-md font-semibold transition-all duration-300">
+            <CustomLink
+              to="/contact"
+              className="bg-white hover:bg-[#89c540] text-[#001e57] hover:text-white px-8 py-3 rounded-md font-semibold transition-all duration-300"
+            >
               Contact Us
             </CustomLink>
-            <CustomLink to="/" hash="services" className="bg-transparent border border-white text-white hover:bg-white/10 px-8 py-3 rounded-md font-semibold transition-all duration-300">
+            <CustomLink
+              to="/"
+              hash="services"
+              className="bg-transparent border border-white text-white hover:bg-white/10 px-8 py-3 rounded-md font-semibold transition-all duration-300"
+            >
               Explore Services
             </CustomLink>
           </div>
@@ -28,4 +37,4 @@ export function AboutCtaSection() {
       </div>
     </section>
   );
-} 
+}

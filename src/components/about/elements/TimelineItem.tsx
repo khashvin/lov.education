@@ -1,4 +1,4 @@
-import * as m from "motion/react-m";
+import * as m from 'motion/react-m';
 
 interface TimelineItemProps {
   year: string;
@@ -7,7 +7,12 @@ interface TimelineItemProps {
   index: number;
 }
 
-export function TimelineItem({ year, title, description, index }: TimelineItemProps) {
+export function TimelineItem({
+  year,
+  title,
+  description,
+  index,
+}: TimelineItemProps) {
   return (
     <m.div
       initial={{ opacity: 0, y: 20 }}
@@ -15,8 +20,12 @@ export function TimelineItem({ year, title, description, index }: TimelineItemPr
       transition={{ duration: 0.5, delay: 0.1 * index }}
       className={`flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} mb-12`}
     >
-      <div className={`w-1/2 ${index % 2 === 0 ? 'pr-12 text-right' : 'pl-12 text-left'}`}>
-        <div className="inline-block bg-[#001e57] text-white px-3 py-1 rounded-md text-sm font-medium mb-2">{year}</div>
+      <div
+        className={`w-1/2 ${index % 2 === 0 ? 'pr-12 text-right' : 'pl-12 text-left'}`}
+      >
+        <div className="inline-block bg-[#001e57] text-white px-3 py-1 rounded-md text-sm font-medium mb-2">
+          {year}
+        </div>
         <h3 className="text-xl font-bold text-[#001e57] mb-2">{title}</h3>
         <p className="text-gray-600">{description}</p>
       </div>
@@ -27,4 +36,4 @@ export function TimelineItem({ year, title, description, index }: TimelineItemPr
       <div className="w-1/2"></div>
     </m.div>
   );
-} 
+}

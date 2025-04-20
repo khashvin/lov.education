@@ -1,5 +1,5 @@
-import { Card } from '@/components/ui/card'
-import { Skeleton } from '@/components/ui/skeleton'
+import { Card } from '@/components/ui/card';
+import { Skeleton } from '@/components/ui/skeleton';
 
 export function UniversitySkeleton() {
   return (
@@ -21,5 +21,5 @@ export function UniversitySkeleton() {
         <Skeleton className="h-9 sm:h-10 w-full" />
       </div>
     </Card>
-  )
-} 
+  );
+}

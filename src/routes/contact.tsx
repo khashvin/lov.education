@@ -1,10 +1,10 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { LazyMotion, domAnimation } from "motion/react"
-import { 
-  ContactHeroSection, 
-  ContactInfoSection, 
-  MapSection 
-} from '@/components/contact'
+import { createFileRoute } from '@tanstack/react-router';
+import { LazyMotion, domAnimation } from 'motion/react';
+import {
+  ContactHeroSection,
+  ContactInfoSection,
+  MapSection,
+} from '@/components/contact';
 
 export const Route = createFileRoute('/contact')({
   component: ContactPage,
@@ -15,7 +15,7 @@ export const Route = createFileRoute('/contact')({
       },
     ],
   }),
-})
+});
 
 function ContactPage() {
   return (
@@ -26,5 +26,5 @@ function ContactPage() {
         <MapSection />
       </div>
     </LazyMotion>
-  )
-} 
+  );
+}

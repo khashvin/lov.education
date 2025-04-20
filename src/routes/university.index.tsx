@@ -1,12 +1,12 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { LazyMotion, domAnimation } from 'motion/react'
-import { getUniversitiesOptions } from '@/lib/queries'
-import { useQuery } from '@tanstack/react-query'
-import { 
-  UniversityHeroSection, 
-  UniversityListSection, 
-  UniversityCtaSection 
-} from '@/components/university'
+import { createFileRoute } from '@tanstack/react-router';
+import { LazyMotion, domAnimation } from 'motion/react';
+import { getUniversitiesOptions } from '@/lib/queries';
+import { useQuery } from '@tanstack/react-query';
+import {
+  UniversityHeroSection,
+  UniversityListSection,
+  UniversityCtaSection,
+} from '@/components/university';
 
 export const Route = createFileRoute('/university/')({
   component: UniversityPage,
@@ -20,16 +20,20 @@ export const Route = createFileRoute('/university/')({
       },
     ],
   }),
-})
+});
 
 function UniversityPage() {
-  const { data: universities = [], isLoading: isLoadingUniversities, isError: isUniversitiesError } = useQuery(getUniversitiesOptions)
+  const {
+    data: universities = [],
+    isLoading: isLoadingUniversities,
+    isError: isUniversitiesError,
+  } = useQuery(getUniversitiesOptions);
 
   return (
     <LazyMotion features={domAnimation}>
       <div className="bg-white min-h-screen">
         <UniversityHeroSection />
-        <UniversityListSection 
+        <UniversityListSection
           universities={universities}
           isLoading={isLoadingUniversities}
           isError={isUniversitiesError}
@@ -37,5 +41,5 @@ function UniversityPage() {
         <UniversityCtaSection />
       </div>
     </LazyMotion>
-  )
-} 
+  );
+}

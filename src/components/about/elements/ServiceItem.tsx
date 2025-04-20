@@ -1,4 +1,4 @@
-import * as m from "motion/react-m";
+import * as m from 'motion/react-m';
 
 interface ServiceItemProps {
   title: string;
@@ -7,7 +7,12 @@ interface ServiceItemProps {
   index: number;
 }
 
-export function ServiceItem({ title, description, number, index }: ServiceItemProps) {
+export function ServiceItem({
+  title,
+  description,
+  number,
+  index,
+}: ServiceItemProps) {
   return (
     <m.div
       initial={{ opacity: 0, y: 20 }}
@@ -22,4 +27,4 @@ export function ServiceItem({ title, description, number, index }: ServiceItemPr
       </div>
     </m.div>
   );
-} 
+}

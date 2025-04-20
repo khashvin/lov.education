@@ -10,4 +10,4 @@ export { StorySection } from './sections/StorySection';
 export { MissionValuesSection } from './sections/MissionValuesSection';
 export { ServicesSection } from './sections/ServicesSection';
 export { TimelineSection } from './sections/TimelineSection';
-export { AboutCtaSection } from './sections/AboutCtaSection'; 
+export { AboutCtaSection } from './sections/AboutCtaSection';
