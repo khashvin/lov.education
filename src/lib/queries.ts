@@ -1,4 +1,3 @@
-import { fetchVersionMetadata } from '@/functions/cf-metadata';
 import {
   fetchCourses,
   fetchFaculties,
@@ -37,10 +36,3 @@ export const getCoursesOptions = (facultyId: number) =>
     staleTime: Infinity,
     retry: false,
   });
-
-export const getVersionMetadataOptions = queryOptions({
-  queryKey: ['version-metadata'],
-  queryFn: fetchVersionMetadata,
-  staleTime: Infinity,
-  retry: false,
-});

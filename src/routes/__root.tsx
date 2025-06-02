@@ -10,16 +10,10 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { TopBar, Navigation, Footer } from '../components/layout';
 import appCss from '../styles.css?url';
 
-import { useQuery, type QueryClient } from '@tanstack/react-query';
 import React from 'react';
 import { Toaster } from 'sonner';
-import { getVersionMetadataOptions } from '@/lib/queries';
+import type { MyRouterContext } from '../router';
 
-interface MyRouterContext {
-  queryClient: QueryClient;
-}
-
-// Root document component
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -52,9 +46,6 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 }
 
 export const Route = createRootRouteWithContext<MyRouterContext>()({
-  loader: async ({ context }) => {
-    await context.queryClient.ensureQueryData(getVersionMetadataOptions);
-  },
   head: () => ({
     meta: [
       {
@@ -85,8 +76,6 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
     ],
   }),
   component: () => {
-    const { data: version } = useQuery(getVersionMetadataOptions);
-    console.info('CF_VERSION_ID', version?.id);
     return (
       <RootDocument>
         <div className="min-h-screen flex flex-col">

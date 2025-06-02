@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router';
+;
 import { LazyMotion, domAnimation } from 'motion/react';
 import { getUniversitiesOptions } from '@/lib/queries';
 import { useQuery } from '@tanstack/react-query';
@@ -8,7 +8,7 @@ import {
   UniversityCtaSection,
 } from '@/components/university';
 
-export const Route = createFileRoute('/university/')({
+export const Route = createFileRoute({
   component: UniversityPage,
   loader: async ({ context }) => {
     await context.queryClient.ensureQueryData(getUniversitiesOptions);

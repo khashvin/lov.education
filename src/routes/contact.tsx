@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router';
+;
 import { LazyMotion, domAnimation } from 'motion/react';
 import {
   ContactHeroSection,
@@ -6,7 +6,7 @@ import {
   MapSection,
 } from '@/components/contact';
 
-export const Route = createFileRoute('/contact')({
+export const Route = createFileRoute({
   component: ContactPage,
   head: () => ({
     meta: [

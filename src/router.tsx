@@ -8,18 +8,21 @@ import { routeTree } from './routeTree.gen';
 import './styles.css';
 import { DefaultNotFoundPage } from './components/DefaultNotFound';
 import { DefaultErrorPage } from './components/DefaultErrorPage';
-const queryClient = new QueryClient();
+
+export interface MyRouterContext {
+  queryClient: QueryClient;
+}
 
 // Create a new router instance
 export const createRouter = () => {
+  const queryClient = new QueryClient();
+
   const router = routerWithQueryClient(
     createTanstackRouter({
       routeTree,
       context: { queryClient },
       scrollRestoration: true,
       defaultPreload: 'intent',
-      defaultPreloadDelay: 500,
-      defaultPreloadStaleTime: 0,
       defaultErrorComponent: DefaultErrorPage,
       defaultNotFoundComponent: DefaultNotFoundPage,
     }),

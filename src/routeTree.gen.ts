@@ -8,42 +8,44 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
+import type { CreateFileRoute, FileRoutesByPath } from '@tanstack/react-router'
+
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as ContactImport } from './routes/contact'
-import { Route as AboutImport } from './routes/about'
-import { Route as IndexImport } from './routes/index'
-import { Route as UniversityIndexImport } from './routes/university.index'
-import { Route as UniversityUniImport } from './routes/university.$uni'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as IndexRouteImport } from './routes/index'
+import { Route as UniversityIndexRouteImport } from './routes/university.index'
+import { Route as UniversityUniRouteImport } from './routes/university.$uni'
 
 // Create/Update Routes
 
-const ContactRoute = ContactImport.update({
+const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
   getParentRoute: () => rootRoute,
 } as any)
 
-const AboutRoute = AboutImport.update({
+const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
   getParentRoute: () => rootRoute,
 } as any)
 
-const IndexRoute = IndexImport.update({
+const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRoute,
 } as any)
 
-const UniversityIndexRoute = UniversityIndexImport.update({
+const UniversityIndexRoute = UniversityIndexRouteImport.update({
   id: '/university/',
   path: '/university/',
   getParentRoute: () => rootRoute,
 } as any)
 
-const UniversityUniRoute = UniversityUniImport.update({
+const UniversityUniRoute = UniversityUniRouteImport.update({
   id: '/university/$uni',
   path: '/university/$uni',
   getParentRoute: () => rootRoute,
@@ -57,38 +59,86 @@ declare module '@tanstack/react-router' {
       id: '/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof IndexImport
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRoute
     }
     '/about': {
       id: '/about'
       path: '/about'
       fullPath: '/about'
-      preLoaderRoute: typeof AboutImport
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRoute
     }
     '/contact': {
       id: '/contact'
       path: '/contact'
       fullPath: '/contact'
-      preLoaderRoute: typeof ContactImport
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRoute
     }
     '/university/$uni': {
       id: '/university/$uni'
       path: '/university/$uni'
       fullPath: '/university/$uni'
-      preLoaderRoute: typeof UniversityUniImport
+      preLoaderRoute: typeof UniversityUniRouteImport
       parentRoute: typeof rootRoute
     }
     '/university/': {
       id: '/university/'
       path: '/university'
       fullPath: '/university'
-      preLoaderRoute: typeof UniversityIndexImport
+      preLoaderRoute: typeof UniversityIndexRouteImport
       parentRoute: typeof rootRoute
     }
   }
+}
+
+// Add type-safety to the createFileRoute function across the route tree
+
+declare module './routes/index' {
+  const createFileRoute: CreateFileRoute<
+    '/',
+    FileRoutesByPath['/']['parentRoute'],
+    FileRoutesByPath['/']['id'],
+    FileRoutesByPath['/']['path'],
+    FileRoutesByPath['/']['fullPath']
+  >
+}
+declare module './routes/about' {
+  const createFileRoute: CreateFileRoute<
+    '/about',
+    FileRoutesByPath['/about']['parentRoute'],
+    FileRoutesByPath['/about']['id'],
+    FileRoutesByPath['/about']['path'],
+    FileRoutesByPath['/about']['fullPath']
+  >
+}
+declare module './routes/contact' {
+  const createFileRoute: CreateFileRoute<
+    '/contact',
+    FileRoutesByPath['/contact']['parentRoute'],
+    FileRoutesByPath['/contact']['id'],
+    FileRoutesByPath['/contact']['path'],
+    FileRoutesByPath['/contact']['fullPath']
+  >
+}
+declare module './routes/university.$uni' {
+  const createFileRoute: CreateFileRoute<
+    '/university/$uni',
+    FileRoutesByPath['/university/$uni']['parentRoute'],
+    FileRoutesByPath['/university/$uni']['id'],
+    FileRoutesByPath['/university/$uni']['path'],
+    FileRoutesByPath['/university/$uni']['fullPath']
+  >
+}
+declare module './routes/university.index' {
+  const createFileRoute: CreateFileRoute<
+    '/university/',
+    FileRoutesByPath['/university/']['parentRoute'],
+    FileRoutesByPath['/university/']['id'],
+    FileRoutesByPath['/university/']['path'],
+    FileRoutesByPath['/university/']['fullPath']
+  >
 }
 
 // Create and export the route tree
