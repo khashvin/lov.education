@@ -50,9 +50,9 @@ export function ContactForm() {
 
   return (
     <>
-      <Card className="border-0 shadow-2xl overflow-hidden">
-        <div className="p-8 md:p-10 bg-white">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-[#001e57] relative pb-4 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-16 after:bg-[#89c540]">
+      <Card className="overflow-hidden border-0 shadow-2xl">
+        <div className="bg-white p-8 md:p-10">
+          <h2 className="relative mb-8 pb-4 text-2xl font-bold text-[#001e57] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-16 after:bg-[#89c540] after:content-[''] md:text-3xl">
             Send Us a Message
           </h2>
 
@@ -69,7 +69,7 @@ export function ContactForm() {
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="mb-2 block text-sm font-medium text-gray-700"
                   >
                     Full Name <span className="text-red-500">*</span>
                   </label>
@@ -80,10 +80,10 @@ export function ContactForm() {
                     value={field.state.value}
                     onChange={(e) => field.handleChange(e.target.value)}
                     required
-                    className={`bg-[#f3f5f9] border-transparent focus:border-[#89c540] h-12 ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
+                    className={`h-12 border-transparent bg-[#f3f5f9] focus:border-[#89c540] ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
                   />
                   {field.state.meta.errors.length > 0 && (
-                    <p className="text-red-500 text-xs mt-1">
+                    <p className="mt-1 text-xs text-red-500">
                       {field.state.meta.errors[0]?.message || 'Invalid input'}
                     </p>
                   )}
@@ -96,7 +96,7 @@ export function ContactForm() {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="mb-2 block text-sm font-medium text-gray-700"
                   >
                     Email Address <span className="text-red-500">*</span>
                   </label>
@@ -107,10 +107,10 @@ export function ContactForm() {
                     value={field.state.value}
                     onChange={(e) => field.handleChange(e.target.value)}
                     required
-                    className={`bg-[#f3f5f9] border-transparent focus:border-[#89c540] h-12 ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
+                    className={`h-12 border-transparent bg-[#f3f5f9] focus:border-[#89c540] ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
                   />
                   {field.state.meta.errors.length > 0 && (
-                    <p className="text-red-500 text-xs mt-1">
+                    <p className="mt-1 text-xs text-red-500">
                       {field.state.meta.errors[0]?.message || 'Invalid email'}
                     </p>
                   )}
@@ -123,7 +123,7 @@ export function ContactForm() {
                 <div>
                   <label
                     htmlFor="phone"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="mb-2 block text-sm font-medium text-gray-700"
                   >
                     Phone Number
                   </label>
@@ -133,10 +133,10 @@ export function ContactForm() {
                     name="phone"
                     value={field.state.value}
                     onChange={(e) => field.handleChange(e.target.value)}
-                    className={`bg-[#f3f5f9] border-transparent focus:border-[#89c540] h-12 ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
+                    className={`h-12 border-transparent bg-[#f3f5f9] focus:border-[#89c540] ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
                   />
                   {field.state.meta.errors.length > 0 && (
-                    <p className="text-red-500 text-xs mt-1">
+                    <p className="mt-1 text-xs text-red-500">
                       {field.state.meta.errors[0]?.message ||
                         'Invalid phone number'}
                     </p>
@@ -150,7 +150,7 @@ export function ContactForm() {
                 <div>
                   <label
                     htmlFor="subject"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="mb-2 block text-sm font-medium text-gray-700"
                   >
                     Subject <span className="text-red-500">*</span>
                   </label>
@@ -161,10 +161,10 @@ export function ContactForm() {
                     value={field.state.value}
                     onChange={(e) => field.handleChange(e.target.value)}
                     required
-                    className={`bg-[#f3f5f9] border-transparent focus:border-[#89c540] h-12 ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
+                    className={`h-12 border-transparent bg-[#f3f5f9] focus:border-[#89c540] ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
                   />
                   {field.state.meta.errors.length > 0 && (
-                    <p className="text-red-500 text-xs mt-1">
+                    <p className="mt-1 text-xs text-red-500">
                       {field.state.meta.errors[0]?.message || 'Invalid subject'}
                     </p>
                   )}
@@ -177,7 +177,7 @@ export function ContactForm() {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="mb-2 block text-sm font-medium text-gray-700"
                   >
                     Message <span className="text-red-500">*</span>
                   </label>
@@ -188,10 +188,10 @@ export function ContactForm() {
                     onChange={(e) => field.handleChange(e.target.value)}
                     rows={5}
                     required
-                    className={`bg-[#f3f5f9] border-transparent focus:border-[#89c540] min-h-[140px] ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
+                    className={`min-h-[140px] border-transparent bg-[#f3f5f9] focus:border-[#89c540] ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
                   />
                   {field.state.meta.errors.length > 0 && (
-                    <p className="text-red-500 text-xs mt-1">
+                    <p className="mt-1 text-xs text-red-500">
                       {field.state.meta.errors[0]?.message || 'Invalid message'}
                     </p>
                   )}
@@ -211,7 +211,7 @@ export function ContactForm() {
                   <Button
                     type="submit"
                     disabled={!canSubmit || isSubmitting}
-                    className="w-full bg-[#001e57] hover:bg-[#001e57]/90 text-white h-12 font-medium"
+                    className="h-12 w-full bg-[#001e57] font-medium text-white hover:bg-[#001e57]/90"
                   >
                     {isSubmitting ? 'Sending...' : 'Send Message'}
                   </Button>

@@ -59,13 +59,13 @@ export function ContactForm() {
           form.handleSubmit();
         }}
       >
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid gap-6 md:grid-cols-2">
           <form.Field name="name">
             {(field) => (
               <div className="form-group">
                 <label
                   htmlFor="name"
-                  className="text-sm font-medium text-gray-600 mb-2 block"
+                  className="mb-2 block text-sm font-medium text-gray-600"
                 >
                   Full Name
                 </label>
@@ -76,11 +76,11 @@ export function ContactForm() {
                   value={field.state.value}
                   onChange={(e) => field.handleChange(e.target.value)}
                   placeholder="Enter your full name"
-                  className={`bg-[#f3f5f9] border-transparent focus:border-[#89c540] h-12 ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
+                  className={`h-12 border-transparent bg-[#f3f5f9] focus:border-[#89c540] ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
                   required
                 />
                 {field.state.meta.errors.length > 0 && (
-                  <p className="text-red-500 text-xs mt-1">
+                  <p className="mt-1 text-xs text-red-500">
                     {field.state.meta.errors[0]?.message || 'Invalid name'}
                   </p>
                 )}
@@ -92,7 +92,7 @@ export function ContactForm() {
               <div className="form-group">
                 <label
                   htmlFor="phone"
-                  className="text-sm font-medium text-gray-600 mb-2 block"
+                  className="mb-2 block text-sm font-medium text-gray-600"
                 >
                   Phone Number
                 </label>
@@ -103,11 +103,11 @@ export function ContactForm() {
                   value={field.state.value}
                   onChange={(e) => field.handleChange(e.target.value)}
                   placeholder="Enter your phone number"
-                  className={`bg-[#f3f5f9] border-transparent focus:border-[#89c540] h-12 ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
+                  className={`h-12 border-transparent bg-[#f3f5f9] focus:border-[#89c540] ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
                   required
                 />
                 {field.state.meta.errors.length > 0 && (
-                  <p className="text-red-500 text-xs mt-1">
+                  <p className="mt-1 text-xs text-red-500">
                     {field.state.meta.errors[0]?.message ||
                       'Invalid phone number'}
                   </p>
@@ -122,7 +122,7 @@ export function ContactForm() {
             <div className="form-group">
               <label
                 htmlFor="email"
-                className="text-sm font-medium text-gray-600 mb-2 block"
+                className="mb-2 block text-sm font-medium text-gray-600"
               >
                 Email Address
               </label>
@@ -133,11 +133,11 @@ export function ContactForm() {
                 value={field.state.value}
                 onChange={(e) => field.handleChange(e.target.value)}
                 placeholder="Enter your email address"
-                className={`bg-[#f3f5f9] border-transparent focus:border-[#89c540] h-12 ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
+                className={`h-12 border-transparent bg-[#f3f5f9] focus:border-[#89c540] ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
                 required
               />
               {field.state.meta.errors.length > 0 && (
-                <p className="text-red-500 text-xs mt-1">
+                <p className="mt-1 text-xs text-red-500">
                   {field.state.meta.errors[0]?.message || 'Invalid email'}
                 </p>
               )}
@@ -145,7 +145,7 @@ export function ContactForm() {
           )}
         </form.Field>
 
-        <h3 className="text-xl font-bold text-[#001e57] mt-8 mb-4">
+        <h3 className="mt-8 mb-4 text-xl font-bold text-[#001e57]">
           Study Preferences
         </h3>
 
@@ -154,7 +154,7 @@ export function ContactForm() {
             <div className="form-group">
               <label
                 htmlFor="university"
-                className="text-sm font-medium text-gray-600 mb-2 block"
+                className="mb-2 block text-sm font-medium text-gray-600"
               >
                 Preferred University
               </label>
@@ -165,10 +165,10 @@ export function ContactForm() {
                 value={field.state.value}
                 onChange={(e) => field.handleChange(e.target.value)}
                 placeholder="Enter preferred university"
-                className={`bg-[#f3f5f9] border-transparent focus:border-[#89c540] h-12 ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
+                className={`h-12 border-transparent bg-[#f3f5f9] focus:border-[#89c540] ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
               />
               {field.state.meta.errors.length > 0 && (
-                <p className="text-red-500 text-xs mt-1">
+                <p className="mt-1 text-xs text-red-500">
                   {field.state.meta.errors[0]?.message || 'Invalid input'}
                 </p>
               )}
@@ -181,7 +181,7 @@ export function ContactForm() {
             <div className="form-group">
               <label
                 htmlFor="study"
-                className="text-sm font-medium text-gray-600 mb-2 block"
+                className="mb-2 block text-sm font-medium text-gray-600"
               >
                 Field of Study
               </label>
@@ -192,10 +192,10 @@ export function ContactForm() {
                 value={field.state.value}
                 onChange={(e) => field.handleChange(e.target.value)}
                 placeholder="What do you want to study?"
-                className={`bg-[#f3f5f9] border-transparent focus:border-[#89c540] h-12 ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
+                className={`h-12 border-transparent bg-[#f3f5f9] focus:border-[#89c540] ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
               />
               {field.state.meta.errors.length > 0 && (
-                <p className="text-red-500 text-xs mt-1">
+                <p className="mt-1 text-xs text-red-500">
                   {field.state.meta.errors[0]?.message || 'Invalid input'}
                 </p>
               )}
@@ -208,7 +208,7 @@ export function ContactForm() {
             <div className="form-group">
               <label
                 htmlFor="message"
-                className="text-sm font-medium text-gray-600 mb-2 block"
+                className="mb-2 block text-sm font-medium text-gray-600"
               >
                 Additional Information
               </label>
@@ -218,10 +218,10 @@ export function ContactForm() {
                 value={field.state.value}
                 onChange={(e) => field.handleChange(e.target.value)}
                 placeholder="Any specific requirements or questions?"
-                className={`bg-[#f3f5f9] border-transparent focus:border-[#89c540] min-h-[140px] ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
+                className={`min-h-[140px] border-transparent bg-[#f3f5f9] focus:border-[#89c540] ${field.state.meta.errors.length ? 'border-red-500' : ''}`}
               />
               {field.state.meta.errors.length > 0 && (
-                <p className="text-red-500 text-xs mt-1">
+                <p className="mt-1 text-xs text-red-500">
                   {field.state.meta.errors[0]?.message || 'Invalid input'}
                 </p>
               )}
@@ -241,7 +241,7 @@ export function ContactForm() {
               <>
                 <Button
                   type="submit"
-                  className="w-full bg-[#001e57] hover:bg-[#001e57]/90 text-white h-12 font-medium hover:shadow-xl transition-all duration-300"
+                  className="h-12 w-full bg-[#001e57] font-medium text-white transition-all duration-300 hover:bg-[#001e57]/90 hover:shadow-xl"
                   disabled={!canSubmit || isSubmitting}
                 >
                   <span className="flex items-center justify-center gap-2">

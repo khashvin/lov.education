@@ -2,7 +2,7 @@ import * as m from 'motion/react-m';
 
 export function UniversityHeroSection() {
   return (
-    <section className="bg-gradient-to-br from-[#001e57] to-[#001a4a] text-white py-16 lg:py-24 relative overflow-hidden">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#001e57] to-[#001a4a] py-16 text-white lg:py-24">
       {/* Animated background dots/grid */}
       <div className="absolute inset-0 opacity-10">
         <div
@@ -15,19 +15,19 @@ export function UniversityHeroSection() {
         ></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
+      <div className="relative z-10 container mx-auto px-4">
+        <div className="mx-auto max-w-3xl text-center">
           <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <h4 className="uppercase text-sm sm:text-base tracking-widest font-bold text-[#89c540] mb-2">
+            <h4 className="mb-2 text-sm font-bold tracking-widest text-[#89c540] uppercase sm:text-base">
               Malaysian Education
             </h4>
 
             <m.h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6"
+              className="mb-4 text-4xl leading-tight font-bold sm:mb-6 sm:text-5xl lg:text-6xl"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.2 }}
@@ -36,7 +36,7 @@ export function UniversityHeroSection() {
             </m.h1>
 
             <m.p
-              className="text-base sm:text-lg text-white/90 mb-6 max-w-2xl mx-auto"
+              className="mx-auto mb-6 max-w-2xl text-base text-white/90 sm:text-lg"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.3 }}

@@ -32,11 +32,11 @@ export function FacultyAccordion({ universityId }: FacultyAccordionProps) {
     return (
       <Card className="border-red-100">
         <CardContent className="p-6 text-center">
-          <AlertCircle className="h-12 w-12 text-red-500 mx-auto mb-4" />
-          <h3 className="text-lg font-semibold text-red-700 mb-2">
+          <AlertCircle className="mx-auto mb-4 h-12 w-12 text-red-500" />
+          <h3 className="mb-2 text-lg font-semibold text-red-700">
             Error Loading Faculties
           </h3>
-          <p className="text-gray-600 mb-4">
+          <p className="mb-4 text-gray-600">
             There was a problem loading the faculty information.
           </p>
           <Button
@@ -55,8 +55,8 @@ export function FacultyAccordion({ universityId }: FacultyAccordionProps) {
     return (
       <Card className="border-gray-200">
         <CardContent className="p-6 text-center">
-          <XCircle className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">
+          <XCircle className="mx-auto mb-4 h-12 w-12 text-gray-400" />
+          <h3 className="mb-2 text-lg font-semibold text-gray-900">
             No Faculties Found
           </h3>
           <p className="text-gray-600">
@@ -73,7 +73,7 @@ export function FacultyAccordion({ universityId }: FacultyAccordionProps) {
         <AccordionItem key={faculty.id} value={`faculty-${faculty.id}`}>
           <AccordionTrigger className="text-lg hover:no-underline">
             <div className="flex items-center">
-              <BookOpenIcon className="h-5 w-5 mr-2" />
+              <BookOpenIcon className="mr-2 h-5 w-5" />
               {faculty.name}
             </div>
           </AccordionTrigger>

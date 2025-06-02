@@ -7,10 +7,10 @@ function NavLink({ to, label }: { to: string; label: string }) {
     <Link
       to={to}
       activeProps={{ className: 'text-[#89c540] font-medium' }}
-      className="relative px-4 py-2 text-gray-700 font-medium hover:text-[#89c540] transition-colors duration-300 group rounded-lg hover:bg-gray-50"
+      className="group relative rounded-lg px-4 py-2 font-medium text-gray-700 transition-colors duration-300 hover:bg-gray-50 hover:text-[#89c540]"
     >
       {label}
-      <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-[#89c540] group-hover:w-3/4 transition-all duration-300"></span>
+      <span className="absolute bottom-0 left-1/2 h-0.5 w-0 -translate-x-1/2 transform bg-[#89c540] transition-all duration-300 group-hover:w-3/4"></span>
     </Link>
   );
 }
@@ -29,7 +29,7 @@ function MobileNavLink({
     <Link
       to={to}
       activeProps={{ className: 'text-[#89c540] bg-gray-50' }}
-      className="px-4 py-3 text-gray-700 font-medium hover:text-[#89c540] hover:bg-gray-50 transition-colors duration-300 rounded-lg block"
+      className="block rounded-lg px-4 py-3 font-medium text-gray-700 transition-colors duration-300 hover:bg-gray-50 hover:text-[#89c540]"
       onClick={onClick}
     >
       {label}
@@ -57,7 +57,7 @@ export function Navigation() {
 
   return (
     <div
-      className={`bg-white shadow-md transition-all duration-300 ${isSticky ? 'fixed top-0 left-0 right-0 animate-slideDown shadow-lg' : ''}`}
+      className={`bg-white shadow-md transition-all duration-300 ${isSticky ? 'animate-slideDown fixed top-0 right-0 left-0 shadow-lg' : ''}`}
     >
       <div className="container mx-auto px-4">
         <div
@@ -75,7 +75,7 @@ export function Navigation() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1">
+          <nav className="hidden items-center space-x-1 md:flex">
             <NavLink to="/" label="Home" />
             <NavLink to="/about" label="About us" />
             <NavLink to="/university" label="Universities" />
@@ -86,7 +86,7 @@ export function Navigation() {
           <div className="md:hidden">
             <button
               type="button"
-              className={`text-gray-700 hover:text-[#89c540] focus:outline-none p-2 rounded-full hover:bg-gray-100 transition-all duration-300 ${isSticky ? 'text-sm' : 'text-xl'}`}
+              className={`rounded-full p-2 text-gray-700 transition-all duration-300 hover:bg-gray-100 hover:text-[#89c540] focus:outline-none ${isSticky ? 'text-sm' : 'text-xl'}`}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? (
@@ -101,7 +101,7 @@ export function Navigation() {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200 animate-slideDown">
+        <div className="animate-slideDown border-t border-gray-200 bg-white md:hidden">
           <div className="container mx-auto px-4 py-4">
             <nav className="flex flex-col space-y-2">
               <MobileNavLink

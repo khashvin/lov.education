@@ -2,8 +2,12 @@
 
 /** @type {import('prettier').Config} */
 const config = {
-  singleQuote: true,
   semi: true,
+  singleQuote: true,
+  trailingComma: 'all',
+  endOfLine: 'lf',
+  tabWidth: 2,
+  plugins: ['prettier-plugin-tailwindcss'],
 };
 
 export default config;

@@ -1,4 +1,3 @@
-;
 import {
   HeroSection,
   ServicesSection,

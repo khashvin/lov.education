@@ -5,20 +5,20 @@ export function UniversitySkeleton() {
   return (
     <Card className="w-full max-w-full">
       <div>
-        <Skeleton className="w-full h-40 sm:h-48 rounded-t-xl" />
+        <Skeleton className="h-40 w-full rounded-t-xl sm:h-48" />
       </div>
       <div className="p-4 sm:p-6">
-        <Skeleton className="h-6 sm:h-8 w-3/4 mb-2" />
-        <Skeleton className="h-4 w-1/2 mb-4" />
-        <Skeleton className="h-4 w-full mb-2" />
-        <Skeleton className="h-4 w-full mb-2" />
-        <Skeleton className="h-4 w-2/3 mb-4" />
-        <div className="flex gap-2 mb-4">
-          <Skeleton className="h-5 sm:h-6 w-14 sm:w-16" />
-          <Skeleton className="h-5 sm:h-6 w-14 sm:w-16" />
-          <Skeleton className="h-5 sm:h-6 w-14 sm:w-16" />
+        <Skeleton className="mb-2 h-6 w-3/4 sm:h-8" />
+        <Skeleton className="mb-4 h-4 w-1/2" />
+        <Skeleton className="mb-2 h-4 w-full" />
+        <Skeleton className="mb-2 h-4 w-full" />
+        <Skeleton className="mb-4 h-4 w-2/3" />
+        <div className="mb-4 flex gap-2">
+          <Skeleton className="h-5 w-14 sm:h-6 sm:w-16" />
+          <Skeleton className="h-5 w-14 sm:h-6 sm:w-16" />
+          <Skeleton className="h-5 w-14 sm:h-6 sm:w-16" />
         </div>
-        <Skeleton className="h-9 sm:h-10 w-full" />
+        <Skeleton className="h-9 w-full sm:h-10" />
       </div>
     </Card>
   );

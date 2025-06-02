@@ -22,7 +22,7 @@ export function ServiceItem({
     >
       <div className="text-5xl font-bold text-[#89c540]/20">{number}</div>
       <div>
-        <h3 className="text-xl font-bold text-[#001e57] mb-3">{title}</h3>
+        <h3 className="mb-3 text-xl font-bold text-[#001e57]">{title}</h3>
         <p className="text-gray-600">{description}</p>
       </div>
     </m.div>

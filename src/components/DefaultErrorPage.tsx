@@ -16,13 +16,13 @@ export function DefaultErrorPage({
 }: DefaultErrorPageProps) {
   return (
     <LazyMotion features={domAnimation}>
-      <div className="min-h-screen bg-white dark:bg-[#121826] flex flex-col items-center justify-center p-4">
+      <div className="flex min-h-screen flex-col items-center justify-center bg-white p-4 dark:bg-[#121826]">
         {/* Main content */}
-        <div className="w-full max-w-3xl mx-auto relative">
+        <div className="relative mx-auto w-full max-w-3xl">
           {/* Background decorations */}
-          <div className="absolute inset-0 overflow-hidden -z-10">
+          <div className="absolute inset-0 -z-10 overflow-hidden">
             <m.div
-              className="absolute -top-64 -right-64 w-96 h-96 rounded-full bg-[#001e57]/5"
+              className="absolute -top-64 -right-64 h-96 w-96 rounded-full bg-[#001e57]/5"
               animate={{
                 scale: [1, 1.1, 1],
                 opacity: [0.5, 0.7, 0.5],
@@ -30,7 +30,7 @@ export function DefaultErrorPage({
               transition={{ duration: 7, repeat: Infinity }}
             />
             <m.div
-              className="absolute -bottom-32 -left-32 w-72 h-72 rounded-full bg-[#89c540]/5"
+              className="absolute -bottom-32 -left-32 h-72 w-72 rounded-full bg-[#89c540]/5"
               animate={{
                 scale: [1, 1.2, 1],
                 opacity: [0.3, 0.5, 0.3],
@@ -42,7 +42,7 @@ export function DefaultErrorPage({
           <div className="relative">
             {/* Top section - Visual */}
             <div className="text-center">
-              <div className="w-full flex justify-center mb-8">
+              <div className="mb-8 flex w-full justify-center">
                 <m.div
                   className="relative"
                   initial={{ opacity: 0, y: -20 }}
@@ -52,7 +52,7 @@ export function DefaultErrorPage({
                   {/* 404 Text */}
                   <div className="relative">
                     <m.div
-                      className="font-bold text-[180px] leading-none text-[#001e57]/5 dark:text-white/5"
+                      className="text-[180px] leading-none font-bold text-[#001e57]/5 dark:text-white/5"
                       initial={{ scale: 0.9 }}
                       animate={{
                         scale: [0.9, 1, 0.9],
@@ -64,12 +64,12 @@ export function DefaultErrorPage({
 
                     {/* Broken connection illustration */}
                     <m.div
-                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center"
+                      className="absolute top-1/2 left-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 0.3, duration: 0.5 }}
                     >
-                      <div className="w-16 h-16 rounded-full flex items-center justify-center bg-[#001e57] text-white">
+                      <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#001e57] text-white">
                         <m.div
                           animate={{ rotate: 360 }}
                           transition={{
@@ -83,7 +83,7 @@ export function DefaultErrorPage({
                       </div>
 
                       <m.div
-                        className="h-1 w-24 bg-gradient-to-r from-[#001e57] to-transparent mx-2"
+                        className="mx-2 h-1 w-24 bg-gradient-to-r from-[#001e57] to-transparent"
                         animate={{
                           opacity: [1, 0.3, 1],
                           scaleX: [1, 0.8, 1],
@@ -91,7 +91,7 @@ export function DefaultErrorPage({
                         transition={{ duration: 2, repeat: Infinity }}
                       />
 
-                      <div className="w-16 h-16 rounded-full flex items-center justify-center bg-[#89c540] text-white">
+                      <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#89c540] text-white">
                         <m.div
                           animate={{
                             y: [0, -3, 0, 3, 0],
@@ -110,19 +110,19 @@ export function DefaultErrorPage({
 
             {/* Bottom section - Content */}
             <m.div
-              className="bg-white dark:bg-[#1a1d2a] rounded-2xl shadow-xl overflow-hidden border border-[#001e57]/10 dark:border-white/10"
+              className="overflow-hidden rounded-2xl border border-[#001e57]/10 bg-white shadow-xl dark:border-white/10 dark:bg-[#1a1d2a]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <div className="border-b border-gray-100 dark:border-gray-800 bg-gray-50 dark:bg-[#1e293b] py-4 px-6">
+              <div className="border-b border-gray-100 bg-gray-50 px-6 py-4 dark:border-gray-800 dark:bg-[#1e293b]">
                 <div className="flex items-center">
                   <div className="flex space-x-2">
-                    <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                    <div className="h-3 w-3 rounded-full bg-red-500"></div>
+                    <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
+                    <div className="h-3 w-3 rounded-full bg-green-500"></div>
                   </div>
-                  <div className="flex-1 text-center text-sm font-mono text-gray-500 dark:text-gray-400">
+                  <div className="flex-1 text-center font-mono text-sm text-gray-500 dark:text-gray-400">
                     Error • {error?.name || 'Application Error'}
                   </div>
                 </div>
@@ -131,23 +131,23 @@ export function DefaultErrorPage({
               <div className="p-8">
                 <div className="space-y-6">
                   <div className="text-center">
-                    <h1 className="text-3xl font-bold text-[#001e57] dark:text-white mb-3">
+                    <h1 className="mb-3 text-3xl font-bold text-[#001e57] dark:text-white">
                       Something went wrong
                     </h1>
-                    <p className="text-gray-500 dark:text-gray-400 max-w-lg mx-auto">
+                    <p className="mx-auto max-w-lg text-gray-500 dark:text-gray-400">
                       We encountered an unexpected error. Our team has been
                       notified and is working to fix the issue.
                     </p>
                   </div>
 
                   {error && (
-                    <div className="rounded-lg bg-gray-50 dark:bg-gray-800/50 p-4 border border-gray-100 dark:border-gray-700">
-                      <div className="font-mono text-sm overflow-auto max-h-[100px] text-gray-700 dark:text-gray-300">
-                        <div className="text-red-500 dark:text-red-400 mb-1">
+                    <div className="rounded-lg border border-gray-100 bg-gray-50 p-4 dark:border-gray-700 dark:bg-gray-800/50">
+                      <div className="max-h-[100px] overflow-auto font-mono text-sm text-gray-700 dark:text-gray-300">
+                        <div className="mb-1 text-red-500 dark:text-red-400">
                           {error.name}: {error.message}
                         </div>
                         {error.stack && (
-                          <div className="text-xs text-gray-500 dark:text-gray-400 whitespace-pre-wrap">
+                          <div className="text-xs whitespace-pre-wrap text-gray-500 dark:text-gray-400">
                             {error.stack.split('\n').slice(1, 4).join('\n')}...
                           </div>
                         )}
@@ -155,7 +155,7 @@ export function DefaultErrorPage({
                     </div>
                   )}
 
-                  <div className="border-t border-gray-100 dark:border-gray-800 pt-6 flex flex-col sm:flex-row gap-3 justify-center">
+                  <div className="flex flex-col justify-center gap-3 border-t border-gray-100 pt-6 sm:flex-row dark:border-gray-800">
                     {resetErrorBoundary && (
                       <Button
                         onClick={resetErrorBoundary}
@@ -185,12 +185,12 @@ export function DefaultErrorPage({
                 </div>
               </div>
 
-              <div className="bg-gray-50 dark:bg-[#1e293b] px-6 py-4 text-center">
+              <div className="bg-gray-50 px-6 py-4 text-center dark:bg-[#1e293b]">
                 <div className="flex items-center justify-center text-sm text-gray-500 dark:text-gray-400">
                   <img
                     src="/logo-header.png"
                     alt="Literacy of Virtue"
-                    className="h-6 mr-2"
+                    className="mr-2 h-6"
                   />
                   <span>
                     Literacy of Virtue • Error ID:{' '}

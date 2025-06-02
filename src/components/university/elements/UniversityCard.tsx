@@ -25,7 +25,7 @@ const BasicButtonLink = React.forwardRef<HTMLButtonElement>((props, ref) => {
     <Button
       ref={ref}
       {...props}
-      className="w-full bg-[#001e57] hover:bg-[#001e57]/90 text-white"
+      className="w-full bg-[#001e57] text-white hover:bg-[#001e57]/90"
     >
       Learn More
     </Button>
@@ -46,38 +46,38 @@ export function UniversityCard({ university }: UniversityCardProps) {
       transition={{ duration: 0.5 }}
       className="w-full"
     >
-      <Card className="group overflow-hidden transition-all duration-300 hover:shadow-lg w-full max-w-full">
-        <div className="relative overflow-hidden aspect-[3/2] sm:aspect-[16/9]">
-          <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
+      <Card className="group w-full max-w-full overflow-hidden transition-all duration-300 hover:shadow-lg">
+        <div className="relative aspect-[3/2] overflow-hidden sm:aspect-[16/9]">
+          <div className="absolute inset-0 flex items-center justify-center bg-gray-200">
             <img
               src={university.thumbnail}
               alt={university.name}
-              className="w-full h-full object-cover"
+              className="h-full w-full object-cover"
             />
           </div>
         </div>
 
         <CardHeader className="space-y-2 p-4 sm:p-6">
-          <CardTitle className="text-lg sm:text-xl font-bold group-hover:text-[#89c540] transition-colors line-clamp-2">
+          <CardTitle className="line-clamp-2 text-lg font-bold transition-colors group-hover:text-[#89c540] sm:text-xl">
             {university.name}
           </CardTitle>
-          <CardDescription className="flex items-center text-gray-600 text-sm">
-            <MapPinIcon className="h-4 w-4 mr-1 shrink-0" />
+          <CardDescription className="flex items-center text-sm text-gray-600">
+            <MapPinIcon className="mr-1 h-4 w-4 shrink-0" />
             <span className="line-clamp-1">{university.location}</span>
           </CardDescription>
         </CardHeader>
 
-        <CardContent className="p-4 sm:p-6 pt-0 sm:pt-0">
-          <p className="text-gray-700 text-sm sm:text-base mb-3 sm:mb-4 line-clamp-3">
+        <CardContent className="p-4 pt-0 sm:p-6 sm:pt-0">
+          <p className="mb-3 line-clamp-3 text-sm text-gray-700 sm:mb-4 sm:text-base">
             {university.description}
           </p>
 
-          <div className="flex items-center text-sm text-gray-600 mb-3 sm:mb-4">
-            <CalendarIcon className="h-4 w-4 mr-2 shrink-0" />
+          <div className="mb-3 flex items-center text-sm text-gray-600 sm:mb-4">
+            <CalendarIcon className="mr-2 h-4 w-4 shrink-0" />
             <span className="line-clamp-1">Intake: {university.intake}</span>
           </div>
           {university.fieldOfStudies && (
-            <ScrollArea className="w-full whitespace-nowrap rounded-md">
+            <ScrollArea className="w-full rounded-md whitespace-nowrap">
               <div className="flex space-x-2 py-1">
                 {university.fieldOfStudies.map((field) => (
                   <Badge
@@ -85,11 +85,11 @@ export function UniversityCard({ university }: UniversityCardProps) {
                     variant="outline"
                     className={`${
                       [
-                        'bg-blue-50 text-blue-700 border-blue-200',
-                        'bg-green-50 text-green-700 border-green-200',
-                        'bg-purple-50 text-purple-700 border-purple-200',
-                        'bg-orange-50 text-orange-700 border-orange-200',
-                        'bg-pink-50 text-pink-700 border-pink-200',
+                        'border-blue-200 bg-blue-50 text-blue-700',
+                        'border-green-200 bg-green-50 text-green-700',
+                        'border-purple-200 bg-purple-50 text-purple-700',
+                        'border-orange-200 bg-orange-50 text-orange-700',
+                        'border-pink-200 bg-pink-50 text-pink-700',
                       ][Math.floor(Math.random() * 5)]
                     } shrink-0 text-xs sm:text-sm`}
                   >
@@ -102,7 +102,7 @@ export function UniversityCard({ university }: UniversityCardProps) {
           )}
         </CardContent>
 
-        <CardFooter className="p-4 sm:p-6 pt-2">
+        <CardFooter className="p-4 pt-2 sm:p-6">
           <ButtonLink to="/university/$uni" params={{ uni: university.path }}>
             Learn More
           </ButtonLink>

@@ -9,16 +9,16 @@ export function AboutHeroSection() {
   ];
 
   return (
-    <section className="relative py-20 md:py-28 border-b border-gray-100">
+    <section className="relative border-b border-gray-100 py-20 md:py-28">
       <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto">
+        <div className="mx-auto max-w-5xl">
           <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
             className="mb-6"
           >
-            <p className="text-[#89c540] font-medium tracking-wider uppercase text-sm">
+            <p className="text-sm font-medium tracking-wider text-[#89c540] uppercase">
               About Us
             </p>
           </m.div>
@@ -27,7 +27,7 @@ export function AboutHeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-6xl font-bold text-[#001e57] tracking-tight mb-8"
+            className="mb-8 text-4xl font-bold tracking-tight text-[#001e57] md:text-6xl"
           >
             Your trusted partner in{' '}
             <span className="text-[#89c540]">international education</span>.
@@ -37,7 +37,7 @@ export function AboutHeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="grid md:grid-cols-3 gap-x-8 gap-y-6 mt-12 border-t border-gray-100 pt-12"
+            className="mt-12 grid gap-x-8 gap-y-6 border-t border-gray-100 pt-12 md:grid-cols-3"
           >
             {stats.map((stat, index) => (
               <StatsItem key={index} value={stat.value} label={stat.label} />

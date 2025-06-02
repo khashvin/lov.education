@@ -1,4 +1,3 @@
-;
 import { LazyMotion, domAnimation } from 'motion/react';
 import { getUniversitiesOptions } from '@/lib/queries';
 import { useQuery } from '@tanstack/react-query';
@@ -31,7 +30,7 @@ function UniversityPage() {
 
   return (
     <LazyMotion features={domAnimation}>
-      <div className="bg-white min-h-screen">
+      <div className="min-h-screen bg-white">
         <UniversityHeroSection />
         <UniversityListSection
           universities={universities}

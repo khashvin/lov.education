@@ -53,11 +53,11 @@ export function BannerSlider({ banners }: BannerSliderProps) {
 
   return (
     <div
-      className="w-full lg:w-7/12 relative aspect-[16/9] sm:aspect-[16/10] md:aspect-[16/9] flex items-center justify-center"
+      className="relative flex aspect-[16/9] w-full items-center justify-center sm:aspect-[16/10] md:aspect-[16/9] lg:w-7/12"
       ref={bannerContainerRef}
     >
       <m.div
-        className="relative w-full h-full rounded-2xl overflow-hidden"
+        className="relative h-full w-full overflow-hidden rounded-2xl"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.3 }}
@@ -67,11 +67,11 @@ export function BannerSlider({ banners }: BannerSliderProps) {
         }}
       >
         {/* Banner Gallery */}
-        <div className="absolute inset-0 rounded-2xl overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden rounded-2xl">
           {banners.map((banner, index) => (
             <m.div
               key={index}
-              className="absolute inset-0 w-full h-full"
+              className="absolute inset-0 h-full w-full"
               initial={{ opacity: 0 }}
               animate={{
                 opacity: activeIndex === index ? 1 : 0,
@@ -83,7 +83,7 @@ export function BannerSlider({ banners }: BannerSliderProps) {
               }}
             >
               <m.div
-                className="w-full h-full overflow-hidden rounded-2xl"
+                className="h-full w-full overflow-hidden rounded-2xl"
                 animate={{
                   rotateX: (mousePosition.y - 0.5) * 5,
                   rotateY: (mousePosition.x - 0.5) * -7,
@@ -94,20 +94,20 @@ export function BannerSlider({ banners }: BannerSliderProps) {
                 <img
                   src={banner}
                   alt={`Malaysian education - banner ${index + 1}`}
-                  className="w-full h-full object-contain object-center rounded-2xl select-none"
+                  className="h-full w-full rounded-2xl object-contain object-center select-none"
                   loading={index === 0 ? 'eager' : 'lazy'}
                 />
 
-                <div className="absolute inset-0 rounded-2xl pointer-events-none"></div>
+                <div className="pointer-events-none absolute inset-0 rounded-2xl"></div>
               </m.div>
             </m.div>
           ))}
         </div>
 
         {/* Banner Overlay Elements */}
-        <div className="absolute bottom-8 left-8 right-8 z-20 text-white pointer-events-none">
+        <div className="pointer-events-none absolute right-8 bottom-8 left-8 z-20 text-white">
           <m.div
-            className="inline-block px-3 py-1.5 rounded-full text-xs font-medium bg-black/20 backdrop-blur-md border border-white/10"
+            className="inline-block rounded-full border border-white/10 bg-black/20 px-3 py-1.5 text-xs font-medium backdrop-blur-md"
             animate={{ opacity: [0.7, 1, 0.7] }}
             transition={{ duration: 3, repeat: Infinity }}
           >
@@ -116,15 +116,15 @@ export function BannerSlider({ banners }: BannerSliderProps) {
         </div>
 
         {/* Controls */}
-        <div className="absolute left-1/2 bottom-4 -translate-x-1/2 z-20 flex space-x-3">
+        <div className="absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 space-x-3">
           {banners.map((_, i) => (
             <button
               key={i}
               onClick={() => setActiveIndex(i)}
               className={`h-1.5 ${
                 activeIndex === i
-                  ? 'bg-white w-8'
-                  : 'bg-white/40 hover:bg-white/60 w-4'
+                  ? 'w-8 bg-white'
+                  : 'w-4 bg-white/40 hover:bg-white/60'
               } rounded-full transition-all duration-300`}
               aria-label={`View banner ${i + 1}`}
             />
@@ -134,7 +134,7 @@ export function BannerSlider({ banners }: BannerSliderProps) {
 
       {/* Banner Frame & Decorative elements */}
       <m.div
-        className="absolute -bottom-6 -left-6 md:-bottom-10 md:-left-10 w-32 h-32 md:w-60 md:h-60 bg-[#89c540]/20 rounded-full blur-3xl"
+        className="absolute -bottom-6 -left-6 h-32 w-32 rounded-full bg-[#89c540]/20 blur-3xl md:-bottom-10 md:-left-10 md:h-60 md:w-60"
         animate={{
           opacity: [0.2, 0.4, 0.2],
           scale: [1, 1.1, 1],
@@ -147,7 +147,7 @@ export function BannerSlider({ banners }: BannerSliderProps) {
       />
 
       <m.div
-        className="absolute -top-6 -right-6 md:-top-10 md:-right-10 w-32 h-32 md:w-48 md:h-48 bg-[#001e57]/50 rounded-full blur-3xl"
+        className="absolute -top-6 -right-6 h-32 w-32 rounded-full bg-[#001e57]/50 blur-3xl md:-top-10 md:-right-10 md:h-48 md:w-48"
         animate={{
           opacity: [0.2, 0.3, 0.2],
           scale: [1, 1.1, 1],

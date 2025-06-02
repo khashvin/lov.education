@@ -78,8 +78,8 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
   component: () => {
     return (
       <RootDocument>
-        <div className="min-h-screen flex flex-col">
-          <header className="w-full z-50">
+        <div className="flex min-h-screen flex-col">
+          <header className="z-50 w-full">
             <TopBar />
             <Navigation />
           </header>

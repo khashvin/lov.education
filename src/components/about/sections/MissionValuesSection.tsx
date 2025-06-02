@@ -24,25 +24,25 @@ export function MissionValuesSection() {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="bg-gray-50 py-20">
       <div className="container mx-auto px-4">
         <m.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-3xl mx-auto text-center mb-16"
+          className="mx-auto mb-16 max-w-3xl text-center"
         >
-          <h2 className="text-3xl font-bold text-[#001e57] mb-4">
+          <h2 className="mb-4 text-3xl font-bold text-[#001e57]">
             Our Mission & Values
           </h2>
-          <p className="text-gray-600 text-lg">
+          <p className="text-lg text-gray-600">
             Guiding principles that drive our commitment to educational
             excellence.
           </p>
         </m.div>
 
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-8 md:grid-cols-3">
             {values.map((value, index) => (
               <ValueCard
                 key={index}

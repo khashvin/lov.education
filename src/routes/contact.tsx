@@ -1,4 +1,3 @@
-;
 import { LazyMotion, domAnimation } from 'motion/react';
 import {
   ContactHeroSection,

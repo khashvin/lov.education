@@ -13,7 +13,7 @@ export function UniversityQuickFact({
 }: UniversityQuickFactProps) {
   return (
     <div className="flex items-start space-x-3">
-      <Icon className="h-5 w-5 text-gray-500 mt-1" />
+      <Icon className="mt-1 h-5 w-5 text-gray-500" />
       <div>
         <h4 className="font-medium">{title}</h4>
         <p className="text-sm text-gray-600">{value}</p>
