@@ -13,12 +13,12 @@ export function ValueCard({ title, description, icon, index }: ValueCardProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.1 * index }}
-      className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+      className="rounded-lg bg-white p-8 shadow-sm transition-shadow duration-300 hover:shadow-md"
     >
-      <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#001e57] text-white text-2xl font-bold mb-6">
+      <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-[#001e57] text-2xl font-bold text-white">
         {icon}
       </div>
-      <h3 className="text-xl font-bold text-[#001e57] mb-3">{title}</h3>
+      <h3 className="mb-3 text-xl font-bold text-[#001e57]">{title}</h3>
       <p className="text-gray-600">{description}</p>
     </m.div>
   );

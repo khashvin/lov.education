@@ -38,25 +38,25 @@ export function HeroSection() {
         </div>
 
         {/* Main hero content */}
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col lg:flex-row min-h-[80vh] md:min-h-[70vh] py-10 md:py-14 items-center">
+        <div className="relative z-10 container mx-auto px-4">
+          <div className="flex min-h-[80vh] flex-col items-center py-10 md:min-h-[70vh] md:py-14 lg:flex-row">
             {/* Left side - Text and CTA */}
-            <div className="w-full lg:w-5/12 text-white z-10 mb-10 lg:mb-0">
+            <div className="z-10 mb-10 w-full text-white lg:mb-0 lg:w-5/12">
               <m.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.1 }}
               >
-                <h4 className="uppercase text-sm sm:text-base tracking-widest font-bold text-[#89c540] mb-2 relative inline-flex items-center">
-                  <span className="flex w-3 h-3 mr-2">
-                    <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-[#89c540] opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-3 w-3 bg-[#89c540]"></span>
+                <h4 className="relative mb-2 inline-flex items-center text-sm font-bold tracking-widest text-[#89c540] uppercase sm:text-base">
+                  <span className="mr-2 flex h-3 w-3">
+                    <span className="absolute inline-flex h-3 w-3 animate-ping rounded-full bg-[#89c540] opacity-75"></span>
+                    <span className="relative inline-flex h-3 w-3 rounded-full bg-[#89c540]"></span>
                   </span>
                   Malaysian Education Agency
                 </h4>
 
                 <m.h1
-                  className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6"
+                  className="mb-4 text-4xl leading-tight font-bold sm:mb-6 sm:text-5xl lg:text-6xl"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.7, delay: 0.2 }}
@@ -66,7 +66,7 @@ export function HeroSection() {
                 </m.h1>
 
                 <m.p
-                  className="text-base sm:text-lg text-white/90 mb-6 sm:mb-8 max-w-lg"
+                  className="mb-6 max-w-lg text-base text-white/90 sm:mb-8 sm:text-lg"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.7, delay: 0.3 }}
@@ -85,7 +85,7 @@ export function HeroSection() {
                   <CustomLink
                     to="/"
                     hash="main-form"
-                    className="bg-[#89c540] hover:bg-[#89c540]/90 text-white px-5 sm:px-6 py-3 sm:py-4 rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 transform hover:-translate-y-1 shadow-[0_0_20px_rgba(137,197,64,0.5)]"
+                    className="flex transform items-center gap-2 rounded-xl bg-[#89c540] px-5 py-3 font-semibold text-white shadow-[0_0_20px_rgba(137,197,64,0.5)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#89c540]/90 sm:px-6 sm:py-4"
                   >
                     <span>Start Application</span>
                     <svg
@@ -104,7 +104,7 @@ export function HeroSection() {
                   <CustomLink
                     to="/"
                     hash="services"
-                    className="bg-white/10 backdrop-blur-sm hover:bg-white/20 border border-white/30 text-white px-5 sm:px-6 py-3 sm:py-4 rounded-xl font-semibold transition-all duration-300 flex items-center gap-2 group"
+                    className="group flex items-center gap-2 rounded-xl border border-white/30 bg-white/10 px-5 py-3 font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/20 sm:px-6 sm:py-4"
                   >
                     <span>Our Services</span>
                     <svg
@@ -123,7 +123,7 @@ export function HeroSection() {
                 </m.div>
 
                 <m.div
-                  className="mt-10 sm:mt-12 flex items-center gap-3 sm:gap-4"
+                  className="mt-10 flex items-center gap-3 sm:mt-12 sm:gap-4"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.7, delay: 0.6 }}
@@ -132,7 +132,7 @@ export function HeroSection() {
                     {[1, 2, 3].map((i) => (
                       <m.div
                         key={i}
-                        className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-[#001e57] overflow-hidden"
+                        className="h-8 w-8 overflow-hidden rounded-full border-2 border-[#001e57] sm:h-10 sm:w-10"
                         initial={{ opacity: 0, x: 15 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: 0.6 + i * 0.1 }}
@@ -145,7 +145,7 @@ export function HeroSection() {
                     ))}
                   </div>
                   <m.div
-                    className="text-white/80 text-xs sm:text-sm"
+                    className="text-xs text-white/80 sm:text-sm"
                     initial={{ opacity: 0, x: 15 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.9 }}

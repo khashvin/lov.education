@@ -1,21 +1,21 @@
-import { type } from 'arktype';
+import { z } from 'zod/v4';
 
-export const ContactFormSchema = type({
-  name: 'string > 0',
-  email: 'string.email',
-  phone: 'string',
-  subject: 'string > 0',
-  message: 'string > 0',
+export const ContactFormSchema = z.object({
+  name: z.string().min(1),
+  email: z.email(),
+  phone: z.string(),
+  subject: z.string().min(1),
+  message: z.string().min(1),
 });
 
-export const InquiryFormSchema = type({
-  name: 'string > 0',
-  phone: 'string',
-  email: 'string.email',
-  university: 'string > 0',
-  fieldOfStudy: 'string > 0',
-  additionalInfo: 'string',
+export const InquiryFormSchema = z.object({
+  name: z.string().min(1),
+  phone: z.string(),
+  email: z.email(),
+  university: z.string().min(1),
+  fieldOfStudy: z.string().min(1),
+  additionalInfo: z.string(),
 });
 
-export type ContactFormType = typeof ContactFormSchema.infer;
-export type InquiryFormType = typeof InquiryFormSchema.infer;
+export type ContactFormType = z.infer<typeof ContactFormSchema>;
+export type InquiryFormType = z.infer<typeof InquiryFormSchema>;

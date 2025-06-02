@@ -25,11 +25,11 @@ export function CourseList({ facultyId }: CourseListProps) {
   if (isCoursesError) {
     return (
       <div className="rounded-lg bg-red-50 p-4 text-center">
-        <AlertCircle className="h-8 w-8 text-red-500 mx-auto mb-2" />
-        <h4 className="text-sm font-semibold text-red-700 mb-1">
+        <AlertCircle className="mx-auto mb-2 h-8 w-8 text-red-500" />
+        <h4 className="mb-1 text-sm font-semibold text-red-700">
           Error Loading Courses
         </h4>
-        <p className="text-xs text-red-600 mb-2">
+        <p className="mb-2 text-xs text-red-600">
           Unable to load course information.
         </p>
         <Button
@@ -47,8 +47,8 @@ export function CourseList({ facultyId }: CourseListProps) {
   if (!courses || courses.length === 0) {
     return (
       <div className="rounded-lg bg-gray-50 p-4 text-center">
-        <XCircle className="h-8 w-8 text-gray-400 mx-auto mb-2" />
-        <h4 className="text-sm font-semibold text-gray-900 mb-1">
+        <XCircle className="mx-auto mb-2 h-8 w-8 text-gray-400" />
+        <h4 className="mb-1 text-sm font-semibold text-gray-900">
           No Courses Available
         </h4>
         <p className="text-xs text-gray-600">
@@ -64,7 +64,7 @@ export function CourseList({ facultyId }: CourseListProps) {
         {courses.map((course) => (
           <div
             key={course.id}
-            className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-50"
+            className="flex items-center space-x-2 rounded-lg p-2 hover:bg-gray-50"
           >
             <Badge variant="outline" className="flex-shrink-0">
               Course

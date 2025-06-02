@@ -4,8 +4,9 @@ dist
 dist-ssr
 *.local
 .output
-.vinxi
+.nitro
 .wrangler
 .drizzle
 .env*
 !.env.example
+**/.tanstack-start/build

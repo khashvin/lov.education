@@ -23,15 +23,15 @@ export function TimelineItem({
       <div
         className={`w-1/2 ${index % 2 === 0 ? 'pr-12 text-right' : 'pl-12 text-left'}`}
       >
-        <div className="inline-block bg-[#001e57] text-white px-3 py-1 rounded-md text-sm font-medium mb-2">
+        <div className="mb-2 inline-block rounded-md bg-[#001e57] px-3 py-1 text-sm font-medium text-white">
           {year}
         </div>
-        <h3 className="text-xl font-bold text-[#001e57] mb-2">{title}</h3>
+        <h3 className="mb-2 text-xl font-bold text-[#001e57]">{title}</h3>
         <p className="text-gray-600">{description}</p>
       </div>
-      <div className="w-0 relative flex items-center justify-center">
+      <div className="relative flex w-0 items-center justify-center">
         <div className="absolute h-full w-px bg-[#89c540]/30"></div>
-        <div className="w-4 h-4 rounded-full bg-[#89c540] border-4 border-[#001e57] z-10"></div>
+        <div className="z-10 h-4 w-4 rounded-full border-4 border-[#001e57] bg-[#89c540]"></div>
       </div>
       <div className="w-1/2"></div>
     </m.div>

@@ -1,4 +1,3 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { LazyMotion, domAnimation } from 'motion/react';
 
 import {
@@ -10,7 +9,7 @@ import {
   AboutCtaSection,
 } from '@/components/about';
 
-export const Route = createFileRoute('/about')({
+export const Route = createFileRoute({
   component: AboutPage,
   head: () => ({
     meta: [

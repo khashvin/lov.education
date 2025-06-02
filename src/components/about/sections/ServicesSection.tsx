@@ -36,18 +36,18 @@ export function ServicesSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-3xl mx-auto text-center mb-16"
+          className="mx-auto mb-16 max-w-3xl text-center"
         >
-          <h2 className="text-3xl font-bold text-[#001e57] mb-4">
+          <h2 className="mb-4 text-3xl font-bold text-[#001e57]">
             What We Offer
           </h2>
-          <p className="text-gray-600 text-lg">
+          <p className="text-lg text-gray-600">
             Comprehensive services to support your educational journey.
           </p>
         </m.div>
 
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-10">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-10 md:grid-cols-2">
             {services.map((service, index) => (
               <ServiceItem
                 key={index}

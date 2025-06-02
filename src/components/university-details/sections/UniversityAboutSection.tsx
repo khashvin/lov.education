@@ -10,8 +10,8 @@ export function UniversityAboutSection({
   return (
     <Card>
       <CardContent className="p-6">
-        <h2 className="text-2xl font-bold mb-4">About the University</h2>
-        <p className="text-gray-700 whitespace-pre-wrap">{description}</p>
+        <h2 className="mb-4 text-2xl font-bold">About the University</h2>
+        <p className="whitespace-pre-wrap text-gray-700">{description}</p>
       </CardContent>
     </Card>
   );

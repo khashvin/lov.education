@@ -10,31 +10,27 @@
   "preview_urls": false,
   "assets": {
     "directory": ".output/public/",
-    "binding": "ASSETS"
   },
   "placement": {
-    "mode": "smart"
+    "mode": "smart",
   },
   "d1_databases": [
     {
       "binding": "DB",
       "database_name": "lov_db",
       "database_id": "f63daa02-d721-4ba5-b7ee-389c14e09412",
-      "migrations_dir": "./src/drizzle/migrations"
-    }
+      "migrations_dir": "./src/drizzle/migrations",
+    },
   ],
   "observability": {
     "logs": {
-      "enabled": true
-    }
+      "enabled": true,
+    },
   },
   "routes": [
     {
       "custom_domain": true,
       "pattern": "lov.education",
-    }
+    },
   ],
-  "version_metadata": {
-    "binding": "CF_VERSION_METADATA"
-  }
 }
