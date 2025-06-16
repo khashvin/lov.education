@@ -5,8 +5,7 @@ dist-ssr
 *.local
 .output
 .nitro
-.wrangler
-.drizzle
+.tanstack
 .env*
 !.env.example
-**/.tanstack-start/build
+.wrangler

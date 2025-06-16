@@ -1,22 +1,22 @@
 {
   "files.watcherExclude": {
     "**/routeTree.gen.ts": true,
-    "**/tanstack-start.d.ts": true,
     "**/worker-configuration.d.ts": true
   },
   "search.exclude": {
     "**/routeTree.gen.ts": true,
-    "**/tanstack-start.d.ts": true,
     "**/worker-configuration.d.ts": true
   },
   "files.readonlyInclude": {
     "**/routeTree.gen.ts": true,
-    "**/tanstack-start.d.ts": true,
     "**/worker-configuration.d.ts": true
+  },
+  "files.associations": {
+    "*.css": "tailwindcss"
   },
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "files.associations": {
-    "*.css": "tailwindcss"
-  }
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

@@ -1,4 +1,4 @@
-import { redirect } from '@tanstack/react-router';
+import { redirect, createFileRoute } from '@tanstack/react-router';
 import { GraduationCapIcon } from 'lucide-react';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Card, CardContent } from '@/components/ui/card';
@@ -11,8 +11,7 @@ import {
   UniversitySidebarSection,
 } from '@/components/university-details';
 
-export const Route = createFileRoute({
-  component: UniversityDetailsPage,
+export const Route = createFileRoute('/university/$uni')({
   loader: async ({ context, params }) => {
     const uni = await context.queryClient.ensureQueryData(
       getUniversityOptions(params.uni),
@@ -23,12 +22,9 @@ export const Route = createFileRoute({
     await context.queryClient.ensureQueryData(getFacultiesOptions(uni.id));
   },
   head: ({ params }) => ({
-    meta: [
-      {
-        title: `${params.uni.toUpperCase()} - Literacy of Virtue`,
-      },
-    ],
+    meta: [{ title: `${params.uni.toUpperCase()} - Literacy of Virtue` }],
   }),
+  component: UniversityDetailsPage,
 });
 
 function UniversityDetailsPage() {
