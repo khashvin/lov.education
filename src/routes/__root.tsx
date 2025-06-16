@@ -48,16 +48,9 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 export const Route = createRootRouteWithContext<MyRouterContext>()({
   head: () => ({
     meta: [
-      {
-        charSet: 'utf-8',
-      },
-      {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1',
-      },
-      {
-        title: 'Literacy of Virtue - Education Consultancy',
-      },
+      { charSet: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { title: 'Literacy of Virtue - Education Consultancy' },
       {
         name: 'description',
         content:
@@ -65,10 +58,7 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
       },
     ],
     links: [
-      {
-        rel: 'stylesheet',
-        href: appCss,
-      },
+      { rel: 'stylesheet', href: appCss },
       {
         rel: 'stylesheet',
         href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css',

@@ -1,8 +1,5 @@
-package-lock.json
 pnpm-lock.yaml
-yarn.lock
 node_modules
 src/routeTree.gen.ts
 src/worker-configuration.d.ts
-src/drizzle/migrations
-src/tanstack-start.d.ts
+src/drizzle/migrations/**

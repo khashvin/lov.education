@@ -73,7 +73,7 @@ export function FacultyAccordion({ universityId }: FacultyAccordionProps) {
         <AccordionItem key={faculty.id} value={`faculty-${faculty.id}`}>
           <AccordionTrigger className="text-lg hover:no-underline">
             <div className="flex items-center">
-              <BookOpenIcon className="mr-2 h-5 w-5" />
+              <BookOpenIcon className="mr-2 h-5 min-h-5 w-5 min-w-5" />
               {faculty.name}
             </div>
           </AccordionTrigger>

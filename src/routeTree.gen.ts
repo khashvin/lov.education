@@ -8,140 +8,38 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import type { CreateFileRoute, FileRoutesByPath } from '@tanstack/react-router'
-
-// Import Routes
-
-import { Route as rootRoute } from './routes/__root'
+import { Route as rootRouteImport } from './routes/__root'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as UniversityIndexRouteImport } from './routes/university.index'
 import { Route as UniversityUniRouteImport } from './routes/university.$uni'
 
-// Create/Update Routes
-
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => rootRouteImport,
 } as any)
-
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => rootRouteImport,
 } as any)
-
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => rootRouteImport,
 } as any)
-
 const UniversityIndexRoute = UniversityIndexRouteImport.update({
   id: '/university/',
   path: '/university/',
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => rootRouteImport,
 } as any)
-
 const UniversityUniRoute = UniversityUniRouteImport.update({
   id: '/university/$uni',
   path: '/university/$uni',
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => rootRouteImport,
 } as any)
-
-// Populate the FileRoutesByPath interface
-
-declare module '@tanstack/react-router' {
-  interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRoute
-    }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRoute
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRoute
-    }
-    '/university/$uni': {
-      id: '/university/$uni'
-      path: '/university/$uni'
-      fullPath: '/university/$uni'
-      preLoaderRoute: typeof UniversityUniRouteImport
-      parentRoute: typeof rootRoute
-    }
-    '/university/': {
-      id: '/university/'
-      path: '/university'
-      fullPath: '/university'
-      preLoaderRoute: typeof UniversityIndexRouteImport
-      parentRoute: typeof rootRoute
-    }
-  }
-}
-
-// Add type-safety to the createFileRoute function across the route tree
-
-declare module './routes/index' {
-  const createFileRoute: CreateFileRoute<
-    '/',
-    FileRoutesByPath['/']['parentRoute'],
-    FileRoutesByPath['/']['id'],
-    FileRoutesByPath['/']['path'],
-    FileRoutesByPath['/']['fullPath']
-  >
-}
-declare module './routes/about' {
-  const createFileRoute: CreateFileRoute<
-    '/about',
-    FileRoutesByPath['/about']['parentRoute'],
-    FileRoutesByPath['/about']['id'],
-    FileRoutesByPath['/about']['path'],
-    FileRoutesByPath['/about']['fullPath']
-  >
-}
-declare module './routes/contact' {
-  const createFileRoute: CreateFileRoute<
-    '/contact',
-    FileRoutesByPath['/contact']['parentRoute'],
-    FileRoutesByPath['/contact']['id'],
-    FileRoutesByPath['/contact']['path'],
-    FileRoutesByPath['/contact']['fullPath']
-  >
-}
-declare module './routes/university.$uni' {
-  const createFileRoute: CreateFileRoute<
-    '/university/$uni',
-    FileRoutesByPath['/university/$uni']['parentRoute'],
-    FileRoutesByPath['/university/$uni']['id'],
-    FileRoutesByPath['/university/$uni']['path'],
-    FileRoutesByPath['/university/$uni']['fullPath']
-  >
-}
-declare module './routes/university.index' {
-  const createFileRoute: CreateFileRoute<
-    '/university/',
-    FileRoutesByPath['/university/']['parentRoute'],
-    FileRoutesByPath['/university/']['id'],
-    FileRoutesByPath['/university/']['path'],
-    FileRoutesByPath['/university/']['fullPath']
-  >
-}
-
-// Create and export the route tree
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -150,7 +48,6 @@ export interface FileRoutesByFullPath {
   '/university/$uni': typeof UniversityUniRoute
   '/university': typeof UniversityIndexRoute
 }
-
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
@@ -158,16 +55,14 @@ export interface FileRoutesByTo {
   '/university/$uni': typeof UniversityUniRoute
   '/university': typeof UniversityIndexRoute
 }
-
 export interface FileRoutesById {
-  __root__: typeof rootRoute
+  __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/university/$uni': typeof UniversityUniRoute
   '/university/': typeof UniversityIndexRoute
 }
-
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths: '/' | '/about' | '/contact' | '/university/$uni' | '/university'
@@ -182,13 +77,52 @@ export interface FileRouteTypes {
     | '/university/'
   fileRoutesById: FileRoutesById
 }
-
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   UniversityUniRoute: typeof UniversityUniRoute
   UniversityIndexRoute: typeof UniversityIndexRoute
+}
+
+declare module '@tanstack/react-router' {
+  interface FileRoutesByPath {
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/university/': {
+      id: '/university/'
+      path: '/university'
+      fullPath: '/university'
+      preLoaderRoute: typeof UniversityIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/university/$uni': {
+      id: '/university/$uni'
+      path: '/university/$uni'
+      fullPath: '/university/$uni'
+      preLoaderRoute: typeof UniversityUniRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+  }
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -198,39 +132,6 @@ const rootRouteChildren: RootRouteChildren = {
   UniversityUniRoute: UniversityUniRoute,
   UniversityIndexRoute: UniversityIndexRoute,
 }
-
-export const routeTree = rootRoute
+export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-/* ROUTE_MANIFEST_START
-{
-  "routes": {
-    "__root__": {
-      "filePath": "__root.tsx",
-      "children": [
-        "/",
-        "/about",
-        "/contact",
-        "/university/$uni",
-        "/university/"
-      ]
-    },
-    "/": {
-      "filePath": "index.tsx"
-    },
-    "/about": {
-      "filePath": "about.tsx"
-    },
-    "/contact": {
-      "filePath": "contact.tsx"
-    },
-    "/university/$uni": {
-      "filePath": "university.$uni.tsx"
-    },
-    "/university/": {
-      "filePath": "university.index.tsx"
-    }
-  }
-}
-ROUTE_MANIFEST_END */
