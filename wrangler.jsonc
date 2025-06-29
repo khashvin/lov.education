@@ -3,7 +3,7 @@
   "account_id": "870e543d41f304fa4fe70ffd722dee4b",
   "name": "lov-education",
   "main": ".output/server/index.mjs",
-  "compatibility_date": "2025-03-24",
+  "compatibility_date": "2025-06-29",
   "compatibility_flags": ["nodejs_compat"],
   "workers_dev": false,
   "keep_vars": true,
