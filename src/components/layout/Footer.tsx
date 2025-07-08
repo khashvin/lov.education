@@ -2,7 +2,7 @@ import { Link, useRouteContext } from '@tanstack/react-router';
 
 export function Footer() {
   const { metadata } = useRouteContext({
-    from: '/',
+    from: '__root__',
     select: (ctx) => ctx.metadata,
   });
 
