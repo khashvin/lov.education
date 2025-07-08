@@ -1,6 +1,11 @@
-import { Link } from '@tanstack/react-router';
+import { Link, useRouteContext } from '@tanstack/react-router';
 
 export function Footer() {
+  const { metadata } = useRouteContext({
+    from: '/',
+    select: (ctx) => ctx.metadata,
+  });
+
   return (
     <footer className="bg-[#030e22] py-16 text-white">
       <div className="container mx-auto px-4">
@@ -139,6 +144,9 @@ export function Footer() {
               >
                 Artiqe Media
               </a>
+              <span className="pl-2 text-xs text-white/15">
+                ({metadata.id.slice(0, 8)})
+              </span>
             </div>
             <div>
               <ul className="flex justify-center space-x-4">

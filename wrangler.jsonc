@@ -33,4 +33,7 @@
       "pattern": "lov.education",
     },
   ],
+  "version_metadata": {
+    "binding": "VERSION_METADATA",
+  },
 }

@@ -12,8 +12,13 @@ import appCss from '../styles.css?url';
 import React from 'react';
 import { Toaster } from 'sonner';
 import type { MyRouterContext } from '../router';
+import { getVersionMetadata } from '@/functions/version-metadata';
 
 export const Route = createRootRouteWithContext<MyRouterContext>()({
+  beforeLoad: async () => {
+    const metadata = await getVersionMetadata();
+    return { metadata };
+  },
   head: () => ({
     meta: [
       { charSet: 'utf-8' },
