@@ -1,5 +1,4 @@
 import {
-  Outlet,
   HeadContent,
   Scripts,
   createRootRouteWithContext,
@@ -37,7 +36,7 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
   shellComponent: RootComponent,
 });
 
-function RootDocument({ children }: { children: React.ReactNode }) {
+function RootComponent({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
@@ -61,29 +60,19 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         </style>
       </head>
       <body>
-        {children}
+        <div className="flex min-h-screen flex-col">
+          <header className="z-50 w-full">
+            <TopBar />
+            <Navigation />
+          </header>
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </div>
+        <Toaster position="top-right" />
+        <TanStackRouterDevtools />
+        <ReactQueryDevtools buttonPosition="bottom-right" />
         <Scripts />
       </body>
     </html>
-  );
-}
-
-function RootComponent() {
-  return (
-    <RootDocument>
-      <div className="flex min-h-screen flex-col">
-        <header className="z-50 w-full">
-          <TopBar />
-          <Navigation />
-        </header>
-        <main className="flex-1">
-          <Outlet />
-        </main>
-        <Footer />
-      </div>
-      <Toaster position="top-right" />
-      <TanStackRouterDevtools />
-      <ReactQueryDevtools buttonPosition="bottom-right" />
-    </RootDocument>
   );
 }
