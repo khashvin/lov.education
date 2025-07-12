@@ -1,4 +1,5 @@
 import { createServerFn } from '@tanstack/react-start';
+
 import { getBindings } from '@/lib/cf-bindings';
 
 export const getVersionMetadata = createServerFn().handler(async () => {

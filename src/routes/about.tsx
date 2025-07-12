@@ -1,13 +1,13 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { LazyMotion, domAnimation } from 'motion/react';
+import { domAnimation, LazyMotion } from 'motion/react';
 
 import {
+  AboutCtaSection,
   AboutHeroSection,
-  StorySection,
   MissionValuesSection,
   ServicesSection,
+  StorySection,
   TimelineSection,
-  AboutCtaSection,
 } from '@/components/about';
 
 export const Route = createFileRoute('/about')({

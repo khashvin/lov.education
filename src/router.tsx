@@ -1,13 +1,14 @@
+import { QueryClient } from '@tanstack/react-query';
 import { createRouter as createTanstackRouter } from '@tanstack/react-router';
 import { routerWithQueryClient } from '@tanstack/react-router-with-query';
-import { QueryClient } from '@tanstack/react-query';
 
 // Import the generated route tree
 import { routeTree } from './routeTree.gen';
 
 import './styles.css';
-import { DefaultNotFoundPage } from './components/DefaultNotFound';
+
 import { DefaultErrorPage } from './components/DefaultErrorPage';
+import { DefaultNotFoundPage } from './components/DefaultNotFound';
 
 export interface MyRouterContext {
   queryClient: QueryClient;

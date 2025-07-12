@@ -1,7 +1,7 @@
 import { GraduationCapIcon } from 'lucide-react';
+
 import { Button } from '@/components/ui/button';
 import type { University as UniversityType } from '@/drizzle/schema';
-
 import { UniversityCard } from '../elements/UniversityCard';
 import { UniversitySkeleton } from '../elements/UniversitySkeleton';
 

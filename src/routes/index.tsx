@@ -1,8 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router';
+
 import {
+  ContactFormSection,
   HeroSection,
   ServicesSection,
-  ContactFormSection,
 } from '@/components/home';
 
 export const Route = createFileRoute('/')({

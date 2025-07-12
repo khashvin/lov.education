@@ -1,12 +1,13 @@
-import { createFileRoute } from '@tanstack/react-router';
-import { LazyMotion, domAnimation } from 'motion/react';
-import { getUniversitiesOptions } from '@/lib/queries';
 import { useQuery } from '@tanstack/react-query';
+import { createFileRoute } from '@tanstack/react-router';
+import { domAnimation, LazyMotion } from 'motion/react';
+
 import {
+  UniversityCtaSection,
   UniversityHeroSection,
   UniversityListSection,
-  UniversityCtaSection,
 } from '@/components/university';
+import { getUniversitiesOptions } from '@/lib/queries';
 
 export const Route = createFileRoute('/university/')({
   loader: async ({ context }) => {

@@ -1,7 +1,8 @@
 import * as m from 'motion/react-m';
+
+import ContactForm from '../elements/ContactForm';
 import ContactInfoCard from '../elements/ContactInfoCard';
 import SocialLinks from '../elements/SocialLinks';
-import ContactForm from '../elements/ContactForm';
 
 export function ContactInfoSection() {
   return (

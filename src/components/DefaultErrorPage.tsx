@@ -1,7 +1,7 @@
 import { Link } from '@tanstack/react-router';
-import { Home, ArrowLeft, RefreshCw, ExternalLink } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Home, RefreshCw } from 'lucide-react';
+import { domAnimation, LazyMotion } from 'motion/react';
 import * as m from 'motion/react-m';
-import { LazyMotion, domAnimation } from 'motion/react';
 
 import { Button } from '@/components/ui/button';
 

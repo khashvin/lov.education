@@ -1,4 +1,5 @@
 import * as m from 'motion/react-m';
+
 import { StatsItem } from '../elements/StatsItem';
 
 export function AboutHeroSection() {

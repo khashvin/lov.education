@@ -1,5 +1,6 @@
-import { CustomLink } from '@/components/CustomLink';
 import * as m from 'motion/react-m';
+
+import { CustomLink } from '@/components/CustomLink';
 
 export function AboutCtaSection() {
   return (

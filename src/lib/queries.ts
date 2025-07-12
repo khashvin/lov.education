@@ -1,10 +1,11 @@
+import { queryOptions } from '@tanstack/react-query';
+
 import {
   fetchCourses,
   fetchFaculties,
   fetchUniversities,
   fetchUniversity,
 } from '@/functions/fetch-universities';
-import { queryOptions } from '@tanstack/react-query';
 
 export const getUniversitiesOptions = queryOptions({
   queryKey: ['universities'],

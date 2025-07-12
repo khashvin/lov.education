@@ -1,18 +1,17 @@
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import {
+  createRootRouteWithContext,
   HeadContent,
   Scripts,
-  createRootRouteWithContext,
 } from '@tanstack/react-router';
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-
-import { TopBar, Navigation, Footer } from '../components/layout';
-import appCss from '../styles.css?url';
-
 import React from 'react';
 import { Toaster } from 'sonner';
-import type { MyRouterContext } from '../router';
+
 import { getVersionMetadata } from '@/functions/version-metadata';
+import { Footer, Navigation, TopBar } from '../components/layout';
+import type { MyRouterContext } from '../router';
+import appCss from '../styles.css?url';
 
 export const Route = createRootRouteWithContext<MyRouterContext>()({
   beforeLoad: async () => {

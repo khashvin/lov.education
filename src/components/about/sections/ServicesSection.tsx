@@ -1,4 +1,5 @@
 import * as m from 'motion/react-m';
+
 import { ServiceItem } from '../elements/ServiceItem';
 
 export function ServicesSection() {

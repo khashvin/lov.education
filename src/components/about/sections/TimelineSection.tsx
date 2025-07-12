@@ -1,4 +1,5 @@
 import * as m from 'motion/react-m';
+
 import { TimelineItem } from '../elements/TimelineItem';
 
 export function TimelineSection() {

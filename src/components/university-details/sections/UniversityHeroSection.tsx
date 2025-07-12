@@ -1,4 +1,4 @@
-import { MapPinIcon, CalendarIcon } from 'lucide-react';
+import { CalendarIcon, MapPinIcon } from 'lucide-react';
 
 interface UniversityHeroSectionProps {
   name: string;

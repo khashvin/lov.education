@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
 import * as m from 'motion/react-m';
+import { useEffect, useRef, useState } from 'react';
 
 interface BannerSliderProps {
   banners: string[];

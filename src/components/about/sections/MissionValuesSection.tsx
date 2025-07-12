@@ -1,4 +1,5 @@
 import * as m from 'motion/react-m';
+
 import { ValueCard } from '../elements/ValueCard';
 
 export function MissionValuesSection() {

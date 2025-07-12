@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
+import { domAnimation, LazyMotion } from 'motion/react';
 import * as m from 'motion/react-m';
-import { LazyMotion, domAnimation } from 'motion/react';
-import BannerSlider from '../elements/BannerSlider';
+import { useEffect, useState } from 'react';
+
 import { CustomLink } from '@/components/CustomLink';
+import BannerSlider from '../elements/BannerSlider';
 
 export function HeroSection() {
   const banners = [

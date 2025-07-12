@@ -1,7 +1,7 @@
 import { Link } from '@tanstack/react-router';
-import { MapPin, Book, Route, Home, ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Book, Home, MapPin, Route } from 'lucide-react';
+import { domAnimation, LazyMotion } from 'motion/react';
 import * as m from 'motion/react-m';
-import { LazyMotion, domAnimation } from 'motion/react';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';

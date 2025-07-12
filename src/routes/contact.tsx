@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { LazyMotion, domAnimation } from 'motion/react';
+import { domAnimation, LazyMotion } from 'motion/react';
+
 import {
   ContactHeroSection,
   ContactInfoSection,

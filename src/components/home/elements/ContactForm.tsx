@@ -1,14 +1,19 @@
+import { Turnstile } from '@marsidev/react-turnstile';
+import { useForm } from '@tanstack/react-form';
+import { useState } from 'react';
+import { toast } from 'sonner';
+
 import { Button } from '@/components/ui/button';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { useForm } from '@tanstack/react-form';
-import { InquiryFormSchema, type InquiryFormType } from '@/lib/form-schema';
 import { handleInquiryForm } from '@/functions/form-handlers';
-import { toast } from 'sonner';
-import { DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
-import { useState } from 'react';
-import { Turnstile } from '@marsidev/react-turnstile';
+import { InquiryFormSchema, type InquiryFormType } from '@/lib/form-schema';
 
 const formDefaultValues = {
   name: '',

@@ -1,7 +1,8 @@
 import { createServerFn } from '@tanstack/react-start';
-import { drizzle } from 'drizzle-orm/d1';
-import * as schema from '@/drizzle/schema';
 import { eq } from 'drizzle-orm';
+import { drizzle } from 'drizzle-orm/d1';
+
+import * as schema from '@/drizzle/schema';
 import { getBindings } from '@/lib/cf-bindings';
 
 export const fetchUniversities = createServerFn().handler(async () => {

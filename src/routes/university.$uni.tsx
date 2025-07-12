@@ -1,15 +1,16 @@
-import { redirect, createFileRoute } from '@tanstack/react-router';
-import { GraduationCapIcon } from 'lucide-react';
-import { Skeleton } from '@/components/ui/skeleton';
-import { Card, CardContent } from '@/components/ui/card';
 import { useQuery } from '@tanstack/react-query';
-import { getFacultiesOptions, getUniversityOptions } from '@/lib/queries';
+import { createFileRoute, redirect } from '@tanstack/react-router';
+import { GraduationCapIcon } from 'lucide-react';
+
+import { Card, CardContent } from '@/components/ui/card';
+import { Skeleton } from '@/components/ui/skeleton';
 import {
-  UniversityHeroSection,
   UniversityAboutSection,
   UniversityFacultiesSection,
+  UniversityHeroSection,
   UniversitySidebarSection,
 } from '@/components/university-details';
+import { getFacultiesOptions, getUniversityOptions } from '@/lib/queries';
 
 export const Route = createFileRoute('/university/$uni')({
   loader: async ({ context, params }) => {

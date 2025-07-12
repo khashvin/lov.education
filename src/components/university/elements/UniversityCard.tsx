@@ -1,20 +1,20 @@
-import { MapPinIcon, CalendarIcon } from 'lucide-react';
+import { createLink, type LinkComponent } from '@tanstack/react-router';
+import { CalendarIcon, MapPinIcon } from 'lucide-react';
 import * as m from 'motion/react-m';
+import React from 'react';
 
+import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
-  CardHeader,
-  CardTitle,
   CardDescription,
   CardFooter,
+  CardHeader,
+  CardTitle,
 } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import type { University } from '@/drizzle/schema';
-import { createLink, type LinkComponent } from '@tanstack/react-router';
-import React from 'react';
 
 interface UniversityCardProps {
   university: University;

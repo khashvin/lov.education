@@ -1,4 +1,5 @@
-import { MapPinIcon, CalendarIcon } from 'lucide-react';
+import { CalendarIcon, MapPinIcon } from 'lucide-react';
+
 import { Card, CardContent } from '@/components/ui/card';
 
 interface UniversitySidebarSectionProps {

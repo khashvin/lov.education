@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
 import { Link } from '@tanstack/react-router';
+import { useEffect, useState } from 'react';
 
 // NavLink component for desktop navigation
 function NavLink({ to, label }: { to: string; label: string }) {

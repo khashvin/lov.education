@@ -1,9 +1,10 @@
+import { useQuery } from '@tanstack/react-query';
+import { AlertCircle, XCircle } from 'lucide-react';
+
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Skeleton } from '@/components/ui/skeleton';
-import { AlertCircle, XCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { useQuery } from '@tanstack/react-query';
 import { getCoursesOptions } from '@/lib/queries';
 
 interface CourseListProps {
