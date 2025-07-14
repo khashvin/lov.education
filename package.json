@@ -1,7 +1,12 @@
 {
   "name": "lov.education",
   "private": true,
+  "version": "2.0.0",
   "type": "module",
+  "author": {
+    "name": "K Hashvin",
+    "url": "https://github.com/khashvin"
+  },
   "scripts": {
     "dev": "vite dev",
     "start": "vite start",
