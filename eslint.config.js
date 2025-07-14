@@ -1,10 +1,10 @@
 import eslint from '@eslint/js';
-import tseslint from 'typescript-eslint';
-import pluginTSRouter from '@tanstack/eslint-plugin-router';
 import pluginTSQuery from '@tanstack/eslint-plugin-query';
+import pluginTSRouter from '@tanstack/eslint-plugin-router';
 import prettier from 'eslint-config-prettier/flat';
 import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
 import { defineConfig, globalIgnores } from 'eslint/config';
+import tseslint from 'typescript-eslint';
 
 export default defineConfig([
   globalIgnores([
