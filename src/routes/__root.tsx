@@ -45,23 +45,6 @@ function RootComponent({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
-        <style>
-          {`
-            @keyframes slideDown {
-              0% {
-                transform: translateY(-100%);
-                opacity: 0;
-              }
-              100% {
-                transform: translateY(0);
-                opacity: 1;
-              }
-            }
-            .animate-slideDown {
-              animation: slideDown 0.3s ease-in-out forwards;
-            }
-          `}
-        </style>
       </head>
       <body>
         <div className="flex min-h-screen flex-col">
