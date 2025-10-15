@@ -6,7 +6,7 @@ import { sendEmail } from './send-email';
 export const handleContactForm = createServerFn({
   method: 'POST',
 })
-  .validator(ContactFormSchema)
+  .inputValidator(ContactFormSchema)
   .handler(async ({ data }) => {
     const emailText = `
       Name: ${data.name}
@@ -33,7 +33,7 @@ export const handleContactForm = createServerFn({
 export const handleInquiryForm = createServerFn({
   method: 'POST',
 })
-  .validator(InquiryFormSchema)
+  .inputValidator(InquiryFormSchema)
   .handler(async ({ data }) => {
     const emailText = `
       Name: ${data.name}

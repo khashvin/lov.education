@@ -18,7 +18,7 @@ export default defineConfig([
   prettier,
   ...pluginTSRouter.configs['flat/recommended'],
   ...pluginTSQuery.configs['flat/recommended'],
-  eslintPluginReactHooks.configs['recommended-latest'],
+  eslintPluginReactHooks.configs.flat['recommended-latest'],
   {
     rules: {
       '@typescript-eslint/no-unused-vars': 'warn',

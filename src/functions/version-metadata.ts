@@ -1,11 +1,8 @@
 import { createServerFn } from '@tanstack/react-start';
-
-import { getBindings } from '@/lib/cf-bindings';
+import { env } from 'cloudflare:workers';
 
 export const getVersionMetadata = createServerFn().handler(async () => {
-  const cf = await getBindings();
-
   return {
-    metadata: cf.VERSION_METADATA,
+    metadata: env.VERSION_METADATA,
   };
 });

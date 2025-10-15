@@ -2,14 +2,14 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "account_id": "870e543d41f304fa4fe70ffd722dee4b",
   "name": "lov-education",
-  "main": ".output/server/index.mjs",
+  "main": "@tanstack/react-start/server-entry",
   "compatibility_date": "2025-06-29",
   "compatibility_flags": ["nodejs_compat"],
   "workers_dev": false,
   "keep_vars": true,
   "preview_urls": false,
   "assets": {
-    "directory": ".output/public/",
+    "directory": "./dist/client",
   },
   "placement": {
     "mode": "smart",

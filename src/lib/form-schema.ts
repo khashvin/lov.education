@@ -1,4 +1,4 @@
-import { z } from 'zod/v4';
+import * as z from 'zod';
 
 export const ContactFormSchema = z.object({
   name: z.string().min(1),

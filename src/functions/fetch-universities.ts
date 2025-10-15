@@ -1,13 +1,12 @@
 import { createServerFn } from '@tanstack/react-start';
+import { env } from 'cloudflare:workers';
 import { eq } from 'drizzle-orm';
 import { drizzle } from 'drizzle-orm/d1';
 
 import * as schema from '@/drizzle/schema';
-import { getBindings } from '@/lib/cf-bindings';
 
 export const fetchUniversities = createServerFn().handler(async () => {
-  const cf = await getBindings();
-  const db = drizzle(cf.DB, { schema });
+  const db = drizzle(env.DB, { schema });
   return await db
     .select()
     .from(schema.universities)
@@ -15,30 +14,27 @@ export const fetchUniversities = createServerFn().handler(async () => {
 });
 
 export const fetchUniversity = createServerFn()
-  .validator((uniPath: string) => uniPath)
+  .inputValidator((uniPath: string) => uniPath)
   .handler(async (ctx) => {
-    const cf = await getBindings();
-    const db = drizzle(cf.DB, { schema });
+    const db = drizzle(env.DB, { schema });
     return await db.query.universities.findFirst({
       where: eq(schema.universities.path, ctx.data),
     });
   });
 
 export const fetchFaculties = createServerFn()
-  .validator((universityId: number) => universityId)
+  .inputValidator((universityId: number) => universityId)
   .handler(async (ctx) => {
-    const cf = await getBindings();
-    const db = drizzle(cf.DB, { schema });
+    const db = drizzle(env.DB, { schema });
     return await db.query.faculties.findMany({
       where: eq(schema.faculties.university, ctx.data),
     });
   });
 
 export const fetchCourses = createServerFn()
-  .validator((facultyId: number) => facultyId)
+  .inputValidator((facultyId: number) => facultyId)
   .handler(async (ctx) => {
-    const cf = await getBindings();
-    const db = drizzle(cf.DB, { schema });
+    const db = drizzle(env.DB, { schema });
     return await db.query.courses.findMany({
       where: eq(schema.courses.faculty, ctx.data),
     });

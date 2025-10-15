@@ -1,3 +1,4 @@
+import type { QueryClient } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import {
   createRootRouteWithContext,
@@ -10,8 +11,11 @@ import { Toaster } from 'sonner';
 
 import { getVersionMetadata } from '@/functions/version-metadata';
 import { Footer, Navigation, TopBar } from '../components/layout';
-import type { MyRouterContext } from '../router';
 import appCss from '../styles.css?url';
+
+export interface MyRouterContext {
+  queryClient: QueryClient;
+}
 
 export const Route = createRootRouteWithContext<MyRouterContext>()({
   beforeLoad: async () => {

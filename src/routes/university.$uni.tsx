@@ -18,9 +18,9 @@ export const Route = createFileRoute('/university/$uni')({
       getUniversityOptions(params.uni),
     );
     if (!uni) {
-      return redirect({ to: '/university' });
+      throw redirect({ to: '/university' });
     }
-    await context.queryClient.ensureQueryData(getFacultiesOptions(uni.id));
+    context.queryClient.ensureQueryData(getFacultiesOptions(uni.id));
   },
   head: ({ params }) => ({
     meta: [{ title: `${params.uni.toUpperCase()} - Literacy of Virtue` }],

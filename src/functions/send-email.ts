@@ -11,7 +11,7 @@ interface SendEmailParams {
 export const sendEmail = createServerFn({
   method: 'POST',
 })
-  .validator((data: SendEmailParams) => data)
+  .inputValidator((data: SendEmailParams) => data)
   .handler(async (ctx) => {
     const resend = new Resend(process.env.RESEND_API_KEY);
 
